@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo | Monolito Ingeniería</title>
+    <!-- Mismos recursos que contacto.html -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ¡Estilos COPIADOS DIRECTAMENTE de contacto.html! */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #2A5C9A;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #1E3A8A;
+        }
+        .content-box {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #2A5C9A;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer-info {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* Estilos específicos para el contenido del equipo (mismo formato que el formulario de contacto) */
+        .director-profile {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        .director-photo {
+            width: 250px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .director-info h2 {
+            color: #2A5C9A;
+            margin-top: 0;
+        }
+        .director-info h3 {
+            color: #555;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .badge {
+            display: inline-block;
+            background: #f0f4f9;
+            color: #2A5C9A;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .director-profile {
+                flex-direction: column;
+            }
+            .director-photo {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado IDÉNTICO a contacto.html -->
+    <header>
+        <div class="header-container">
+            <img src="assets/img/logo.png" alt="Monolito Ingeniería" class="logo">
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="equipo.html">Equipo</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal - Misma estructura de caja que contacto.html -->
+    <main>
+        <div class="content-box"> <!-- Contenedor blanco con sombra -->
+            <h1 style="color: #2A5C9A; margin-bottom: 30px; text-align: center;">Nuestro Director</h1>
+            
+            <!-- Perfil en recuadro (similar al formulario de contacto) -->
+            <div class="director-profile">
+                <img src="assets/img/director.jpg" alt="Ing. [Nombre]" class="director-photo">
+                
+                <div class="director-info">
+                    <h2>Ing. [Nombre Completo]</h2>
+                    <h3>Director General y Especialista en Estructuras</h3>
+                    
+                    <p>Con más de [X] años de experiencia en ingeniería estructural, el Ing. [Nombre] ha liderado proyectos en [Ciudad/País], combinando <strong>precisión técnica</strong> con <strong>soluciones innovadoras</strong>.</p>
+                    
+                    <!-- Badges de credenciales (estilo consistente) -->
+                    <div style="margin: 20px 0;">
+                        <span class="badge"><i class="fas fa-graduation-cap"></i> UNAM</span>
+                        <span class="badge"><i class="fas fa-certificate"></i> CICM</span>
+                        <span class="badge"><i class="fas fa-shield-alt"></i> NTCC-2017</span>
+                    </div>
+                    
+                    <h4 style="color: #2A5C9A;">Logros Clave:</h4>
+                    <ul style="line-height: 1.6; padding-left: 20px;">
+                        <li>Diseño estructural del <strong>Edificio [X]</strong> (Premio CMIC 2021).</li>
+                        <li>Rehabilitación sísmica de <strong>[Edificio Histórico]</strong>.</li>
+                        <li>Publicaciones en <strong>Congresos Internacionales</strong>.</li>
+                    </ul>
+                    
+                    <!-- Cita destacada (como en contacto.html) -->
+                    <blockquote style="border-left: 3px solid #2A5C9A; padding-left: 15px; font-style: italic; margin-top: 20px;">
+                        "En Monolito, cada cálculo refleja nuestro compromiso con la seguridad y la excelencia."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer IDÉNTICO a contacto.html -->
+    <footer>
+        <div class="footer-info">
+            <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería" style="height: 40px; margin-bottom: 15px;">
+            <p>Monolito Ingeniería S.A. de C.V.</p>
+            <p>Av. Ingenieros 123, Col. Desarrollo, CDMX</p>
+            <p>Teléfono: (55) 1234 5678 | RFC: MIN123456ABC</p>
+            <p>© 2023 Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>

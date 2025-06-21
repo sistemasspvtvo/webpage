@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | Monolito Ingeniería</title>
+    <title>Servicios | Monolito Ingeniería</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Fuente de Google (Roboto) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos personalizados */
+        /* Estilos reutilizados desde contacto.html */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -48,7 +48,8 @@
         nav a:hover {
             color: #1E3A8A;
         }
-        .contact-container {
+        /* Estilos específicos para servicios */
+        .services-container {
             max-width: 1000px;
             margin: 40px auto;
             padding: 30px;
@@ -56,42 +57,26 @@
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
-        form {
-            display: grid;
-            gap: 20px;
+        .service {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
         }
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Roboto', sans-serif;
+        .service:last-child {
+            border-bottom: none;
         }
-        button {
-            background-color: #2A5C9A;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #1E3A8A;
-        }
-        .social-icons {
-            margin-top: 30px;
-            text-align: center;
-        }
-        .social-icons a {
+        .service h2 {
             color: #2A5C9A;
-            font-size: 24px;
-            margin: 0 10px;
-            transition: color 0.3s;
+            display: flex;
+            align-items: center;
         }
-        .social-icons a:hover {
-            color: #1E3A8A;
+        .service h2 i {
+            margin-right: 15px;
+            font-size: 28px;
+        }
+        .service p {
+            line-height: 1.6;
+            margin-left: 43px; /* Alineación con el título */
         }
         footer {
             background-color: #2A5C9A;
@@ -123,37 +108,40 @@
 
     <!-- Contenido principal -->
     <main>
-       <div class="contact-container">
-            <h1>Contacta a Nuestro Equipo</h1>
-            <p>Envíanos tus consultas y te responderemos en menos de 24 horas.</p>
+        <div class="services-container">
+            <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">Nuestros Servicios Profesionales</h1>
             
-            <!-- Formulario Netlify -->
-            <form name="contacto" netlify>
-                <input type="text" name="nombre" placeholder="Nombre completo" required>
-                <input type="email" name="email" placeholder="Correo electrónico" required>
-                <input type="tel" name="telefono" placeholder="Teléfono (opcional)">
-                <select name="servicio" required>
-                    <option value="" disabled selected>Selecciona un servicio</option>
-                    <option value="calculos">Cálculos estructurales</option>
-                    <option value="inspecciones">Inspecciones técnicas</option>
-                    <option value="proyectos">Proyectos ejecutivos</option>
-                    <option value="otros">Otros servicios</option>
-                </select>
-                <textarea name="mensaje" rows="5" placeholder="Describe tu proyecto o consulta..." required></textarea>
-                <button type="submit">Enviar Mensaje</button>
-            </form>
+            <!-- Servicio 1: Levantamientos -->
+            <div class="service">
+                <h2><i class="fas fa-ruler-combined"></i> Levantamientos de Inmueble</h2>
+                <p>
+                    Realizamos mediciones precisas de edificaciones existentes mediante tecnología láser 
+                    y fotogrametría, generando planos arquitectónicos y estructurales actualizados. 
+                    Ideal para remodelaciones, ampliaciones o regularización de predios. Nuestros informes 
+                    incluyen detalles de materiales, daños estructurales y recomendaciones técnicas.
+                </p>
+            </div>
 
-            <!-- Redes sociales -->
-            <div class="social-icons">
-                <a href="https://wa.me/5215512345678" target="_blank" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.instagram.com/into.the.sunlight/" target="_blank" title="LinkedIn">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="mailto:contacto@monolitoingenieria.com" title="Correo electrónico">
-                    <i class="far fa-envelope"></i>
-                </a>
+            <!-- Servicio 2: Cálculos -->
+            <div class="service">
+                <h2><i class="fas fa-calculator"></i> Cálculos Estructurales</h2>
+                <p>
+                    Diseñamos y analizamos estructuras de concreto, acero y madera cumpliendo con 
+                    las normativas mexicanas (NTCC, ACI, ASTM). Elaboramos memorias de cálculo 
+                    detalladas con software especializado (ETABS, SAP2000) para garantizar la seguridad 
+                    de tu proyecto. Incluye revisión de cargas sísmicas y de viento según tu zona.
+                </p>
+            </div>
+
+            <!-- Servicio 3: Trámites -->
+            <div class="service">
+                <h2><i class="fas fa-file-signature"></i> Gestiones para Licencias de Construcción</h2>
+                <p>
+                    Te acompañamos en todo el proceso de obtención de permisos ante municipios y 
+                    dependencias. Preparamos documentación técnica (proyectos ejecutivos, estudios 
+                    de impacto urbano), coordinamos visitas de inspección y resolvemos observaciones. 
+                    Servicio disponible para obra nueva, demoliciones y usos de suelo.
+                </p>
             </div>
         </div>
     </main>
@@ -161,7 +149,7 @@
     <!-- Pie de página -->
     <footer>
         <div class="footer-info">
-            <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería" style="height: 40px; margin-bottom: 15px;">
+	    <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería" style="height: 40px; margin-bottom: 15px;">
             <p>Monolito Ingeniería S.A. de C.V.</p>
             <p>Av. Pedro Henríquez Ureña 275, Col. Pedregal de Santo Domingo, Coyoacán, CDMX</p>
             <p>Teléfono: (55) 1111 2222 | email: consultoria@monolito.lat</p>
@@ -182,7 +170,6 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-
 
 </body>
 </html>

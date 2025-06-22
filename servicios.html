@@ -10,7 +10,6 @@
     <!-- Fuente de Google (Roboto) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos reutilizados desde contacto.html */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -48,7 +47,6 @@
         nav a:hover {
             color: #1E3A8A;
         }
-        /* Estilos específicos para servicios */
         .services-container {
             max-width: 1000px;
             margin: 40px auto;
@@ -90,10 +88,18 @@
             margin: 0 auto;
             line-height: 1.6;
         }
+	.section-container {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .section-container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
-    <!-- Encabezado con logo y menú -->
     <header>
         <div class="header-container">
             <img src="assets/img/logo.png" alt="Monolito Ingeniería" class="logo">
@@ -105,13 +111,10 @@
             </nav>
         </div>
     </header>
-
-    <!-- Contenido principal -->
     <main>
         <div class="services-container">
             <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">Nuestros Servicios Profesionales</h1>
-            
-            <!-- Servicio 1: Levantamientos -->
+            <section id="levantamientos" class="section-container">
             <div class="service">
                 <h2><i class="fas fa-ruler-combined"></i> Levantamientos de Inmueble</h2>
                 <p>
@@ -121,8 +124,8 @@
                     incluyen detalles de materiales, daños estructurales y recomendaciones técnicas.
                 </p>
             </div>
-
-            <!-- Servicio 2: Cálculos -->
+	    </section>
+	    <section id="calculos">
             <div class="service">
                 <h2><i class="fas fa-calculator"></i> Cálculos Estructurales</h2>
                 <p>
@@ -132,8 +135,8 @@
                     de tu proyecto. Incluye revisión de cargas sísmicas y de viento según tu zona.
                 </p>
             </div>
-
-            <!-- Servicio 3: Trámites -->
+	    </section>
+	    <section id="tramites">
             <div class="service">
                 <h2><i class="fas fa-file-signature"></i> Gestiones para Licencias de Construcción</h2>
                 <p>
@@ -143,6 +146,7 @@
                     Servicio disponible para obra nueva, demoliciones y usos de suelo.
                 </p>
             </div>
+	    </section>
         </div>
     </main>
 
@@ -152,11 +156,25 @@
 	    <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería" style="height: 40px; margin-bottom: 15px;">
             <p>Monolito Ingeniería S.A. de C.V.</p>
             <p>Av. Pedro Henríquez Ureña 275, Col. Pedregal de Santo Domingo, Coyoacán, CDMX</p>
-            <p>Teléfono: (55) 1111 2222 | email: consultoria@monolito.lat</p>
+            <p>Teléfono: 55 1111 2222 | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
             <p>© 2025 Todos los derechos reservados</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formSection = document.querySelector('.section-container');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, { threshold: 0.1 });
 
+            observer.observe(formSection);
+        });
+    </script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

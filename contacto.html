@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | Monolito Ingeniería</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Fuente de Google (Roboto) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos personalizados */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -60,12 +57,44 @@
             display: grid;
             gap: 20px;
         }
-        input, select, textarea {
+        .form-container {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .form-container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        input, textarea, select {
             width: 100%;
             padding: 12px;
+            margin-bottom: 20px;
             border: 1px solid #ddd;
             border-radius: 4px;
             font-family: 'Roboto', sans-serif;
+            transition: all 0.3s ease;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #2A5C9A;
+            box-shadow: 0 0 0 3px rgba(42, 92, 154, 0.2);
+            outline: none;
+            transform: scale(1.02);
+        }
+        input:valid, textarea:valid {
+            border-left: 3px solid #4CAF50;
+        }
+        input:invalid:not(:placeholder-shown),
+        textarea:invalid:not(:placeholder-shown) {
+            border-left: 3px solid #f44336;
+            animation: shake 0.5s ease-in-out;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
         }
         button {
             background-color: #2A5C9A;
@@ -76,10 +105,37 @@
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s;
+            width: 100%;
         }
         button:hover {
             background-color: #1E3A8A;
         }
+
+
+
+        .submit-btn {
+            position: relative;
+        }
+        .spinner {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .spinner.active {
+            opacity: 1;
+        }
+        .submit-btn-text {
+            transition: opacity 0.3s;
+        }
+        .submit-btn-text.hidden {
+            opacity: 0;
+        }
+
+
+
         .social-icons {
             margin-top: 30px;
             text-align: center;
@@ -108,7 +164,6 @@
     </style>
 </head>
 <body>
-    <!-- Encabezado con logo y menú -->
     <header>
         <div class="header-container">
             <img src="assets/img/logo.png" alt="Monolito Ingeniería" class="logo">
@@ -120,14 +175,23 @@
             </nav>
         </div>
     </header>
-
-    <!-- Contenido principal -->
     <main>
+<section id="contacto" class ="form-container">
        <div class="contact-container">
-            <h1>Contacta a Nuestro Equipo</h1>
+            <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">Contacta a Nuestro Equipo</h1>
             <p>Envíanos tus consultas y te responderemos en menos de 24 horas.</p>
-            
-            <!-- Formulario Netlify -->
+            <div class="social-icons">
+                <a href="https://wa.me/5215512345678" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/into.the.sunlight/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:contacto@monolitoingenieria.com" title="Correo electrónico">
+                    <i class="far fa-envelope"></i>
+                </a>
+		<p></p>
+            </div>
             <form name="contacto" netlify action="/success">
                 <input type="text" name="nombre" placeholder="Nombre completo" required>
                 <input type="email" name="email" placeholder="Correo electrónico" required>
@@ -140,36 +204,39 @@
                     <option value="otros">Otros servicios</option>
                 </select>
                 <textarea name="mensaje" rows="5" placeholder="Describe tu proyecto o consulta..." required></textarea>
-                <button type="submit">Enviar Mensaje</button>		
+            <button type="submit" class="submit-btn" id="submit-btn">
+                <span class="submit-btn-text">Enviar mensaje</span>
+                <span class="spinner"><i class="fas fa-spinner fa-spin"></i></span>
+            </button>	
             </form>
-
-            <!-- Redes sociales -->
-            <div class="social-icons">
-                <a href="https://wa.me/5215512345678" target="_blank" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.instagram.com/into.the.sunlight/" target="_blank" title="LinkedIn">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="mailto:contacto@monolitoingenieria.com" title="Correo electrónico">
-                    <i class="far fa-envelope"></i>
-                </a>
-            </div>
         </div>
+</section>
     </main>
-
-    <!-- Pie de página -->
     <footer>
         <div class="footer-info">
             <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería" style="height: 40px; margin-bottom: 15px;">
+	    <p class="slogan" style="font-style: italic; margin: 20px 0;">"En Monolito Ingeniería, transformamos cálculos en soluciones seguras...<br>porque tu tranquilidad no se negocia."</p>
             <p>Monolito Ingeniería S.A. de C.V.</p>
             <p>Av. Pedro Henríquez Ureña 275, Col. Pedregal de Santo Domingo, Coyoacán, CDMX</p>
-            <p>Teléfono: (55) 1111 2222 | email: consultoria@monolito.lat</p>
+            <p>Teléfono: 55 1111 2222 | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
             <p>© 2025 Todos los derechos reservados</p>
         </div>
     </footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formSection = document.querySelector('.form-container');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, { threshold: 0.1 }); // Se activa cuando el 10% del elemento es visible
 
-<!--Start of Tawk.to Script-->
+            observer.observe(formSection);
+        });
+    </script>
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -181,8 +248,5 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
-
-
 </body>
 </html>

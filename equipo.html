@@ -116,6 +116,20 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* Section styling with fade-in capability */
+        section {
+            min-height: 100vh;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+            opacity: 0; /* Start hidden for fade-in */
+      	    transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -132,7 +146,7 @@
     </header>
 
     <main>
-	<section id="equipo" class="section-container">
+	<section id="equipo">
 	<section id="nosotros">
         <div class="content-box"> <!-- Contenedor blanco con sombra -->
             <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px; ">Acerca de Nosotros</h1>
@@ -226,7 +240,7 @@ El 80% de nuestros clientes llegaron por recomendación. ¿La razón? Dicen que 
             <p>© 2025 Todos los derechos reservados</p>
         </div>
     </footer>
-    <script>
+ <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Apply fade-in to all sections
             const sections = document.querySelectorAll('section');
@@ -252,7 +266,7 @@ El 80% de nuestros clientes llegaron por recomendación. ¿La razón? Dicen que 
             // Optional: Handle internal link clicks with fade transition
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
-                    const target = document.querySelector('.section-container');
+                    const target = document.querySelector(this.getAttribute('href'));
                     if(target) {
                         // Fade out all sections
                         sections.forEach(section => {

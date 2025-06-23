@@ -97,6 +97,21 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Section styling with fade-in capability */
+        section {
+            min-height: 100vh;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+            opacity: 0; /* Start hidden for fade-in */
+      	    transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+}
     </style>
 </head>
 <body>
@@ -112,9 +127,8 @@
         </div>
     </header>
     <main>
-
+<section id="servicios">
         <div class="services-container">
-<section id="servicios" class="section-container">
             <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">Nuestros Servicios Profesionales</h1>
             <section id="levantamientos">
             <div class="service">
@@ -189,13 +203,13 @@ Aseguramos:
 	<div class="services-container">
             <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">📋 FAQ: Preguntas Frecuentes sobre Nuestros Servicios</h1>
             <p>
-                        
+ <section id="faq">                        
 📏 Levantamientos de Inmueble
 </p><p>
 1. ¿Cómo miden mi propiedad y qué precisión tienen?
 
 <ul style="line-height: 1.6; padding-left: 65px;">
-    Usamos escáner láser y drones para medir con un error máximo de ±3 mm. Entregamos planos digitales e impresos con detalles de cada área (metros cuadrados, alturas, distribución).
+    Usamos escáner láser y drones para medir con un error máximo de ±3 mm. Entregamos planos digitales con detalles de cada área (metros cuadrados, alturas, distribución). Planos impresos con cargoo extra.
 </ul>
 2. ¿Sirve para regularizar mi casa?
 <ul style="line-height: 1.6; padding-left: 65px;">
@@ -203,7 +217,7 @@ Aseguramos:
 </ul>
 3. ¿Detectan problemas en mi estructura?
 <ul style="line-height: 1.6; padding-left: 65px;">
-    Incluimos un informe básico de grietas, humedades o daños visibles (sin costo extra). Para análisis profundos, ofrecemos estudios estructurales.
+    Incluimos un informe básico de grietas, humedades o daños visibles. Para análisis profundos, ofrecemos estudios estructurales.
 </ul>	
 </p>
 <p>
@@ -223,7 +237,7 @@ Aseguramos:
 </ul></ul>
 5. ¿Qué normas cumplen?
 <ul style="line-height: 1.6; padding-left: 65px;">
-    Seguimos las NTCM-2017 (CDMX), ACI 318 (concreto) y ASTM (acero). Usamos software especializado (ETABS, SAP2000) para garantizar seguridad.
+    Seguimos las NTCM-2023 (CDMX), ACI 318 (concreto) y ASTM (acero). Usamos software especializado (ETABS, SAP2000, Staad Pro) para garantizar seguridad.
 </ul>
 6. ¿Dan recomendaciones de materiales?
 
@@ -234,15 +248,17 @@ Aseguramos:
 
 7. ¿Qué documentos necesito para sacar una licencia?
 
-        Escrituras o predial.
+        Escrituras de propiedad.
 
         Croquis inicial (si no lo tienes, lo hacemos nosotros).
 
         Identificación oficial.
 
+	Pagos al corriente de predial y agua.
+
 8. ¿Cuánto tarda el trámite?
 
-    Depende del municipio, pero entre 30 y 90 días. Nosotros aceleramos el proceso evitando observaciones comunes.
+    Depende de la alcaldía o municipio, pero entre 30 y 90 días. Nosotros aceleramos el proceso evitando observaciones comunes.
 
 9. ¿Pueden ayudar si mi construcción ya está avanzada sin permiso?
 
@@ -252,7 +268,7 @@ Aseguramos:
 
 10. ¿Trabajan en toda la CDMX?
 
-    Cubrimos todas las alcaldías. Para obras fuera de la ciudad, consúltanos.
+    Cubrimos todas las alcaldías. Para trabajos fuera de la ciudad, consúltanos.
 
 11. ¿Dan factura?
 
@@ -272,9 +288,8 @@ Aseguramos:
 
         </div>
 </section>
+</section>
     </main>
-
-    <!-- Pie de página -->
     <footer>
         <div class="footer-info">
 	    <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería" style="height: 40px; margin-bottom: 15px;">
@@ -284,10 +299,10 @@ Aseguramos:
             <p>© 2025 Todos los derechos reservados</p>
         </div>
     </footer>
-    <script>
+ <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Apply fade-in to all sections
-            const sections = document.querySelectorAll('.section-container');
+            const sections = document.querySelectorAll('section');
             
             // Check if we came from an anchor link
             if(window.location.hash) {
@@ -310,7 +325,7 @@ Aseguramos:
             // Optional: Handle internal link clicks with fade transition
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
-                    const target = document.querySelector('.section-container');
+                    const target = document.querySelector(this.getAttribute('href'));
                     if(target) {
                         // Fade out all sections
                         sections.forEach(section => {

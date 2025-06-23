@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monolito Ingeniería | Diseño Estructural en [Tu Ciudad]</title>
-    <!-- Mismos recursos que contacto.html -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos COPIADOS de contacto.html */
+        /* Estilos reutilizados (igual que en contacto.html y servicios.html) */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -33,10 +32,6 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        .logo {
-            height: 50px;
-            width: auto;
-        }
         nav a {
             margin: 0 15px;
             text-decoration: none;
@@ -47,20 +42,7 @@
         nav a:hover {
             color: #1E3A8A;
         }
-        footer {
-            background-color: #2A5C9A;
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .footer-info {
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Estilos específicos de la homepage (puedes personalizar esto) */
+        /* Estilos específicos para la homepage */
         .hero {
             background: url('assets/img/hero-bg.jpg') no-repeat center/cover;
             height: 500px;
@@ -90,6 +72,10 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
         .btn-cta {
             background-color: #2A5C9A;
             color: white;
@@ -102,23 +88,70 @@
         .btn-cta:hover {
             background-color: #1E3A8A;
         }
+        .features {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #2A5C9A;
+            margin-bottom: 15px;
+        }
+        .social-icons-footer {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .social-icons-footer a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .social-icons-footer a:hover {
+            color: #1E3A8A;
+        }
+	.logo {
+            height: 50px;
+            width: auto;
+        }
+        footer {
+            background-color: #2A5C9A;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer-info {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
-    <!-- ENCABEZADO IDÉNTICO a contacto.html -->
-    <header>
+    <!-- Encabezado (igual que en otras páginas) -->
+       <header>
         <div class="header-container">
             <img src="assets/img/logo.png" alt="Monolito Ingeniería" class="logo">
             <nav>
                 <a href="index.html">Inicio</a>
                 <a href="servicios.html">Servicios</a>
                 <a href="equipo.html">Equipo</a>
-                <a href="contacto.html">Contacto</a>
+		<a href="contacto.html">Contacto</a>
             </nav>
         </div>
     </header>
-
-
     <!-- Sección Hero (Banner principal) -->
     <section class="hero">
         <div class="hero-content">
@@ -133,13 +166,13 @@
         <div class="feature-card">
             <i class="fas fa-ruler-combined"></i>
             <h3>Levantamientos de Inmueble</h3>
-            <p>Mediciones precisas con tecnología láser para planos ejecutivos y diagnósticos estructurales.</p>
+            <p>Mediciones precisas para planos ejecutivos y diagnósticos estructurales.</p>
             <a href="servicios.html#levantamientos">Saber más →</a>
         </div>
         <div class="feature-card">
             <i class="fas fa-calculator"></i>
             <h3>Cálculos Estructurales</h3>
-            <p>Diseño y análisis con software especializado (ETABS, SAP2000) bajo normativas mexicanas.</p>
+            <p>Diseño y análisis con software especializado bajo normativas mexicanas e internacionales.</p>
             <a href="servicios.html#calculos">Saber más →</a>
         </div>
         <div class="feature-card">
@@ -171,15 +204,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Llamado a la acción final -->
-    <section style="padding: 60px 20px; text-align: center;">
-        <h2 style="color: #2A5C9A;">¿Listo para Iniciar tu Proyecto?</h2>
-        <p style="max-width: 600px; margin: 0 auto 30px;">Contáctanos para una asesoría gratuita y recibe una cotización en menos de 24 horas.</p>
-        <a href="contacto.html" class="btn-cta">Contactar Ahora</a>
-    </section>
-
-
 <section style="background: #f9f9f9; padding: 40px 20px;">
     <div style="max-width: 1000px; margin: 0 auto; display: flex; align-items: center; gap: 30px;">
         <img src="assets/img/director.jpg" alt="Ing. [Nombre]" style="width: 200px; border-radius: 8px;">
@@ -190,21 +214,36 @@
         </div>
     </div>
 </section>
-
-    <!-- Pie de página (igual que en otras páginas) -->
+    <section style="padding: 60px 20px; text-align: center;">
+        <h2 style="color: #2A5C9A;">¿Listo para Iniciar tu Proyecto?</h2>
+        <p style="max-width: 600px; margin: 0 auto 30px;">Contáctanos para una asesoría gratuita y recibe una cotización en menos de 24 horas.</p>
+        <a href="contacto.html" class="btn-cta">Contactar Ahora</a>
+    </section>
     <footer>
         <div class="footer-info">
             <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería" style="height: 40px; margin-bottom: 15px;">
 	    <p class="slogan" style="font-style: italic; margin: 20px 0;">"En Monolito Ingeniería, transformamos cálculos en soluciones seguras...<br>porque tu tranquilidad no se negocia."</p>
             <p>Monolito Ingeniería S.A. de C.V.</p>
             <p>Av. Pedro Henríquez Ureña 275, Col. Pedregal de Santo Domingo, Coyoacán, CDMX</p>
-            <p>Teléfono: 55 1111 2222 | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
+            <p>Teléfono: 56 4393 9397 | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
+            <div class="social-icons-footer">
+                <a href="https://wa.me/5215643939397" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/monolitoingenieria/" target="_blank"  title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:consultoria@monolito.lat" title="Correo electrónico">
+                    <i class="far fa-envelope"></i>
+                </a>
+		<p></p>
+            </div>
             <p>© 2025 Todos los derechos reservados</p>
         </div>
     </footer>
 <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const formSection = document.querySelector('.section-container');
+            const formSection = document.querySelector('.form-container');
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -228,8 +267,5 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
-
-
 </body>
 </html>

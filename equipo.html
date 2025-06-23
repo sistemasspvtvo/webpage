@@ -77,15 +77,7 @@
             border-radius: 8px;
             border: 1px solid #eee;
         }
-        .director-info h2 {
-            color: #2A5C9A;
-            margin-top: 0;
-        }
-        .director-info h3 {
-            color: #555;
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
+
         .badge {
             display: inline-block;
             background: #f0f4f9;
@@ -106,22 +98,25 @@
                 margin: 0 auto 20px;
             }
         }
-	.section-container {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            padding: 0 20px;
+
+        .social-icons-footer {
+            margin-top: 30px;
+            text-align: center;
         }
-        .section-container.show {
-            opacity: 1;
-            transform: translateY(0);
+        .social-icons-footer a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s;
         }
-        /* Section styling with fade-in capability */
+        .social-icons-footer a:hover {
+            color: #1E3A8A;
+        }
         section {
             min-height: 100vh;
             padding: 20px;
             border-bottom: 1px solid #ccc;
-            opacity: 0; /* Start hidden for fade-in */
+            opacity: 0;
       	    transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
@@ -146,6 +141,7 @@
     </header>
 
     <main>
+
 	<section id="equipo">
 	<section id="nosotros">
         <div class="content-box"> <!-- Contenedor blanco con sombra -->
@@ -229,14 +225,25 @@ El 80% de nuestros clientes llegaron por recomendación. ¿La razón? Dicen que 
 	</section>
 	</section>
     </main>
-
     <footer>
         <div class="footer-info">
             <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería" style="height: 40px; margin-bottom: 15px;">
 	    <p class="slogan" style="font-style: italic; margin: 20px 0;">"En Monolito Ingeniería, transformamos cálculos en soluciones seguras...<br>porque tu tranquilidad no se negocia."</p>
             <p>Monolito Ingeniería S.A. de C.V.</p>
-            <p>Av. Ingenieros 123, Col. Desarrollo, CDMX</p>
+            <p>Av. Pedro Henríquez Ureña 275, Col. Pedregal de Santo Domingo, Coyoacán, CDMX</p>
             <p>Teléfono: 55 1111 2222 | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
+            <div class="social-icons-footer">
+                <a href="https://wa.me/5215512345678" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/monolitoingenieria/" target="_blank"  title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:consultoria@monolito.lat" title="Correo electrónico">
+                    <i class="far fa-envelope"></i>
+                </a>
+		<p></p>
+            </div>
             <p>© 2025 Todos los derechos reservados</p>
         </div>
     </footer>

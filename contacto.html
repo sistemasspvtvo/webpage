@@ -61,6 +61,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            padding: 0 20px;
         }
         .form-container.show {
             opacity: 1;
@@ -69,13 +70,15 @@
 
 
         input, textarea, select {
-            width: 100%;
+            width: calc(100% - 24px); 
             padding: 12px;
             margin-bottom: 20px;
             border: 1px solid #ddd;
             border-radius: 4px;
             font-family: 'Roboto', sans-serif;
             transition: all 0.3s ease;
+	    display: block;
+            box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
         }
         input:focus, textarea:focus, select:focus {
             border-color: #2A5C9A;
@@ -105,7 +108,9 @@
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s;
-            width: 100%;
+            width: auto;
+            margin-right: auto;
+            display: block;
         }
         button:hover {
             background-color: #1E3A8A;
@@ -192,15 +197,15 @@
                 </a>
 		<p></p>
             </div>
-            <form name="contacto" netlify action="/success">
+            <form name="contacto" netlify action="/success/success.html">
                 <input type="text" name="nombre" placeholder="Nombre completo" required>
                 <input type="email" name="email" placeholder="Correo electrónico" required>
                 <input type="tel" name="telefono" placeholder="Teléfono (opcional)">
                 <select name="servicio" required>
                     <option value="" disabled selected>Selecciona un servicio</option>
-                    <option value="calculos">Cálculos estructurales</option>
-                    <option value="inspecciones">Inspecciones técnicas</option>
-                    <option value="proyectos">Proyectos ejecutivos</option>
+                    <option value="levantamientos">Levantamientos de Inmueble</option>
+                    <option value="calculos">Cálculos Estructurales</option>
+                    <option value="licencias">Gestiones para Licencias</option>
                     <option value="otros">Otros servicios</option>
                 </select>
                 <textarea name="mensaje" rows="5" placeholder="Describe tu proyecto o consulta..." required></textarea>
@@ -232,7 +237,7 @@
                         entry.target.classList.add('show');
                     }
                 });
-            }, { threshold: 0.1 }); // Se activa cuando el 10% del elemento es visible
+            }, { threshold: 0.1 });
 
             observer.observe(formSection);
         });

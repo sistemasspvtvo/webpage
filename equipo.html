@@ -106,6 +106,16 @@
                 margin: 0 auto 20px;
             }
         }
+	.section-container {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            padding: 0 20px;
+        }
+        .section-container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -122,13 +132,10 @@
     </header>
 
     <main>
-
-
+	<section id="equipo" class="section-container">
+	<section id="nosotros">
         <div class="content-box"> <!-- Contenedor blanco con sombra -->
-            <h1 style="color: #2A5C9A; margin-bottom: 30px; text-align: center;">Acerca de Nosotros</h1>
-            
-
-                
+            <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px; ">Acerca de Nosotros</h1>
                 <div class="nosotros-info">
                     <h2>Nuestro Equipo: Profesionales que Cuidan tu Proyecto como Propio</h2>
                     
@@ -177,9 +184,10 @@ El 80% de nuestros clientes llegaron por recomendación. ¿La razón? Dicen que 
                 </div>
             </div>
         </div>
+	</section>
 <section id="director">
 <div class="content-box"> 
-            <h1 style="color: #2A5C9A; margin-bottom: 30px; text-align: center;">Nuestro Director</h1>
+            <h1 style="color: #2A5C9A; margin-bottom: 40px; text-align: center;">Nuestro Director</h1>
             <div class="director-profile">
                 <img src="assets/img/director.jpg" alt="Ing. [Nombre]" class="director-photo">
                 
@@ -204,6 +212,8 @@ El 80% de nuestros clientes llegaron por recomendación. ¿La razón? Dicen que 
                 </div>
             </div>
         </div>
+	</section>
+	</section>
     </main>
 
     <footer>
@@ -216,6 +226,48 @@ El 80% de nuestros clientes llegaron por recomendación. ¿La razón? Dicen que 
             <p>© 2025 Todos los derechos reservados</p>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Apply fade-in to all sections
+            const sections = document.querySelectorAll('section');
+            
+            // Check if we came from an anchor link
+            if(window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if(target) {
+                    // Small delay to ensure scroll position is set
+                    setTimeout(() => {
+                        target.classList.add('visible');
+                    }, 50);
+                }
+            }
+            
+            // Fade in all sections (for when no hash is present)
+            setTimeout(() => {
+                sections.forEach(section => {
+                    section.classList.add('visible');
+                });
+            }, 100);
+            
+            // Optional: Handle internal link clicks with fade transition
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector('.section-container');
+                    if(target) {
+                        // Fade out all sections
+                        sections.forEach(section => {
+                            section.classList.remove('visible');
+                        });
+                        
+                        // After fade out completes, scroll and fade in
+                        setTimeout(() => {
+                            target.classList.add('visible');
+                        }, 500);
+                    }
+                });
+            });
+        });
+    </script>
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){

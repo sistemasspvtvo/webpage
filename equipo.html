@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipo | Monolito Ingeniería</title>
-    <!-- Mismos recursos que contacto.html -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Estilos base consistentes con otras páginas */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -16,6 +16,7 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: #333;
         }
+        
         header {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 15px 0;
@@ -24,18 +25,36 @@
             top: 0;
             z-index: 100;
         }
+        
         .header-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
+        
         .logo {
-            height: 50px;
+            height: 40px;
             width: auto;
         }
+        
+        /* Estilos de navegación */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #2A5C9A;
+            cursor: pointer;
+        }
+        
+        nav {
+            display: block;
+        }
+        
         nav a {
             margin: 0 15px;
             text-decoration: none;
@@ -43,41 +62,38 @@
             font-weight: 500;
             transition: color 0.3s;
         }
+        
         nav a:hover {
             color: #1E3A8A;
         }
-        .content-box {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            background-color: #2A5C9A;
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .footer-info {
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
+        
+        /* Contenido principal */
+        main {
+            padding: 20px 0;
         }
         
+        .content-box {
+    max-width: 1000px;
+    margin: 0 auto; /* Sin margen vertical */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos del equipo */
         .director-profile {
             display: flex;
             gap: 40px;
             align-items: flex-start;
         }
+        
         .director-photo {
             width: 250px;
             border-radius: 8px;
             border: 1px solid #eee;
         }
-
+        
         .badge {
             display: inline-block;
             background: #f0f4f9;
@@ -88,42 +104,92 @@
             margin-right: 10px;
             margin-bottom: 10px;
         }
-        @media (max-width: 768px) {
-            .director-profile {
-                flex-direction: column;
-            }
-            .director-photo {
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto 20px;
-            }
-        }
+section {
+    scroll-margin-top: 80px;
+    padding: 20px 20px 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform; /* Add this for better performance */
+}
 
-        .social-icons-footer {
-            margin-top: 30px;
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}   
+        footer {
+            background-color: #2A5C9A;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .footer-info {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .footer-info a {
+            color: white;
+        }
+        
+        .slogan {
+            font-style: italic;
+            margin: 20px 0;
+        }
+        
+        .social-icons {
+            margin: 30px 0;
             text-align: center;
         }
-        .social-icons-footer a {
+        
+        .social-icons a {
             color: white;
             font-size: 24px;
             margin: 0 10px;
             transition: color 0.3s;
         }
-        .social-icons-footer a:hover {
-            color: #1E3A8A;
-        }
-        section {
-            min-height: 100vh;
-            padding: 20px;
-            border-bottom: 1px solid #ccc;
-            opacity: 0;
-      	    transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        
+        .social-icons a:hover {
+            color: #c3cfe2;
         }
         
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .director-profile {
+                flex-direction: column;
+            }
+            
+            .director-photo {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto 20px;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 10px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav a {
+                display: block;
+                margin: 8px 0;
+                padding: 8px 0;
+                text-align: center;
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 4px;
+            }
         }
     </style>
 </head>
@@ -131,7 +197,10 @@
     <header>
         <div class="header-container">
             <img src="assets/img/logo.png" alt="Monolito Ingeniería" class="logo">
-            <nav>
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="main-nav">
                 <a href="index.html">Inicio</a>
                 <a href="servicios.html">Servicios</a>
                 <a href="equipo.html">Equipo</a>
@@ -141,164 +210,138 @@
     </header>
 
     <main>
-
-	<section id="equipo">
-	<section id="nosotros">
-        <div class="content-box"> <!-- Contenedor blanco con sombra -->
-            <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px; ">Acerca de Nosotros</h1>
+        <section id="nosotros">
+            <div class="content-box">
+                <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">Acerca de Nosotros</h1>
                 <div class="nosotros-info">
                     <h2>Nuestro Equipo: Profesionales que Cuidan tu Proyecto como Propio</h2>
                     
-<p>
-En Monolito Ingeniería no somos solo números y cálculos. Somos un grupo de ingenieros y arquitectos que entendemos lo que significa para ti construir un hogar, un negocio o un sueño. Con más de 2 años como empresa acompañando a familias y empresarios, hemos aprendido que detrás de cada plano hay ilusiones, ahorros de toda una vida y proyectos que merecen nuestro máximo cuidado.
-</p>
-<p>
-Nos reconocerás por:
-
-                    <ul style="line-height: 1.6; padding-left: 20px;">
-<li>    Las preguntas detalladas que hacemos para entender tus necesidades reales</li>
-
-<li>    Los correos y llamadas puntuales para mantenerte informado</li>
-
-<li>    Esa paciencia para explicar términos técnicos con lenguaje cotidiano</li>
-
-<li>    Las visitas a obra donde revisamos cada detalle con lupa</li>
-</ul>
-</p>
-<p>
-<h2>Nuestra Promesa: Calidad que se Siente</h2>
-
-Creemos que la buena ingeniería debe ser:
-                    <ul style="line-height: 1.6; padding-left: 20px;">
-    <li>Clara: Te entregaremos informes sin lenguaje enredado y estaremos disponibles para aclarar dudas.</li>
-
-    <li>Cercana: Respondemos mensajes en menos de 24 horas y adaptamos horarios para reuniones.</li>
-
-    <li>Consciente: Sabemos que estás invirtiendo recursos valiosos - haremos rendir cada peso.</li>
-
-    <li>Responsable: Cumplimos plazos y nos hacemos cargo de nuestros trabajos.</li>
-			</ul>
-"Cuando nos eliges, no contratas solo un servicio - ganas un equipo que camina contigo hasta ver tu proyecto seguro y en regla."
-<h2>Así Trabajamos</h2>
-	<ul style="line-height: 1.6; padding-left: 20px;">
-    <li>Primera reunión sin costo: Para conocernos y entender bien lo que necesitas</li>
-
-    <li>Presupuestos detallados: Sin sorpresas ni costos ocultos</li>
-
-    <li>Soporte continuo: Desde el primer borrador hasta el último trámite</li>
-	</ul>
-<h4>Dato Curioso</h4>
-
-El 80% de nuestros clientes llegaron por recomendación. ¿La razón? Dicen que se sienten escuchados y en buenas manos.</p>
+                    <p>En Monolito Ingeniería no somos solo números y cálculos. Somos un grupo de ingenieros y arquitectos que entendemos lo que significa para ti construir un hogar, un negocio o un sueño. Con más de 2 años como empresa acompañando a familias y empresarios, hemos aprendido que detrás de cada plano hay ilusiones, ahorros de toda una vida y proyectos que merecen nuestro máximo cuidado.</p>
                     
-                </div>
-            </div>
-        </div>
-	</section>
-<section id="director">
-<div class="content-box"> 
-            <h1 style="color: #2A5C9A; margin-bottom: 40px; text-align: center;">Nuestro Director</h1>
-            <div class="director-profile">
-                <img src="assets/img/director.jpg" alt="Ing. [Nombre]" class="director-photo">
-                
-                <div class="director-info">
-                    <h2>Ing. Angel Monroy Canales</h2>
-                    <h3>Director General y Especialista en Estructuras</h3>
-                    <p>Ingeniero civil egresado de la UNAM con especialización en estructuras, responsable de la conceptualización y ejecución de más de 100 proyectos de mejoramiento estructural en casa-habitación y cimentaciones de torres de telecomunicaciones.</p>
-                    <p>Con más de 10 años de experiencia en ingeniería estructural, el Ing. Angel Monroy Canales ha liderado proyectos en la Ciudad de México, combinando <strong>precisión técnica</strong> con <strong>soluciones innovadoras</strong>.</p>
-                    <div style="margin: 20px 0;">
-                        <span class="badge"><i class="fas fa-graduation-cap"></i> UNAM</span>
-                        <span class="badge"><i class="fas fa-certificate"></i> NTC-2023</span>
-                        <span class="badge"><i class="fas fa-shield-alt"></i> ASCE</span>
-                    </div>
-                    <blockquote style="border-left: 3px solid #2A5C9A; padding-left: 15px; font-style: italic; margin-top: 20px;">
-                        "En Monolito Ingeniería, cada cálculo refleja nuestro compromiso con la seguridad y la excelencia."
-                    </blockquote>
-                    <h4 style="color: #2A5C9A;">Enlaces de interés:</h4>
+                    <p>Nos reconocerás por:</p>
+                    
                     <ul style="line-height: 1.6; padding-left: 20px;">
-                        <li><a href="https://www.briq.mx/desarrolladores/ksi">Rehabilitación sísmica de edificio en la Colonia Narvarte, en la CDMX</strong>.</a></li>
-			<li><a href="https://www.linkedin.com/in/angel-monroy-canales-00b0511aa/">Perfil en LinkedIn</strong>.</a></li>
+                        <li>Las preguntas detalladas que hacemos para entender tus necesidades reales</li>
+                        <li>Los correos y llamadas puntuales para mantenerte informado</li>
+                        <li>Esa paciencia para explicar términos técnicos con lenguaje cotidiano</li>
+                        <li>Las visitas a obra donde revisamos cada detalle con lupa</li>
                     </ul>
+                    
+                    <h2>Nuestra Promesa: Calidad que se Siente</h2>
+                    
+                    <p>Creemos que la buena ingeniería debe ser:</p>
+                    
+                    <ul style="line-height: 1.6; padding-left: 20px;">
+                        <li>Clara: Te entregaremos informes sin lenguaje enredado y estaremos disponibles para aclarar dudas.</li>
+                        <li>Cercana: Respondemos mensajes en menos de 24 horas y adaptamos horarios para reuniones.</li>
+                        <li>Consciente: Sabemos que estás invirtiendo recursos valiosos - haremos rendir cada peso.</li>
+                        <li>Responsable: Cumplimos plazos y nos hacemos cargo de nuestros trabajos.</li>
+                    </ul>
+                    
+                    <p>"Cuando nos eliges, no contratas solo un servicio - ganas un equipo que camina contigo hasta ver tu proyecto seguro y en regla."</p>
+                    
+                    <h2>Así Trabajamos</h2>
+                    
+                    <ul style="line-height: 1.6; padding-left: 20px;">
+                        <li>Primera reunión sin costo: Para conocernos y entender bien lo que necesitas</li>
+                        <li>Presupuestos detallados: Sin sorpresas ni costos ocultos</li>
+                        <li>Soporte continuo: Desde el primer borrador hasta el último trámite</li>
+                    </ul>
+                    
+                    <h4>Dato Curioso</h4>
+                    
+                    <p>El 80% de nuestros clientes llegaron por recomendación. ¿La razón? Dicen que se sienten escuchados y en buenas manos.</p>
                 </div>
             </div>
-        </div>
-	</section>
-	</section>
+        </section>
+        
+        <section id="director">
+            <div class="content-box"> 
+                <h1 style="color: #2A5C9A; margin-bottom: 40px; text-align: center;">Nuestro Director</h1>
+                <div class="director-profile">
+                    <img src="assets/img/director.jpg" alt="Ing. Angel Monroy Canales" class="director-photo">
+                    
+                    <div class="director-info">
+                        <h2>Ing. Angel Monroy Canales</h2>
+                        <h3>Director General y Especialista en Estructuras</h3>
+                        <p>Ingeniero civil egresado de la UNAM con especialización en estructuras, responsable de la conceptualización y ejecución de más de 100 proyectos de mejoramiento estructural en casa-habitación y cimentaciones de torres de telecomunicaciones.</p>
+                        <p>Con más de 10 años de experiencia en ingeniería estructural, el Ing. Angel Monroy Canales ha liderado proyectos en la Ciudad de México, combinando <strong>precisión técnica</strong> con <strong>soluciones innovadoras</strong>.</p>
+                        
+                        <div style="margin: 20px 0;">
+                            <span class="badge"><i class="fas fa-graduation-cap"></i> UNAM</span>
+                            <span class="badge"><i class="fas fa-certificate"></i> NTC-2023</span>
+                            <span class="badge"><i class="fas fa-shield-alt"></i> ASCE</span>
+                        </div>
+                        
+                        <blockquote style="border-left: 3px solid #2A5C9A; padding-left: 15px; font-style: italic; margin-top: 20px;">
+                            "En Monolito Ingeniería, cada cálculo refleja nuestro compromiso con la seguridad y la excelencia."
+                        </blockquote>
+                        
+                        <h4 style="color: #2A5C9A;">Enlaces de interés:</h4>
+                        <ul style="line-height: 1.6; padding-left: 20px;">
+                            <li><a href="https://www.briq.mx/desarrolladores/ksi">Rehabilitación sísmica de edificio en la Colonia Narvarte, en la CDMX</a></li>
+                            <li><a href="https://www.linkedin.com/in/angel-monroy-canales-00b0511aa/">Perfil en LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+    
     <footer>
         <div class="footer-info">
-            <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería" style="height: 40px; margin-bottom: 15px;">
-	    <p class="slogan" style="font-style: italic; margin: 20px 0;">"En Monolito Ingeniería, transformamos cálculos en soluciones seguras...<br>porque tu tranquilidad no se negocia."</p>
+            <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería" style="height: 40px;">
+            <p class="slogan">"En Monolito Ingeniería, transformamos cálculos en soluciones seguras...<br>porque tu tranquilidad no se negocia."</p>
             <p>Monolito Ingeniería S.A. de C.V.</p>
             <p>Av. Pedro Henríquez Ureña 275, Col. Pedregal de Santo Domingo, Coyoacán, CDMX</p>
             <p>Tel: 56 4393 9397 | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
-            <div class="social-icons-footer">
+            
+            <div class="social-icons">
                 <a href="https://wa.me/5215643939397" target="_blank" title="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://www.instagram.com/monolitoingenieria/" target="_blank"  title="Instagram">
+                <a href="https://www.instagram.com/monolitoingenieria/" target="_blank" title="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="mailto:consultoria@monolito.lat" title="Correo electrónico">
                     <i class="far fa-envelope"></i>
                 </a>
-		<p></p>
             </div>
+            
             <p>© 2025 Todos los derechos reservados</p>
         </div>
     </footer>
- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Apply fade-in to all sections
-            const sections = document.querySelectorAll('section');
-            
-            // Check if we came from an anchor link
-            if(window.location.hash) {
-                const target = document.querySelector(window.location.hash);
-                if(target) {
-                    // Small delay to ensure scroll position is set
-                    setTimeout(() => {
-                        target.classList.add('visible');
-                    }, 50);
+<script>
+    // Intersection Observer for scroll animations
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
-            }
-            
-            // Fade in all sections (for when no hash is present)
-            setTimeout(() => {
-                sections.forEach(section => {
-                    section.classList.add('visible');
-                });
-            }, 100);
-            
-            // Optional: Handle internal link clicks with fade transition
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if(target) {
-                        // Fade out all sections
-                        sections.forEach(section => {
-                            section.classList.remove('visible');
-                        });
-                        
-                        // After fade out completes, scroll and fade in
-                        setTimeout(() => {
-                            target.classList.add('visible');
-                        }, 500);
-                    }
-                });
             });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                });
+            }
         });
     </script>
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6856183dc44c79190f98815b/1iu84tcbu';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
 </body>
 </html>

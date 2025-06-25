@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios | Monolito Ingeniería</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Fuente de Google (Roboto) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Estilos base consistentes */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -17,6 +16,7 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: #333;
         }
+        
         header {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 15px 0;
@@ -25,18 +25,36 @@
             top: 0;
             z-index: 100;
         }
+        
         .header-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
+        
         .logo {
-            height: 50px;
+            height: 40px;
             width: auto;
         }
+        
+        /* Estilos de navegación */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #2A5C9A;
+            cursor: pointer;
+        }
+        
+        nav {
+            display: block;
+        }
+        
         nav a {
             margin: 0 15px;
             text-decoration: none;
@@ -44,9 +62,16 @@
             font-weight: 500;
             transition: color 0.3s;
         }
+        
         nav a:hover {
             color: #1E3A8A;
         }
+        
+        /* Contenido principal */
+        main {
+            padding: 20px 0;
+        }
+        
         .services-container {
             max-width: 1000px;
             margin: 40px auto;
@@ -55,27 +80,82 @@
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
+        
         .service {
             margin-bottom: 40px;
             padding-bottom: 30px;
             border-bottom: 1px solid #eee;
         }
+        
         .service:last-child {
             border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
+        
         .service h2 {
             color: #2A5C9A;
             display: flex;
             align-items: center;
+            margin-top: 0;
         }
+        
         .service h2 i {
             margin-right: 15px;
             font-size: 28px;
         }
-        .service p {
+        
+        .service-content {
+            margin-left: 43px;
             line-height: 1.6;
-            margin-left: 43px; /* Alineación con el título */
         }
+        
+        .service-list {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .service-list li {
+            margin-bottom: 8px;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 60px;
+        }
+        
+        .faq-category {
+            margin-bottom: 30px;
+        }
+        
+        .faq-category h3 {
+            color: #2A5C9A;
+            margin-bottom: 15px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: 500;
+            color: #1E3A8A;
+            margin-bottom: 5px;
+        }
+        
+        /* Animaciones */
+        .animated-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .animated-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Footer */
         footer {
             background-color: #2A5C9A;
             color: white;
@@ -83,285 +163,311 @@
             text-align: center;
             margin-top: 50px;
         }
+        
         .footer-info {
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
         }
-	.section-container {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .section-container.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Section styling with fade-in capability */
-        section {
-            min-height: 100vh;
-            padding: 20px;
-            border-bottom: 1px solid #ccc;
-            opacity: 0; /* Start hidden for fade-in */
-      	    transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        
+        .footer-info a {
+            color: white;
         }
         
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-}
+        .slogan {
+            font-style: italic;
+            margin: 20px 0;
+        }
+        
+        .social-icons {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #c3cfe2;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 10px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav a {
+                display: block;
+                margin: 8px 0;
+                padding: 8px 0;
+                text-align: center;
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 4px;
+            }
+            
+            .service h2 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .service h2 i {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+            
+            .service-content {
+                margin-left: 0;
+            }
+        }
+        section {
+	 scroll-margin-top: 120px;
+    padding: 20px 20px 40px; /* Ajuste de padding */
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <img src="assets/img/logo.png" alt="Monolito Ingeniería" class="logo">
-            <nav>
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="main-nav">
                 <a href="index.html">Inicio</a>
                 <a href="servicios.html">Servicios</a>
                 <a href="equipo.html">Equipo</a>
-		<a href="contacto.html">Contacto</a>
+                <a href="contacto.html">Contacto</a>
             </nav>
         </div>
     </header>
+
     <main>
-
-        <div class="services-container">
+        <div class="services-container animated-section" id="servicios">
             <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">Nuestros Servicios Profesionales</h1>
-            <section id="levantamientos">
-            <div class="service">
+            
+            <section class="service animated-section" id="levantamientos">
                 <h2><i class="fas fa-ruler-combined"></i> Levantamientos de Inmueble</h2>
-                <p>
-                    Realizamos mediciones precisas de edificaciones existentes mediante tecnología láser 
-                    y fotogrametría, generando planos arquitectónicos y estructurales actualizados. 
-                    Ideal para remodelaciones, ampliaciones o regularización de predios. Nuestros informes 
-                    incluyen detalles de materiales, daños estructurales y recomendaciones técnicas.
-                </p>
-                <p>
-Nuestros levantamientos integran escaneo láser 3D y fotogrametría con drones (precisión ±3mm/m), generando nubes de puntos georreferenciadas para modelado BIM (Revit, AutoCAD Civil 3D). Incluimos análisis de deformaciones con software de comparación as-built vs. proyecto (CloudCompare), identificación de fisuras mediante termografía infrarroja y evaluación de humedad con esclerómetro Windsor. Los entregables cumplen con la NOM-013-STPS-2020 para seguridad estructural y NMX-R-025-SCFI-2014 para documentación técnica.
-                <p>
-Los informes incluyen:
-                    <ul style="line-height: 1.6; padding-left: 65px;">
-<li>Precisión certificada: Mediciones con error máximo de ±3 mm usando estación total láser.</li>
-<li>Fotogrametría con drones: Ortofotos georreferenciadas para planos en AutoCAD y Revit (formato .DWG/.RVT).</li>
-<li>Evaluación estructural básica: Detección de grietas con esclerómetro (escala Mohs) y humedad con higrómetros digitales.</li>
-<li>Normativa: Cumplimiento con NOM-013-STPS (seguridad en levantamientos) y NMX-R-025 (documentación técnica).</li>
-<li>IA para análisis de imágenes: Usamos algoritmos básicos para detectar grietas o humedades en fotos de drones, agilizando el diagnóstico.</li>
-<li>Sustentabilidad: En los planos, identificamos áreas donde reutilizar materiales existentes (ej. estructuras de acero o madera en buen estado), reduciendo demoliciones y escombros.</li>
-			</ul>
-                </p>
-            </div>
-	    </section>
-	    <section id="calculos">
-            <div class="service">
+                <div class="service-content">
+                    <p>Realizamos mediciones precisas de edificaciones existentes mediante tecnología láser y fotogrametría, generando planos arquitectónicos y estructurales actualizados. Ideal para remodelaciones, ampliaciones o regularización de predios. Nuestros informes incluyen detalles de materiales, daños estructurales y recomendaciones técnicas.</p>
+                    
+                    <p>Nuestros levantamientos integran escaneo láser 3D y fotogrametría con drones (precisión ±3mm/m), generando nubes de puntos georreferenciadas para modelado BIM (Revit, AutoCAD Civil 3D). Incluimos análisis de deformaciones con software de comparación as-built vs. proyecto (CloudCompare), identificación de fisuras mediante termografía infrarroja y evaluación de humedad con esclerómetro Windsor. Los entregables cumplen con la NOM-013-STPS-2020 para seguridad estructural y NMX-R-025-SCFI-2014 para documentación técnica.</p>
+                    
+                    <p>Los informes incluyen:</p>
+                    <ul class="service-list">
+                        <li>Precisión certificada: Mediciones con error máximo de ±3 mm usando estación total láser.</li>
+                        <li>Fotogrametría con drones: Ortofotos georreferenciadas para planos en AutoCAD y Revit (formato .DWG/.RVT).</li>
+                        <li>Evaluación estructural básica: Detección de grietas con esclerómetro (escala Mohs) y humedad con higrómetros digitales.</li>
+                        <li>Normativa: Cumplimiento con NOM-013-STPS (seguridad en levantamientos) y NMX-R-025 (documentación técnica).</li>
+                        <li>IA para análisis de imágenes: Usamos algoritmos básicos para detectar grietas o humedades en fotos de drones, agilizando el diagnóstico.</li>
+                        <li>Sustentabilidad: En los planos, identificamos áreas donde reutilizar materiales existentes (ej. estructuras de acero o madera en buen estado), reduciendo demoliciones y escombros.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="service animated-section" id="calculos">
                 <h2><i class="fas fa-calculator"></i> Cálculos Estructurales</h2>
-                <p>
-                    Diseñamos y analizamos estructuras de concreto, acero y madera cumpliendo con 
-                    las normativas mexicanas (NTCC, ACI, ASTM). Elaboramos memorias de cálculo 
-                    detalladas con software especializado (ETABS, SAP2000) para garantizar la seguridad 
-                    de tu proyecto. Incluye revisión de cargas sísmicas y de viento según tu zona.
-                </p>
-
-                <p>
-Utilizamos análisis no lineales (Pushover Analysis) y modelado de elementos finitos (ANSYS, SAFE) para optimizar diseños en zonas sísmicas (interacción suelo-estructura según NTC-2023-2015). Verificamos capacidad de disipación energética (dúctil vs. frágil) en nodos y conexiones, aplicando coeficientes de comportamiento sísmico (Q=1 a 4, según NTC-2023). Incluimos cálculo de fatiga en aceros (norma ASTM A370) y fluencia lenta en concreto (ACI 209R-92), con reportes de eficiencia estructural mediante índices de robustez (IR ≥ 1.5).
-                </p>                <p>
-Garantizamos:
-                    <ul style="line-height: 1.6; padding-left: 65px;">
-<li>Software especializado: Análisis con ETABS (para estructuras metálicas) y SAP2000 (concreto armado), siguiendo NTCM-2023 y ACI 318-19.</li>
-<li>Cargas sísmicas: Cálculo de espectros de diseño para la Zona Sísmica correspondiente según NTC-2023.</li>
-<li>Memorias de cálculo: Reportes con fórmulas, diagramas de esfuerzos y factores de seguridad (FS ≥ 1.5).</li>
-<li>IA en diseño: Software como ETABS sugiere ajustes automáticos para usar menos concreto o acero sin comprometer seguridad, cumpliendo con normas mexicanas.</li>
-<li>Sustentabilidad: Priorizamos materiales con certificación ecológica (ej. cemento CPC-30R de baja huella de carbono) cuando el cliente lo solicita.</li>
-		</ul>
-                </p>
-            </div>
-	    </section>
-	    <section id="tramites">
-            <div class="service">
+                <div class="service-content">
+                    <p>Diseñamos y analizamos estructuras de concreto, acero y madera cumpliendo con las normativas mexicanas (NTCC, ACI, ASTM). Elaboramos memorias de cálculo detalladas con software especializado (ETABS, SAP2000) para garantizar la seguridad de tu proyecto. Incluye revisión de cargas sísmicas y de viento según tu zona.</p>
+                    
+                    <p>Utilizamos análisis no lineales (Pushover Analysis) y modelado de elementos finitos (ANSYS, SAFE) para optimizar diseños en zonas sísmicas (interacción suelo-estructura según NTC-2023-2015). Verificamos capacidad de disipación energética (dúctil vs. frágil) en nodos y conexiones, aplicando coeficientes de comportamiento sísmico (Q=1 a 4, según NTC-2023). Incluimos cálculo de fatiga en aceros (norma ASTM A370) y fluencia lenta en concreto (ACI 209R-92), con reportes de eficiencia estructural mediante índices de robustez (IR ≥ 1.5).</p>
+                    
+                    <p>Garantizamos:</p>
+                    <ul class="service-list">
+                        <li>Software especializado: Análisis con ETABS (para estructuras metálicas) y SAP2000 (concreto armado), siguiendo NTCM-2023 y ACI 318-19.</li>
+                        <li>Cargas sísmicas: Cálculo de espectros de diseño para la Zona Sísmica correspondiente según NTC-2023.</li>
+                        <li>Memorias de cálculo: Reportes con fórmulas, diagramas de esfuerzos y factores de seguridad (FS ≥ 1.5).</li>
+                        <li>IA en diseño: Software como ETABS sugiere ajustes automáticos para usar menos concreto o acero sin comprometer seguridad, cumpliendo con normas mexicanas.</li>
+                        <li>Sustentabilidad: Priorizamos materiales con certificación ecológica (ej. cemento CPC-30R de baja huella de carbono) cuando el cliente lo solicita.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="service animated-section" id="tramites">
                 <h2><i class="fas fa-file-signature"></i> Gestiones para Licencias de Construcción</h2>
-                <p>
-                    Te acompañamos en todo el proceso de obtención de permisos ante municipios y 
-                    dependencias. Preparamos documentación técnica (proyectos ejecutivos, estudios 
-                    de impacto urbano), coordinamos visitas de inspección y resolvemos observaciones. 
-                    Servicio disponible para obra nueva, demoliciones y usos de suelo.
-                </p>
-                <p>
-Aseguramos:
-                    <ul style="line-height: 1.6; padding-left: 65px;">
-<li>Documentación válida: Proyectos ejecutivos con sellos de director responsable de obra (DRO), corresponsable en seguridad estructural (CSE), corresponsable en diseño urbano y arquitectónico (CDUyA) y corresponsable en instalaciones (CI).</li>
-<li>Trámites ágiles: Conocimiento de requisitos en SEDUVI, SEDEMA y SACMEX.</li>
-<li>IA en documentación: Plantillas inteligentes detectan errores en permisos (ej. falta de firmas o planos mal escalados), evitando retrasos.</li>
-<li>Sustentabilidad: Asesoramos en requisitos básicos para obtener descuentos en impuestos por usar sistemas de captación de agua o paneles solares (según reglamentos locales).</li>
-                </ul></p>
-            </div>
-	    </section>
+                <div class="service-content">
+                    <p>Te acompañamos en todo el proceso de obtención de permisos ante municipios y dependencias. Preparamos documentación técnica (proyectos ejecutivos, estudios de impacto urbano), coordinamos visitas de inspección y resolvemos observaciones. Servicio disponible para obra nueva, demoliciones y usos de suelo.</p>
+                    
+                    <p>Aseguramos:</p>
+                    <ul class="service-list">
+                        <li>Documentación válida: Proyectos ejecutivos con sellos de director responsable de obra (DRO), corresponsable en seguridad estructural (CSE), corresponsable en diseño urbano y arquitectónico (CDUyA) y corresponsable en instalaciones (CI).</li>
+                        <li>Trámites ágiles: Conocimiento de requisitos en SEDUVI, SEDEMA y SACMEX.</li>
+                        <li>IA en documentación: Plantillas inteligentes detectan errores en permisos (ej. falta de firmas o planos mal escalados), evitando retrasos.</li>
+                        <li>Sustentabilidad: Asesoramos en requisitos básicos para obtener descuentos en impuestos por usar sistemas de captación de agua o paneles solares (según reglamentos locales).</li>
+                    </ul>
+                </div>
+            </section>
         </div>
-	<div class="services-container">
-            <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">📋 FAQ: Preguntas Frecuentes sobre Nuestros Servicios</h1>
-            <p>
- <section id="faq">                        
-📏 Levantamientos de Inmueble
-</p><p>
-1. ¿Cómo miden mi propiedad y qué precisión tienen?
-<ul style="line-height: 1.6; padding-left: 25px;">
-    Usamos escáner láser y drones para medir con un error máximo de ±3 mm. Entregamos planos digitales con detalles de cada área (metros cuadrados, alturas, distribución). Planos impresos con cargoo extra.
-</ul>
-2. ¿Sirve para regularizar mi casa?
-<ul style="line-height: 1.6; padding-left: 25px;">
-    Sí. Nuestros planos están avalados por la SEDUVI y son válidos para trámites de regularización, ampliaciones o ventas.
-</ul>
-3. ¿Detectan problemas en mi estructura?
-<ul style="line-height: 1.6; padding-left: 25px;">
-    Incluimos un informe básico de grietas, humedades o daños visibles. Para análisis profundos, ofrecemos estudios estructurales.
-</ul>	
-</p>
-<p>
-🏗 Cálculos Estructurales
-</p>
-4. ¿Cuándo necesito un cálculo estructural?
-<ul style="line-height: 1.6; padding-left: 25px;">
-    Si vas a:
-	<li>Añadir un piso o modificar muros.</li>
-        <li>Reparar daños por sismos.</li>
-        <li>Cambiar materiales (ej: sustituir techos de lámina por losa).</li>
-</ul>
-5. ¿Qué normas cumplen?
-<ul style="line-height: 1.6; padding-left: 25px;">
-    Seguimos las NTCM-2023 (CDMX), ACI 318 (concreto) y ASTM (acero). Usamos software especializado (ETABS, SAP2000, Staad Pro) para garantizar seguridad.
-</ul>
-6. ¿Dan recomendaciones de materiales?
-<ul style="line-height: 1.6; padding-left: 25px;">
-    Sí. Sugerimos opciones balanceadas entre costo y resistencia (ej: acero A36 o concreto f’c=250 kg/cm² para viviendas).
-</ul>
-</p>
-<p>
-📄 Gestiones para Licencias de Construcción
-</p><p>
-7. ¿Qué documentos necesito para sacar una licencia?
-<ul style="line-height: 1.6; padding-left: 25px;">
-        <li>Escrituras de propiedad.</li>
-
-        <li>Croquis inicial (si no lo tienes, lo hacemos nosotros).</li>
-
-        <li>Identificación oficial.</li>
-
-	<li>Pagos al corriente de predial y agua.</li>
-</ul>
-</p><p>
-8. ¿Cuánto tarda mi trámite?
-<ul style="line-height: 1.6; padding-left: 25px;">
-    Depende de la alcaldía o municipio, pero entre 30 y 90 días. Nosotros aceleramos el proceso evitando observaciones comunes.
-</ul>
-</p><p>
-9. ¿Pueden ayudar si mi construcción ya está avanzada sin permiso?
-<ul style="line-height: 1.6; padding-left: 25px;">
-    Sí. Gestionamos licencias retroactivas (con multas, pero evitas demoliciones).
-</ul>
-</p><p>
-💡 Preguntas Generales
-</p><p>
-10. ¿Trabajan en toda la CDMX?
-<ul style="line-height: 1.6; padding-left: 25px;">
-    Cubrimos todas las alcaldías. Para trabajos fuera de la ciudad, consúltanos.
-</ul>
-</p><p>
-11. ¿Dan factura?
-<ul style="line-height: 1.6; padding-left: 25px;">
-    Sí, somos RESICO y facturamos todos nuestros servicios.
-</ul>
-</p><p>
-12. ¿Cómo cotizo?
-<ul style="line-height: 1.6; padding-left: 25px;">
-    Envíanos:
-        <li>Ubicación de la propiedad.</li>
-
-        <li>Fotos o croquis (si lo tienes).</li>
-
-        <li>Tu objetivo (regularizar, ampliar, etc.).</li>
-        <p>¡Te respondemos en 24 horas!</p>
-</ul></ul>
-        </div>
+<section>
 </section>
+        <div class="services-container faq-section animated-section" id="faq">
+            <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">📋 FAQ: Preguntas Frecuentes sobre Nuestros Servicios</h1>
+            
+            <div class="faq-category">
+                <h3>📏 Levantamientos de Inmueble</h3>
+                
+                <div class="faq-item">
+                    <p class="faq-question">1. ¿Cómo miden mi propiedad y qué precisión tienen?</p>
+                    <p>Usamos escáner láser y drones para medir con un error máximo de ±3 mm. Entregamos planos digitales con detalles de cada área (metros cuadrados, alturas, distribución). Planos impresos con cargo extra.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">2. ¿Sirve para regularizar mi casa?</p>
+                    <p>Sí. Nuestros planos están avalados por la SEDUVI y son válidos para trámites de regularización, ampliaciones o ventas.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">3. ¿Detectan problemas en mi estructura?</p>
+                    <p>Incluimos un informe básico de grietas, humedades o daños visibles. Para análisis profundos, ofrecemos estudios estructurales.</p>
+                </div>
+            </div>
+            
+            <div class="faq-category">
+                <h3>🏗 Cálculos Estructurales</h3>
+                
+                <div class="faq-item">
+                    <p class="faq-question">4. ¿Cuándo necesito un cálculo estructural?</p>
+                    <p>Si vas a:</p>
+                    <ul class="service-list">
+                        <li>Añadir un piso o modificar muros.</li>
+                        <li>Reparar daños por sismos.</li>
+                        <li>Cambiar materiales (ej: sustituir techos de lámina por losa).</li>
+                    </ul>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">5. ¿Qué normas cumplen?</p>
+                    <p>Seguimos las NTCM-2023 (CDMX), ACI 318 (concreto) y ASTM (acero). Usamos software especializado (ETABS, SAP2000, Staad Pro) para garantizar seguridad.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">6. ¿Dan recomendaciones de materiales?</p>
+                    <p>Sí. Sugerimos opciones balanceadas entre costo y resistencia (ej: acero A36 o concreto f'c=250 kg/cm² para viviendas).</p>
+                </div>
+            </div>
+            
+            <div class="faq-category">
+                <h3>📄 Gestiones para Licencias de Construcción</h3>
+                
+                <div class="faq-item">
+                    <p class="faq-question">7. ¿Qué documentos necesito para sacar una licencia?</p>
+                    <ul class="service-list">
+                        <li>Escrituras de propiedad.</li>
+                        <li>Croquis inicial (si no lo tienes, lo hacemos nosotros).</li>
+                        <li>Identificación oficial.</li>
+                        <li>Pagos al corriente de predial y agua.</li>
+                    </ul>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">8. ¿Cuánto tarda mi trámite?</p>
+                    <p>Depende de la alcaldía o municipio, pero entre 30 y 90 días. Nosotros aceleramos el proceso evitando observaciones comunes.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">9. ¿Pueden ayudar si mi construcción ya está avanzada sin permiso?</p>
+                    <p>Sí. Gestionamos licencias retroactivas (con multas, pero evitas demoliciones).</p>
+                </div>
+            </div>
+            
+            <div class="faq-category">
+                <h3>💡 Preguntas Generales</h3>
+                
+                <div class="faq-item">
+                    <p class="faq-question">10. ¿Trabajan en toda la CDMX?</p>
+                    <p>Cubrimos todas las alcaldías. Para trabajos fuera de la ciudad, consúltanos.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">11. ¿Dan factura?</p>
+                    <p>Sí, somos RESICO y facturamos todos nuestros servicios.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <p class="faq-question">12. ¿Cómo cotizo?</p>
+                    <p>Envíanos:</p>
+                    <ul class="service-list">
+                        <li>Ubicación de la propiedad.</li>
+                        <li>Fotos o croquis (si lo tienes).</li>
+                        <li>Tu objetivo (regularizar, ampliar, etc.).</li>
+                    </ul>
+                    <p>¡Te respondemos en 24 horas!</p>
+                </div>
+            </div>
+        </div>
     </main>
-        <footer>
+
+    <footer>
         <div class="footer-info">
-            <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería" style="height: 40px; margin-bottom: 15px;">
-	    <p class="slogan" style="font-style: italic; margin: 20px 0;">"En Monolito Ingeniería, transformamos cálculos en soluciones seguras...<br>porque tu tranquilidad no se negocia."</p>
+            <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería" style="height: 40px;">
+            <p class="slogan">"En Monolito Ingeniería, transformamos cálculos en soluciones seguras...<br>porque tu tranquilidad no se negocia."</p>
             <p>Monolito Ingeniería S.A. de C.V.</p>
             <p>Av. Pedro Henríquez Ureña 275, Col. Pedregal de Santo Domingo, Coyoacán, CDMX</p>
             <p>Tel: 56 4393 9397 | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
-            <div class="social-icons-footer">
+            
+            <div class="social-icons">
                 <a href="https://wa.me/5215643939397" target="_blank" title="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://www.instagram.com/monolitoingenieria/" target="_blank"  title="Instagram">
+                <a href="https://www.instagram.com/monolitoingenieria/" target="_blank" title="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="mailto:consultoria@monolito.lat" title="Correo electrónico">
                     <i class="far fa-envelope"></i>
                 </a>
-		<p></p>
             </div>
+            
             <p>© 2025 Todos los derechos reservados</p>
         </div>
     </footer>
- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Apply fade-in to all sections
-            const sections = document.querySelectorAll('section');
-            
-            // Check if we came from an anchor link
-            if(window.location.hash) {
-                const target = document.querySelector(window.location.hash);
-                if(target) {
-                    // Small delay to ensure scroll position is set
-                    setTimeout(() => {
-                        target.classList.add('visible');
-                    }, 50);
+
+<script>
+    // Scroll animation functionality
+    document.addEventListener('DOMContentLoaded', () => {
+        const animatedSections = document.querySelectorAll('.animated-section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
-            }
-            
-            // Fade in all sections (for when no hash is present)
-            setTimeout(() => {
-                sections.forEach(section => {
-                    section.classList.add('visible');
-                });
-            }, 100);
-            
-            // Optional: Handle internal link clicks with fade transition
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if(target) {
-                        // Fade out all sections
-                        sections.forEach(section => {
-                            section.classList.remove('visible');
-                        });
-                        
-                        // After fade out completes, scroll and fade in
-                        setTimeout(() => {
-                            target.classList.add('visible');
-                        }, 500);
-                    }
-                });
             });
+        }, {
+            threshold: 0.1
+        });
+
+        animatedSections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+
+
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                });
+            }
         });
     </script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6856183dc44c79190f98815b/1iu84tcbu';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-
 </body>
 </html>

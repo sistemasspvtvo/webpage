@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Monolito Ingeniería: Consultoría especializada en diseño estructural, cálculos sísmicos y gestión de licencias en CDMX. Ingenieros certificados con 10+ años de experiencia. Cotiza tu proyecto hoy.">
-    <title>Diseño Estructural en CDMX | Monolito Ingeniería - Expertos en Cálculos Sísmicos</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monolito Ingeniería | Consultoría en Seguridad Estructural CDMX</title>
+<meta name="description" content="Monolito Ingeniería: Consultoría especializada en revisión de inmuebles, dictámenes de estructuras y gestión de licencias en la Ciudad de México y Área Metropolitana. Ingenieros certificados con 10+ años de experiencia. Protección legal contra clausuras. Cotización inmediata. El mejor precio, económico.">
+<meta name="keywords" content="constancia seguridad estructural, dictamen estructural CDMX, ingeniería estructural, corresponsable de obra, DRO, CSE, , ISC, monolito ingeniería, permisos construcción CDMX, ecónomico, mejor precio, mejoramos cotizaciones">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Monolito Ingeniería | Especialistas en Seguridad Estructural CDMX">
+<meta property="og:description" content="Expertos certificados en Constancia de Seguridad Estructural y dictámenes para tu propiedad en CDMX. Evita multas y clausuras con nuestro equipo profesional.">
+<meta property="og:url" content="https://monolito.lat/">
+<meta property="og:site_name" content="Monolito Ingeniería">
+<meta property="og:image" content="https://monolito.lat/images/logo.jpg">
+<meta property="og:image:secure_url" content="https://monolito.lat/images/logo-blanco.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Equipo de Monolito Ingeniería trabajando en revisiones estructural">
+<meta property="og:image:type" content="image/hero-bg.png">
     <link rel="canonical" href="https://www.monolito.lat" />    
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <script type="application/ld+json">
+        <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
@@ -41,6 +58,28 @@
         ],
         "opens": "09:00",
         "closes": "18:00"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Ingeniería",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Levantamientos Arquitectónicos",
+              "description": "Mediciones precisas con tecnología láser y drones para planos ejecutivos"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Cálculos Estructurales",
+              "description": "Diseño y análisis de estructuras bajo normativas mexicanas e internacionales"
+            }
+          }
+        ]
       }
     }
     </script>
@@ -77,8 +116,6 @@
             height: 40px;
             width: auto;
         }
-        
-        /* Estilos de navegación */
         .menu-toggle {
             display: none;
             background: none;
@@ -104,10 +141,17 @@
             color: #1E3A8A;
         }
         
-        /* Hero section */
-        .hero {
+        /* Updated Hero Section Styles */
+        .hero-bg {
             background: url('assets/img/hero-bg.jpg') no-repeat center/cover;
             height: 520px;
+            position: relative;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+        
+        .hero {
+            height: 100%;
             display: flex;
             align-items: center;
             text-align: center;
@@ -161,8 +205,6 @@
         .btn-cta:hover {
             background-color: #1E3A8A;
         }
-        
-        /* Features section */
         .features {
             max-width: 1200px;
             margin: 60px auto;
@@ -185,8 +227,6 @@
             color: #2A5C9A;
             margin-bottom: 15px;
         }
-        
-        /* Why choose us section */
         .why-us {
             background: #2A5C9A;
             color: white;
@@ -210,19 +250,18 @@
         }
         
         .director-img {
-            height: 100px;
+            height: 80px;
             width: auto;
             border-radius: 8px;
             margin: 0 auto;
         }
-        
+
         .section-title {
             color: #2A5C9A;
             text-align: center;
             margin-bottom: 30px;
         }
-        
-        /* Footer */
+
         footer {
             background-color: #2A5C9A;
             color: white;
@@ -256,9 +295,6 @@
             color: #1E3A8A;
         }
 
-
-        
-        /* Media Queries */
         @media (max-width: 767px) {
             section > div {
                 flex-direction: column;
@@ -318,7 +354,8 @@
                 background: none !important;
             }
         }
-	section {
+        
+        section {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -347,78 +384,90 @@
         </nav>
     </div>
 </header>
+<div class="hero-bg">
     <section class="hero" aria-label="Servicios de ingeniería estructural">
         <div class="hero-content">
             <h1>Ingeniería con Precisión y Experiencia</h1>
-            <p>Soluciones técnicas y normativas para proyectos estructurales en la Ciudad de México y Área Metropolitana.</p>
+            <p>Expertos en diseño estructural, análisis sísmico y gestión de licencias para proyectos en la Ciudad de México y Área Metropolitana.</p>
             <p class="slogan">"En Monolito Ingeniería, transformamos cálculos en soluciones seguras...<br>porque tu tranquilidad no se negocia."</p>
             <a href="contacto.html" class="btn-cta">Cotizar un Proyecto</a>
         </div>
     </section>
-        <section>
+</div>
+
+<section>
     <h2 class="section-title" style="padding: 5px 0px;">Nuestros Servicios</h2>
-    </section>
-        <section class="features">
-        <div class="feature-card">
-            <i class="fas fa-ruler-combined"></i>
-            <h3>Levantamientos de Inmueble</h3>
-            <p>Mediciones precisas para planos ejecutivos y diagnósticos estructurales.</p>
-            <a href="servicios.html#levantamientos">Saber más →</a>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-calculator"></i>
-            <h3>Cálculos Estructurales</h3>
-            <p>Diseño y análisis con software especializado bajo normativas mexicanas e internacionales.</p>
-            <a href="servicios.html#calculos">Explora a profundidad →</a>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-file-signature"></i>
-            <h3>Gestión de Licencias</h3>
-            <p>Tramitamos permisos de construcción ante autoridades locales y federales.</p>
-            <a href="servicios.html#tramites">Conoce los detalles →</a>
-        </div>
-    </section>
-        <section>
+</section>
+<section class="features">
+    <div class="feature-card">
+        <i class="fas fa-ruler-combined"></i>
+        <h3>Levantamientos de Inmueble</h3>
+        <p>Mediciones precisas para planos ejecutivos y diagnósticos estructurales.</p>
+        <a href="servicios.html#levantamientos">Saber más →</a>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-calculator"></i>
+        <h3>Cálculos Estructurales</h3>
+        <p>Diseño y análisis con software especializado bajo normativas mexicanas e internacionales.</p>
+        <a href="servicios.html#calculos">Explora a profundidad →</a>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-file-signature"></i>
+        <h3>Gestión de Licencias</h3>
+        <p>Tramitamos permisos de construcción ante autoridades locales y federales.</p>
+        <a href="servicios.html#tramites">Conoce los detalles →</a>
+    </div>
+</section>
+<section>
     <h3 class="section-title" style="padding: 5px 0px;">Interactúa con nuestro bot de IA con el botón en la esquina derecha o revisa nuestras preguntas frecuentes <a href="servicios.html#faq">aquí →</a></h3>
-    </section>
-    <section class="why-us">
-        <h2 class="section-title" style="color: white">¿Por Qué Monolito Ingeniería?</h2>
-        <div style="max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            <div>
-                <i class="fas fa-award" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                <h3>+10 Años de Experiencia</h3>
-                <p>Hemos participado en proyectos residenciales, comerciales e industriales.</p>
-            </div>
-            <div>
-                <i class="fas fa-user-tie" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                <h3>Ingenieros Certificados</h3>
-                <p>Colegiados y con especializaciones en análisis sísmico y normativas.</p>
-            </div>
-            <div>
-                <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 15px;"></i>
-                <h3>Resultados Garantizados</h3>
-                <p>Nuestros diseños cumplen con los más altos estándares de seguridad.</p>
-            </div>
+</section>
+<section class="why-us">
+    <h2 class="section-title" style="color: white">¿Por Qué Monolito Ingeniería?</h2>
+    <div style="max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+        <div>
+            <i class="fas fa-award" style="font-size: 2rem; margin-bottom: 15px;"></i>
+            <h3>+10 Años de Experiencia</h3>
+            <p>Hemos participado en proyectos residenciales, comerciales e industriales.</p>
         </div>
-    </section>
-    
-    <section class="director-section">
-        <div class="director-container">
-            <img src="assets/img/director.jpg" alt="Ing. Angel Monroy Canales" class="director-img">
-            <div>
-                <h2 class="section-title">Conoce al Director</h2>
-                <p><strong>Ing. Angel Monroy Canales</strong>, especialista en ingeniería estructural con 10 años de experiencia en diseño sísmico y normativas nacionales e internacionales. Graduado de la Universidad Nacional Autónoma de México.</p>
-                <a href="equipo.html#director" style="color: #2A5C9A; font-weight: 500; display: block; text-align: center;">Ver trayectoria completa →</a>
-            </div>
+        <div>
+            <i class="fas fa-user-tie" style="font-size: 2rem; margin-bottom: 15px;"></i>
+            <h3>Ingenieros Certificados</h3>
+            <p>Colegiados y con especializaciones en análisis sísmico y normativas.</p>
         </div>
-    </section>
-    
-    <section style="padding: 60px 20px; text-align: center;">
-        <h2 class="section-title">¿Listo para Iniciar tu Proyecto?</h2>
-        <p style="max-width: 600px; margin: 0 auto 30px;">Contáctanos para una asesoría gratuita y recibe una cotización en menos de 24 horas.</p>
-        <a href="contacto.html" class="btn-cta">Contactar Ahora</a>
-    </section>
-    
+        <div>
+            <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 15px;"></i>
+            <h3>Resultados Garantizados</h3>
+            <p>Nuestros diseños cumplen con los más altos estándares de seguridad.</p>
+        </div>
+    </div>
+</section>
+
+<section class="director-section">
+    <div class="director-container">
+
+        <div class="director-profile">
+            <h2 class="section-title">Nuestro Equipo: Ingeniería con Rostro Humano</h2>
+<p>
+En Monolito Ingeniería combinamos la técnica con un trato cercano. Somos profesionales que:
+<ul style="line-height: 1.6; padding-left: 20px;">
+<li>    Escuchamos primero, calculamos después</li>
+
+<li>    Explicamos sin tecnicismos innecesarios</li>
+
+<li>    Acompañamos desde el primer borrador hasta el último trámite</li></ul></p>
+
+            <p><strong>Conoce al Director: </strong>El Ing. Angel Monroy Canales, especialista en ingeniería estructural con experiencia en diseño sísmico y normativas nacionales e internacionales. Graduado de la Universidad Nacional Autónoma de México. <a href="equipo.html#director" style="color: #2A5C9A; font-weight: 500; text-align: center;">Ver trayectoria completa →</a></p>
+
+        </div>
+    </div>
+</section>
+
+<section style="padding: 60px 20px; text-align: center;">
+    <h2 class="section-title">¿Listo para Iniciar tu Proyecto?</h2>
+    <p style="max-width: 600px; margin: 0 auto 30px;">Contáctanos para una asesoría gratuita y recibe una cotización en menos de 24 horas.</p>
+    <a href="contacto.html" class="btn-cta">Contactar Ahora</a>
+</section>
+
     <footer>
         <div class="footer-info">
             <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería - Consultoría estructural, levantamientos, inspecciones y gestorías en Ciudad de México" style="height: 40px;">
@@ -449,41 +498,40 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('show');
-                    observer.unobserve(entry.target); // ¡Optimización clave! Deja de observar.
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 }); // Umbral del 10% de visibilidad.
-
-        // Observa todas las secciones.
+        }, { threshold: 0.1 });
+        
         sections.forEach(section => {
             observer.observe(section);
         });
     });
 </script>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.getElementById('menu-toggle');
-            const mainNav = document.getElementById('main-nav');
-            
-            if (menuToggle && mainNav) {
-                menuToggle.addEventListener('click', () => {
-                    mainNav.classList.toggle('active');
-                });
-            }
-        });
-    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+        }
+    });
+</script>
     
-    <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/6856183dc44c79190f98815b/1iu84tcbu';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-        })();
-    </script>
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/6856183dc44c79190f98815b/1iu84tcbu';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
 </body>
 </html>

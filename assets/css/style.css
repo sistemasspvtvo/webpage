@@ -461,6 +461,11 @@ footer {
     color: white;
 }
 
+.footer-info img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
 .slogan {
     font-style: italic;
     margin: 20px 0;

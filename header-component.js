@@ -14,12 +14,12 @@ class HeaderComponent extends HTMLElement {
                         <i class="fas fa-bars"></i>
                     </button>
                     <nav id="main-nav">
-                        <a href="index.html">Inicio</a>
-                        <a href="servicios.html">Servicios</a>
-                        <a href="equipo.html">Equipo</a>
-                        <a href="casos.html">Casos de Éxito</a>
+                        <a href="inicio">Inicio</a>
+                        <a href="servicios">Servicios</a>
+                        <a href="equipo">Equipo</a>
+                        <a href="casos-de-éxito">Casos de Éxito</a>
                         <a href="blog">Blog</a>
-                        <a href="contacto.html">Contacto</a>
+                        <a href="contacto">Contacto</a>
                     </nav>
                 </div>
             </header>

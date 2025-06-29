@@ -7,6 +7,7 @@
                     <source srcset="/assets/img/logo-blanco.webp" type="image/webp">
                     <img src="/assets/img/logo-blanco.png" alt="Logo Monolito" width="40" height="40" alt="Monolito Ingeniería - Consultoría estructural, levantamientos, inspecciones y gestorías en Coyoacán, Ciudad de México">
                 </picture>
+                
                 <p class="slogan">"En Monolito Ingeniería, transformamos cálculos en soluciones seguras...<br>porque tu tranquilidad no se negocia."</p>
                 <p>Monolito Ingeniería S.A. de C.V.</p>
                 <p>Av. Pedro Henríquez Ureña 275, Col. Pedregal de Santo Domingo, Coyoacán, CDMX</p>

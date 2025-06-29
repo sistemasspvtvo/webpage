@@ -140,6 +140,8 @@
         padding: 0 20px;
         position: relative;
         z-index: 2;
+          opacity: 1 !important;
+  transform: none !important;
     }
     
     .hero-content.show {
@@ -399,9 +401,9 @@ En Monolito Ingeniería combinamos la técnica con un trato cercano. Somos profe
 document.addEventListener('DOMContentLoaded', () => {
   const heroContent = document.querySelector('.hero-content');
   if (heroContent) {
-    setTimeout(() => {
+ 
             heroContent.classList.add('show');
-        }, 50);
+
   }
   const sections = document.querySelectorAll('section:not(.hero)');
   const observer = new IntersectionObserver((entries) => {
@@ -417,6 +419,39 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(section);
   });
 });
+</script>
+<script>
+let lcpDone = false;
+
+new PerformanceObserver((entryList) => {
+  const entries = entryList.getEntries();
+  for (const entry of entries) {
+    if (entry.entryType === "largest-contentful-paint") {
+      lcpDone = true;
+    }
+  }
+}).observe({ type: "largest-contentful-paint", buffered: true });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const heroContent = document.querySelector('.hero-content');
+  if (heroContent && lcpDone) {
+    heroContent.classList.add('show');
+  }
+
+  const sections = document.querySelectorAll('section:not(.hero)');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && lcpDone) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+})
 </script>
 <script src="assets/js/main.js" defer></script>
 <script src="header-component.js" defer></script>

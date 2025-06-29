@@ -109,7 +109,7 @@
         height: 100%;
         object-fit: cover;
         z-index: 0;
-        opacity: 0;
+        opacity: 1;
         transition: opacity 0.5s ease;
     }
     .hero-bg-img.loaded {
@@ -282,9 +282,8 @@
 <body>
  <header-component></header-component>
 <div class="hero-bg">
-      <img class="hero-bg-img" 
-       src="assets/img/hero-bg-low-res.webp" 
-       data-src="assets/img/hero-bg.webp" 
+      <img class="hero-bg-img loaded" 
+       src="assets/img/hero-bg.webp" 
        alt="Fondo hero"
        loading="eager"
        decoding="async">

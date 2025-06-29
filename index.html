@@ -93,8 +93,9 @@
         position: relative;
         height: 520px;
         overflow: hidden;
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                    url('assets/img/hero-bg.webp') no-repeat center center;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+           
+        background-color: #2A5C9A; 
         background-size: cover;
         display: flex;
         align-items: center;
@@ -108,7 +109,12 @@
         height: 100%;
         object-fit: cover;
         z-index: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease;
     }
+    .hero-bg-img.loaded {
+        opacity: 1;
+    }    
     .hero {
         position: relative;
         z-index: 2;
@@ -121,7 +127,13 @@
         text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Sombra para mejor legibilidad */
     }
     .hero-overlay {
-        display: none !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7); /* Mismo valor que tenías originalmente */
+        z-index: 1;
     }
     .hero-content {
         max-width: 800px;
@@ -269,8 +281,14 @@
 </head>
 <body>
  <header-component></header-component>
-
 <div class="hero-bg">
+      <img class="hero-bg-img" 
+       src="assets/img/hero-bg-low-res.webp" 
+       data-src="assets/img/hero-bg.webp" 
+       alt="Fondo hero"
+       loading="eager"
+       decoding="async">
+    <div class="hero-overlay"></div>
   <section class="hero">
     <div class="hero-content">
             <h1>Ingeniería con Precisión y Experiencia</h1>
@@ -361,7 +379,23 @@ En Monolito Ingeniería combinamos la técnica con un trato cercano. Somos profe
     <a href="contacto.html" class="btn-cta">Contactar Ahora</a>
 </section>
 <footer-component></footer-component>
-
+<script>
+  // Carga progresiva de la imagen hero
+  document.addEventListener('DOMContentLoaded', function() {
+    const heroImg = document.querySelector('.hero-bg-img');
+    if (heroImg) {
+      const highResSrc = heroImg.getAttribute('data-src');
+      if (highResSrc) {
+        const img = new Image();
+        img.src = highResSrc;
+        img.onload = function() {
+          heroImg.src = highResSrc;
+          heroImg.classList.add('loaded');
+        };
+      }
+    }
+  });
+</script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const heroContent = document.querySelector('.hero-content');

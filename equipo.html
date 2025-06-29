@@ -13,28 +13,27 @@
     <meta property="og:locale" content="es_MX">
     <meta property="og:title" content="Nuestro Equipo de Ingenieros Estructurales en CDMX | Monolito Ingeniería">
     <meta property="og:description" content="Profesionales certificados con 10+ años de experiencia en seguridad estructural y diseño sísmico en Ciudad de México.">
-    <meta property="og:url" content="https://monolito.lat/equipo.html">
+    <meta property="og:url" content="https://monolito.lat/equipo">
     <meta property="og:site_name" content="Monolito Ingeniería">
-    <meta property="og:image" content="https://monolito.lat/assets/img/equipo-ingenieria.jpg">
-    <meta property="og:image:secure_url" content="https://monolito.lat/assets/img/equipo-ingenieria.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image" content="https://monolito.lat/assets/img/director.webp">
+    <meta property="og:image:secure_url" content="https://monolito.lat/assets/img/director.webp">
     <meta property="og:image:alt" content="Equipo de ingenieros estructurales de Monolito Ingeniería">
     <meta itemprop="address" content="Ciudad de México">
     <meta itemprop="email" content="consultoria@monolito.lat">
     <meta itemprop="telephone" content="+525643939397">
-    <link rel="canonical" href="https://www.monolito.lat/equipo.html" />    
+    <link rel="canonical" href="https://www.monolito.lat/equipo" />    
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preload" href="assets/css/style.css" as="style">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto..."></noscript>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
       "name": "Nuestro Equipo de Ingenieros",
       "description": "Conoce al equipo experto en ingeniería estructural de Monolito Ingeniería",
-      "url": "https://www.monolito.lat/equipo.html",
+      "url": "https://www.monolito.lat/equipo",
       "about": {
         "@type": "Organization",
         "name": "Monolito Ingeniería",
@@ -43,7 +42,7 @@
             "@type": "Person",
             "name": "Ing. Angel Monroy Canales",
             "jobTitle": "Director General",
-            "image": "https://www.monolito.lat/assets/img/director.jpg",
+            "image": "https://www.monolito.lat/assets/img/director.webp",
             "url": "https://www.monolito.lat/equipo.html#director",
             "description": "Ingeniero Civil especializado en diseño sísmico con 10 años de experiencia en proyectos estructurales en CDMX.",
             "alumniOf": {
@@ -271,7 +270,7 @@ section.visible {
     <main>
         <section id="nosotros">
             <div class="content-box">
-                <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">Acerca de Nosotros</h1>
+                <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">Acerca de Nosotros | Monolito Ingeniería</h1>
                 <div class="nosotros-info">
                     <h2>Nuestro Equipo: Profesionales que Cuidan tu Proyecto como Propio</h2>
                     
@@ -316,10 +315,13 @@ section.visible {
         
         <section id="director">
             <div class="content-box"> 
-                <h1 style="color: #2A5C9A; margin-bottom: 40px; text-align: center;">Nuestro Director</h1>
+                <h2 style="color: #2A5C9A; margin-bottom: 40px; text-align: center;">Nuestro Director</h2>
                 <div class="director-profile">
-                    <img src="assets/img/director.jpg" alt="Ing. Angel Monroy Canales" class="director-photo">
-                    
+
+                    <picture>
+                        <source srcset="/assets/img/director.webp" type="image/webp">
+                        <img src="/assets/img/director.jpg" alt="Angel Monroy Canales" width="202" height="202" class="director-photo">
+                    </picture>
                     <div class="director-info">
                         <h2>Ing. Angel Monroy Canales</h2>
                         <h3>Director General y Especialista en Estructuras</h3>

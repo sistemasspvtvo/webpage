@@ -7,7 +7,7 @@ class HeaderComponent extends HTMLElement {
 
 <picture>
   <source srcset="/assets/img/logo.webp" type="image/webp">
-  <img src="/assets/img/logo.png" alt="Logo Monolito" width=auto height="40">
+  <img src="/assets/img/logo.png" alt="Logo Monolito" width="40" height="40">
 </picture>
                     </a>
                     <button class="menu-toggle" id="menu-toggle">
@@ -17,8 +17,8 @@ class HeaderComponent extends HTMLElement {
                         <a href="index.html">Inicio</a>
                         <a href="servicios.html">Servicios</a>
                         <a href="equipo.html">Equipo</a>
-                        <a href="casos.html">Casos de éxito</a>
-                        <a href="blog.html">Blog</a>
+                        <a href="casos.html">Casos de Éxito</a>
+                        <a href="blog">Blog</a>
                         <a href="contacto.html">Contacto</a>
                     </nav>
                 </div>

@@ -88,332 +88,356 @@
       }
     }
     </script>
-    <style>
-        /* Estilos base */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #333;
+<style>
+    /* ===== ESTILOS BASE ===== */
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        color: #333;
+    }
+    
+    /* ===== HEADER ===== */
+    header {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 15px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+    
+    .header-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .logo {
+        height: 40px;
+        width: auto;
+    }
+    
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #2A5C9A;
+        cursor: pointer;
+    }
+    
+    nav {
+        display: block;
+    }
+    
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #2A5C9A;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+    
+    nav a:hover {
+        color: #1E3A8A;
+    }
+    
+    /* ===== HERO SECTION ===== */
+    .hero-bg {
+        position: relative;
+        height: 520px;
+        overflow: hidden;
+    }
+    
+    .hero-bg-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+    
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+    }
+    
+    .hero {
+        position: relative;
+        z-index: 3;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+        color: white;
+        opacity: 0;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .hero-content.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .slogan {
+        font-style: italic;
+        margin: 20px 0;
+    }
+    
+    /* ===== BOTONES ===== */
+    .btn-cta {
+        background-color: #2A5C9A;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s;
+    }
+    
+    .btn-cta:hover {
+        background-color: #1E3A8A;
+    }
+    
+    /* ===== SECCIONES ===== */
+    section:not(.hero) {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    section.show:not(.hero) {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .section-title {
+        color: #2A5C9A;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    /* ===== FEATURES ===== */
+    .features {
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .feature-card {
+        background: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+    }
+    
+    .feature-card i {
+        font-size: 2.5rem;
+        color: #2A5C9A;
+        margin-bottom: 15px;
+    }
+    
+    /* ===== WHY US ===== */
+    .why-us {
+        background: #2A5C9A;
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+    }
+    
+    /* ===== DIRECTOR SECTION ===== */
+    .director-section {
+        background: #f9f9f9;
+        padding: 40px 20px;
+    }
+    
+    .director-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .director-img {
+        height: 80px;
+        width: auto;
+        border-radius: 8px;
+        margin: 0 auto;
+    }
+    
+    /* ===== FOOTER ===== */
+    footer {
+        background-color: #2A5C9A;
+        color: white;
+        padding: 30px 0;
+        text-align: center;
+        margin-top: 50px;
+    }
+    
+    .footer-info {
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+    
+    .footer-info a {
+        color: white;
+    }
+    
+    .social-icons-footer {
+        margin-top: 30px;
+        text-align: center;
+    }
+    
+    .social-icons-footer a {
+        color: white;
+        font-size: 24px;
+        margin: 0 10px;
+        transition: color 0.3s;
+        text-decoration: none;
+    }
+    
+    .social-icons-footer a:hover {
+        color: #1E3A8A;
+    }
+    
+    /* ===== MEDIA QUERIES ===== */
+    @media (max-width: 767px) {
+        section > div {
+            flex-direction: column;
+            text-align: center;
         }
         
-        header {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        section > div > img {
+            order: 0;
+            margin-bottom: 20px;
         }
         
-        .header-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        section > div > div {
+            order: 1;
+            min-width: 100%;
         }
         
-        .logo {
-            height: 40px;
-            width: auto;
+        h2 {
+            text-align: center !important;
         }
+        
         .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: #2A5C9A;
-            cursor: pointer;
+            display: block;
         }
         
         nav {
+            display: none;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        nav.active {
             display: block;
         }
         
         nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #2A5C9A;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: #1E3A8A;
-        }
-        
-
-.hero-bg {
-    position: relative;
-    height: 520px;
-    overflow: hidden;
-}
-
-.hero-bg-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Transparencia gris fija */
-    z-index: 1;
-}
-.hero {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: white;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 0;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-        
-        .slogan {
-            font-style: italic;
-            margin: 20px 0;
-        }
-        
-        .btn-cta {
-            background-color: #2A5C9A;
-            color: white;
-            padding: 12px 30px;
+            display: block;
+            margin: 8px 0;
+            padding: 8px 0;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s;
+        }
+    }
+    
+    @media (min-width: 768px) {
+        .menu-toggle {
+            display: none;
         }
         
-        .btn-cta:hover {
-            background-color: #1E3A8A;
-        }
-        .features {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        nav {
+            display: block !important;
         }
         
-        .feature-card {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
+        nav a {
+            display: inline-block;
+            margin: 0 15px;
+            background: none !important;
+        }
+    }
+    
+    /* ===== ACCESIBILIDAD ===== */
+    @media (prefers-reduced-motion: reduce) {
+        .hero-content,
+        section:not(.hero) {
+            transition: none !important;
         }
         
-        .feature-card i {
-            font-size: 2.5rem;
-            color: #2A5C9A;
-            margin-bottom: 15px;
+        .hero-content,
+        section:not(.hero) {
+            opacity: 1 !important;
+            transform: none !important;
         }
-        .why-us {
-            background: #2A5C9A;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        
-        .director-section {
-            background: #f9f9f9;
-            padding: 40px 20px;
-        }
-        
-        .director-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .director-img {
-            height: 80px;
-            width: auto;
-            border-radius: 8px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            color: #2A5C9A;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        footer {
-            background-color: #2A5C9A;
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-            margin-top: 50px;
-        }
-        
-        .footer-info {
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        .footer-info a {
-            color: white;
-        }
-        .social-icons-footer {
-            margin-top: 30px;
-            text-align: center;
-        }
-        
-        .social-icons-footer a {
-            color: white;
-            font-size: 24px;
-            margin: 0 10px;
-            transition: color 0.3s;
-            text-decoration: none;
-        }
-        
-        .social-icons-footer a:hover {
-            color: #1E3A8A;
-        }
-
-        @media (max-width: 767px) {
-            section > div {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            section > div > img {
-                order: 0;
-                margin-bottom: 20px;
-            }
-            
-            section > div > div {
-                order: 1;
-                min-width: 100%;
-            }
-            
-            h2 {
-                text-align: center !important;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            nav {
-                display: none;
-                width: 100%;
-                margin-top: 10px;
-            }
-            
-            nav.active {
-                display: block;
-            }
-            
-            nav a {
-                display: block;
-                margin: 8px 0;
-                padding: 8px 0;
-                text-align: center;
-                background: rgba(255, 255, 255, 0.9);
-                border-radius: 4px;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .menu-toggle {
-                display: none;
-            }
-            
-            nav {
-                display: block !important;
-            }
-            
-            nav a {
-                display: inline-block;
-                margin: 0 15px;
-                background: none !important;
-            }
-        }
-        
-        section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            padding: 0 20px;
-        }
-        section.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
  <header-component></header-component>
-    <script src="header-component.js"></script>
+    <script src="header-component.js" defer></script>
 <div class="hero-bg">
-    <img 
-        src="/assets/img/hero-bg.webp" 
-        alt="Fondo Hero" 
-        class="hero-bg-img"
-        fetchpriority="high"
-        loading="eager"
-        width="1920"
-        height="1080"
-    >
-        <div class="hero-overlay"></div>
-    <section class="hero" aria-label="Servicios de ingeniería estructural">
-        <div class="hero-content">
+  <img src="/assets/img/hero-bg.webp" 
+       alt="Fondo Hero" 
+       class="hero-bg-img"
+       fetchpriority="high"
+       loading="eager"
+       decoding="async"
+       width="1920"
+       height="1080">
+  <div class="hero-overlay" style="opacity: 1 !important;"></div>
+  <section class="hero">
+    <div class="hero-content">
             <h1>Ingeniería con Precisión y Experiencia</h1>
             <p>Expertos en diseño estructural, análisis sísmico y gestión de licencias para proyectos en la Ciudad de México y Área Metropolitana.</p>
             <p class="slogan">"En Monolito Ingeniería, transformamos cálculos en soluciones seguras...<br>porque tu tranquilidad no se negocia."</p>
             <a href="contacto.html" class="btn-cta">Cotizar un Proyecto</a>
-        </div>
-    </section>
+    </div>
+  </section>
 </div>
-
 <section>
     <h2 class="section-title" style="padding: 5px 0px;">Nuestros Servicios</h2>
 </section>
@@ -489,24 +513,40 @@ En Monolito Ingeniería combinamos la técnica con un trato cercano. Somos profe
 <footer-component></footer-component>
     <script src="footer-component.js" defer></script>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const sections = document.querySelectorAll('section');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        sections.forEach(section => {
-            observer.observe(section);
-        });
+document.addEventListener('DOMContentLoaded', () => {
+  // Menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mainNav = document.getElementById('main-nav');
+  
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
     });
+  }
+
+  // Animación para el contenido del hero (activar inmediatamente)
+  const heroContent = document.querySelector('.hero-content');
+  if (heroContent) {
+    heroContent.classList.add('show');
+  }
+
+  // Observador para las demás secciones
+  const sections = document.querySelectorAll('section:not(.hero)');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+});
 </script>
-    
+<!--
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const menuToggle = document.getElementById('menu-toggle');
@@ -519,16 +559,35 @@ En Monolito Ingeniería combinamos la técnica con un trato cercano. Somos profe
         }
     });
 </script>
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/6856183dc44c79190f98815b/1iu84tcbu';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-    })();
+-->
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function(){
+    var tawk = document.createElement('script');
+    tawk.async = true;
+    tawk.src = 'https://embed.tawk.to/6856183dc44c79190f98815b/1iu84tcbu';
+    document.body.appendChild(tawk);
+  }, 5000);
+});
+</script>
+<script>
+const isSlowDevice = /(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|Tablet)/i.test(navigator.userAgent) 
+                    && !/Chrome|Safari|Firefox|Edge|SamsungBrowser|Opera/i.test(navigator.userAgent);
+
+if (isSlowDevice) {
+    document.documentElement.style.setProperty('--animation-duration', '0.5s');
+    const preloads = [
+        '/assets/img/hero-bg.webp',
+        '/assets/css/style.css'
+    ];
+    preloads.forEach(resource => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = resource;
+        link.as = resource.includes('.css') ? 'style' : 'image';
+        document.head.appendChild(link);
+    });
+}
 </script>
 <script>
   if('serviceWorker' in navigator) {
@@ -536,6 +595,14 @@ En Monolito Ingeniería combinamos la técnica con un trato cercano. Somos profe
       navigator.serviceWorker.register('assets/js/sw.js');
     });
   }
+</script>
+<script>
+document.querySelector('.hero-bg-img').onload = function() {
+    console.log('Hero image loaded successfully');
+};
+document.querySelector('.hero-bg-img').onerror = function() {
+    console.error('Hero image failed to load');
+};
 </script>
 </body>
 </html>

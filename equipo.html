@@ -68,19 +68,27 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: #333;
         }
-                .breadcrumbs {
-            padding: 15px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            font-size: 0.9rem;
-        }
+.breadcrumb {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.breadcrumb ol {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+}
         
-        .breadcrumbs a {
+        .breadcrumb a {
             color: #2A5C9A;
             text-decoration: none;
         }
         
-        .breadcrumbs span {
+        .breadcrumb span {
             color: #666;
         }
         header {
@@ -264,9 +272,12 @@ section.visible {
 <body>
  <header-component></header-component>
     <script src="header-component.js"></script>
-    <div class="breadcrumbs">
-        <a href="index.html">Inicio</a> > <span>Equipo</span>
-    </div>
+<nav aria-label="Breadcrumb" class="breadcrumb">
+    <ol>
+        <li><a href="https://monolito.lat">Inicio</a></li>
+        <li aria-current="page">Equipo</li>
+    </ol>
+</nav>
     <main>
         <section id="nosotros">
             <div class="content-box">

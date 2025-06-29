@@ -7,19 +7,27 @@ body {
     color: #333;
 }
 
-.breadcrumbs {
-    padding: 15px 20px;
+.breadcrumb {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.breadcrumb ol {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
     font-size: 0.9rem;
 }
 
-.breadcrumbs a {
+.breadcrumb a {
     color: #2A5C9A;
     text-decoration: none;
 }
 
-.breadcrumbs span {
+.breadcrumb span {
     color: #666;
 }
 

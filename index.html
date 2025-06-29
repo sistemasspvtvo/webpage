@@ -148,40 +148,45 @@
 .hero-bg {
     position: relative;
     height: 520px;
-    overflow: hidden; /* Evita desbordamientos */
+    overflow: hidden;
 }
 
 .hero-bg-img {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cubre todo el espacio sin deformar */
+    object-fit: cover;
     z-index: 0;
 }
 
 .hero {
     position: relative;
-    z-index: 1; /* Asegura que el contenido esté sobre la imagen */
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
 
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
         
         .hero h1 {
             font-size: 2.5rem;
@@ -378,12 +383,8 @@
  <header-component></header-component>
     <script src="header-component.js"></script>
 <div class="hero-bg">
-    <section class="hero" aria-label="Servicios de ingeniería estructural">
-<picture>
-    <source srcset="/assets/img/hero-bg.webp" type="image/webp">
-    <source srcset="/assets/img/hero-bg.jpg" type="image/jpeg">
     <img 
-        src="/assets/img/hero-bg.jpg" 
+        src="/assets/img/hero-bg.webp" 
         alt="Fondo Hero" 
         class="hero-bg-img"
         fetchpriority="high"
@@ -391,7 +392,7 @@
         width="1920"
         height="1080"
     >
-</picture>
+    <section class="hero" aria-label="Servicios de ingeniería estructural">
         <div class="hero-content">
             <h1>Ingeniería con Precisión y Experiencia</h1>
             <p>Expertos en diseño estructural, análisis sísmico y gestión de licencias para proyectos en la Ciudad de México y Área Metropolitana.</p>

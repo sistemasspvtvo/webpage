@@ -26,9 +26,8 @@
     <link rel="preload" href="/assets/img/hero-bg.webp" as="image" media="(min-width: 600px)">
     <link rel="preload" href="/assets/img/logo.webp" as="image" imagesrcset="/assets/img/logo.webp" imagesizes="100vw">
     <link rel="preload" href="/assets/img/logo-blanco.webp" as="image" imagesrcset="/assets/img/logo-blanco.webp" imagesizes="100vw">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/main.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto..."></noscript>
     <script type="application/ld+json">
@@ -270,7 +269,7 @@
 </head>
 <body>
  <header-component></header-component>
-    <script src="header-component.js" defer></script>
+
 <div class="hero-bg">
   <section class="hero">
     <div class="hero-content">
@@ -362,7 +361,7 @@ En Monolito Ingeniería combinamos la técnica con un trato cercano. Somos profe
     <a href="contacto.html" class="btn-cta">Contactar Ahora</a>
 </section>
 <footer-component></footer-component>
-    <script src="footer-component.js" defer></script>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const heroContent = document.querySelector('.hero-content');
@@ -386,5 +385,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+<script src="assets/js/main.js" defer></script>
+<script src="header-component.js" defer></script>
+<script src="footer-component.js" defer></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
 </html>

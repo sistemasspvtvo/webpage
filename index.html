@@ -15,20 +15,21 @@
 <meta property="og:description" content="Expertos certificados en Constancia de Seguridad Estructural y dictámenes para tu propiedad en CDMX. Evita multas y clausuras con nuestro equipo profesional.">
 <meta property="og:url" content="https://monolito.lat/">
 <meta property="og:site_name" content="Monolito Ingeniería">
-<meta property="og:image" content="https://monolito.lat/images/logo.jpg">
-<meta property="og:image:secure_url" content="https://monolito.lat/images/logo-blanco.jpg">
+<meta property="og:image" content="https://monolito.lat/images/logo.webp">
+<meta property="og:image:secure_url" content="https://monolito.lat/images/logo-blanco.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Equipo de Monolito Ingeniería trabajando en revisiones estructural">
-<meta property="og:image:type" content="image/hero-bg.png">
+<meta property="og:image:type" content="image/hero-bg.webp">
     <meta itemprop="address" content="Ciudad de México">
     <meta itemprop="email" content="consultoria@monolito.lat">
     <meta itemprop="telephone" content="+525643939397">
     <link rel="canonical" href="https://www.monolito.lat" />    
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-        <script type="application/ld+json">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto..."></noscript>
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
@@ -146,7 +147,7 @@
         
         /* Updated Hero Section Styles */
         .hero-bg {
-            background: url('assets/img/hero-bg.jpg') no-repeat center/cover;
+            background: url('/assets/img/hero-bg.webp') no-repeat center/cover;
             height: 520px;
             position: relative;
             opacity: 1 !important;
@@ -292,6 +293,7 @@
             font-size: 24px;
             margin: 0 10px;
             transition: color 0.3s;
+            text-decoration: none;
         }
         
         .social-icons-footer a:hover {
@@ -371,22 +373,8 @@
     </style>
 </head>
 <body>
-<header>
-    <div class="header-container">
-        <a href="index.html">
-            <img src="assets/img/logo.png" alt="Monolito Ingeniería - Consultores en diseño estructural CDMX" class="logo">
-        </a>
-        <button class="menu-toggle" id="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </button>
-        <nav id="main-nav">
-            <a href="index.html">Inicio</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="equipo.html">Equipo</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </div>
-</header>
+ <header-component></header-component>
+    <script src="header-component.js"></script>
 <div class="hero-bg">
     <section class="hero" aria-label="Servicios de ingeniería estructural">
         <div class="hero-content">
@@ -470,29 +458,8 @@ En Monolito Ingeniería combinamos la técnica con un trato cercano. Somos profe
     <p style="max-width: 600px; margin: 0 auto 30px;">Contáctanos para una asesoría gratuita y recibe una cotización en menos de 24 horas.</p>
     <a href="contacto.html" class="btn-cta">Contactar Ahora</a>
 </section>
-
-    <footer>
-        <div class="footer-info">
-            <img src="assets/img/logo-blanco.png" alt="Monolito Ingeniería - Consultoría estructural, levantamientos, inspecciones y gestorías en Ciudad de México" style="height: 40px;">
-            <p class="slogan">"En Monolito Ingeniería, transformamos cálculos en soluciones seguras...<br>porque tu tranquilidad no se negocia."</p>
-            <p>Monolito Ingeniería S.A. de C.V.</p>
-            <p>Av. Pedro Henríquez Ureña 275, Col. Pedregal de Santo Domingo, Coyoacán, CDMX</p>
-            <p>Tel: 56 4393 9397 | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
-            <div class="social-icons-footer">
-                <a href="https://wa.me/5215643939397" target="_blank" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.instagram.com/monolitoingenieria/" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="mailto:consultoria@monolito.lat" title="Correo electrónico">
-                    <i class="far fa-envelope"></i>
-                </a>
-            </div>
-            <p>© 2025 Todos los derechos reservados</p>
-        </div>
-    </footer>
-
+<footer-component></footer-component>
+    <script src="footer-component.js" defer></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const sections = document.querySelectorAll('section');
@@ -524,7 +491,30 @@ En Monolito Ingeniería combinamos la técnica con un trato cercano. Somos profe
         }
     });
 </script>
-    
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Selecciona el elemento con la clase .hero-bg
+  const heroBg = document.querySelector('.hero-bg');
+  
+  // Crea un Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // Cuando el elemento es visible en el viewport
+      if (entry.isIntersecting) {
+        // Aplica el fondo (carga la imagen)
+        entry.target.style.backgroundImage = "url('/assets/img/hero-bg.webp')";
+        // Deja de observar (opcional)
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 }); // Se activa cuando el 10% del elemento es visible
+
+  // Observa el elemento .hero-bg
+  if (heroBg) {
+    observer.observe(heroBg);
+  }
+});
+</script>
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){

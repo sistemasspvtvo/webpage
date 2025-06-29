@@ -14,7 +14,7 @@ class HeaderComponent extends HTMLElement {
                         <i class="fas fa-bars"></i>
                     </button>
                     <nav id="main-nav">
-                        <a href="index">Inicio</a>
+                        <a href="https://monolito.lat/">Inicio</a>
                         <a href="servicios">Servicios</a>
                         <a href="equipo">Equipo</a>
                         <a href="casos-de-éxito">Casos de Éxito</a>

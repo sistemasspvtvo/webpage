@@ -4,7 +4,7 @@
             <footer>
                 <div class="footer-info">
                 <picture>
-                    <source srcset="/assets/img/logo-blanco.webp" type="image/webp">
+                    <source srcset="assets/img/logo-blanco.webp" type="image/webp">
                     <img src="/assets/img/logo-blanco.png" alt="Logo Monolito" width="40" loading="lazy" height="40" alt="Monolito Ingeniería - Consultoría estructural, levantamientos, inspecciones y gestorías en Coyoacán, Ciudad de México">
                 </picture>
                 

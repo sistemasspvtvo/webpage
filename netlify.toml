@@ -1,2 +1,9 @@
 [[plugins]]
 package = "@netlify/plugin-sitemap"
+
+[edge_functions]
+  included_files = ["public/index.html"]
+
+[[edge_functions]]
+  path = "/*"
+  function = "render-html"

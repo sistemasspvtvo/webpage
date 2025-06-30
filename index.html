@@ -384,23 +384,6 @@ En Monolito Ingeniería combinamos la técnica con un trato cercano. Somos profe
 </section>
 <footer-component></footer-component>
 <script>
-  // Carga progresiva de la imagen hero
-  document.addEventListener('DOMContentLoaded', function() {
-    const heroImg = document.querySelector('.hero-bg-img');
-    if (heroImg) {
-      const highResSrc = heroImg.getAttribute('data-src');
-      if (highResSrc) {
-        const img = new Image();
-        img.src = highResSrc;
-        img.onload = function() {
-          heroImg.src = highResSrc;
-          heroImg.classList.add('loaded');
-        };
-      }
-    }
-  });
-</script>
-<script>
 document.addEventListener('DOMContentLoaded', () => {
   const heroContent = document.querySelector('.hero-content');
   if (heroContent) {

@@ -28,6 +28,7 @@
                 </div>
                 <p>&copy; ${new Date().getFullYear()} Todos los derechos reservados</p>
                 </div>
+                <div style="margin-bottom:20px"></div>
                 <div>
                 <a href="//www.dmca.com/Protection/Status.aspx?ID=9119aef2-a242-43b7-86f1-d2a5bb4a5a6c" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/DMCA_logo-std-btn140w.png?ID=9119aef2-a242-43b7-86f1-d2a5bb4a5a6c" loading="lazy" width="141" height="53"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
             </div>

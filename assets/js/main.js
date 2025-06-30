@@ -1,4 +1,4 @@
-<script type="text/javascript">
+
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -8,9 +8,7 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
-</script>
 
-<script>
 // Device detection
 const isSlowDevice = /(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|Tablet)/i.test(navigator.userAgent)
     && !/Chrome|Safari|Firefox|Edge|SamsungBrowser|Opera/i.test(navigator.userAgent);
@@ -39,4 +37,3 @@ if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('assets/js/sw.js');
     });
 }
-</script>

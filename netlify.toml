@@ -1,8 +1,2 @@
 [[plugins]]
 package = "@netlify/plugin-sitemap"
-
-[[edge_functions]]
-path = "/*"
-function = "render-html"
-
-excludedPath = ["/assets/*", "/favicon.ico"]

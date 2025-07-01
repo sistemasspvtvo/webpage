@@ -37,6 +37,12 @@
   padding: 0;
 }
 
+html {
+  margin: 0;
+  padding: 0;
+  scroll-padding-top: 0; /* Newer CSS property that can affect spacing */
+}
+
 body {
   font-family: var(--font-body);
   line-height: 1.6;
@@ -95,12 +101,15 @@ img {
 
 header {
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 15px 0;
+  padding: 0 1rem;
   box-shadow: var(--box-shadow-sm);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
   height: var(--header-height);
+  margin: 0;
 }
 
 .header-container {
@@ -110,7 +119,7 @@ header {
   align-items: center;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding-top: calc(var(--header-height)*0.2);
 }
 
 .logo {
@@ -232,39 +241,76 @@ nav a:hover {
 footer {
   background-color: var(--primary-color);
   color: var(--white);
-  padding: 30px 0;
+  padding: 20px;
+  margin-top: 0px;
+}
+
+.footer-slogan {
   text-align: center;
-  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.footer-slogan img {
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-info {
-  max-width: 600px;
-  margin: 0 auto;
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
   line-height: 1.6;
+  padding: 0 15px;
+}
+
+.footer-social {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 15px;
+}
+
+.social-icons-footer {
+  margin-bottom: 15px;
+}
+
+.social-icons-footer a {
+  color: var(--white);
+  margin: 0 10px;
+  font-size: 1.5rem;
 }
 
 .footer-info a {
   color: var(--white);
 }
 
-.slogan {
-  font-style: italic;
-  margin: 20px 0;
+.dmca-badge {
+  margin-top: auto;
 }
 
-.social-icons-footer {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.social-icons-footer a {
-  color: var(--white);
-  font-size: 24px;
-  margin: 0 10px;
-  transition: color 0.3s;
-  text-decoration: none;
-}
-
-.social-icons-footer a:hover {
-  color: var(--primary-light);
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+  }
+  
+  .footer-info,
+  .footer-social {
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .footer-social {
+    order: -1; /* Puts social above info on mobile if desired */
+  }
 }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monolito Ingeniería | Consultoría en Seguridad Estructural CDMX</title>
-    <meta name="description" content="Monolito Ingeniería: Consultoría especializada en revisión de inmuebles, dictámenes de estructuras y gestión de licencias en la Ciudad de México y Área Metropolitana. Ingenieros certificados con 10+ años de experiencia. Protección legal contra clausuras. Cotización inmediata. El mejor precio, económico.">
+    <meta name="description" content="Monolito Ingeniería: 10+ años de experiencia en dictámenes estructurales y gestión de licencias en CDMX. Protección legal, cotización inmediata.">
     <meta name="keywords" content="constancia seguridad estructural, dictamen estructural CDMX, ingeniería estructural, corresponsable de obra, DRO, CSE, , ISC, monolito ingeniería, permisos construcción CDMX, ecónomico, mejor precio, mejoramos cotizaciones, barato, dictamenes, planos, levantamientos, Coyoacán, gratis">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta name="googlebot" content="index, follow">
@@ -244,6 +244,47 @@
         flex-wrap: wrap;
     }
     
+
+  .director-profile {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.director-list {
+  line-height: 1.6;
+  padding-left: 20px;
+  margin: 15px 0;
+}
+
+.director-list li {
+  margin-bottom: 8px;
+  position: relative;
+  list-style-position: outside;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .director-profile {
+    padding: 0 15px;
+  }
+  
+  .director-list {
+    padding-left: 25px;
+  }
+  
+  .director-list li {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+
+
+
     .director-img {
         height: 80px;
         width: auto;
@@ -285,7 +326,7 @@
 </style>
 </head>
 <body>
- <header-component></header-component>
+<header id="header"></header>
 <div class="hero-bg">
       <img class="hero-bg-img loaded" 
        src="assets/img/hero-bg.webp" 
@@ -357,11 +398,9 @@
             <h2 class="section-title">Nuestro Equipo: Ingeniería con Rostro Humano</h2>
 <p>
 En Monolito Ingeniería combinamos la técnica con un trato cercano. Somos profesionales que:
-<ul style="line-height: 1.6; padding-left: 30px; margin-top: 15px;">
+<ul class="director-list">
 <li>    Escuchamos primero, calculamos después</li>
-
 <li>    Explicamos sin tecnicismos innecesarios</li>
-
 <li>    Acompañamos desde el primer borrador hasta el último trámite</li></ul></p>
 
             <p style="margin-top: 15px";><strong>Conoce al Director: </strong>El Ing. Angel Monroy Canales, especialista en ingeniería estructural con experiencia en diseño
@@ -384,7 +423,7 @@ En Monolito Ingeniería combinamos la técnica con un trato cercano. Somos profe
     <p style="max-width: 600px; margin: 0 auto 30px;">Contáctanos para una asesoría gratuita y recibe una cotización en menos de 24 horas.</p>
     <a href="contacto.html" class="btn-cta">Contactar Ahora</a>
 </section>
-<footer-component></footer-component>
+<footer id="footer"></footer>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const heroContent = document.querySelector('.hero-content');
@@ -443,8 +482,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 </script>
 <script src="/assets/js/main.js" defer></script>
-<script src="/header-component.js" defer></script>
-<script src="/footer-component.js" defer></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
 </html>

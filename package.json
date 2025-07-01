@@ -1,0 +1,23 @@
+{
+  "name": "monolito-lat",
+  "version": "1.0.0",
+  "description": "Sitio web de ingeniería estructural",
+  "scripts": {},
+  "devDependencies": {
+    "@babel/cli": "^7.27.2",
+    "@babel/core": "^7.27.7",
+    "@babel/preset-env": "^7.27.2"
+  },
+  "main": "footer-component.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelmc09/monolito-ingenieria.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angelmc09/monolito-ingenieria/issues"
+  },
+  "homepage": "https://github.com/angelmc09/monolito-ingenieria#readme"
+}

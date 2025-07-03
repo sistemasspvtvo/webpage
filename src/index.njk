@@ -9,8 +9,10 @@ ogLocale: "es_MX"
 ogTitle: "Monolito Ingeniería | Especialistas en Seguridad Estructural CDMX"
 ogDescription: "Expertos certificados en Constancia de Seguridad Estructural y dictámenes para tu propiedad en CDMX. Evita multas y clausuras con nuestro equipo profesional."
 socialImage: "/img/logo.webp"
+criticalCSS: true
 css:
 - /css/style.css
+preload: true
 fonts:
 - family: Roboto
   src: /fonts/roboto/roboto-light.tff
@@ -26,8 +28,10 @@ fonts:
   weight: 500
 scripts:
 - /js/main.js
+defer: true
 - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js
-canonicalUrl: "https://www.monolito.lat/"
+defer: true
+canonicalUrl: "https://www.monolito.lat{{ page.url | url }}"
 metaTags: |
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,13 +50,13 @@ metaTags: |
     <meta property="og:image" content="https://monolito.lat/img/logo.webp">
     <meta property="og:image:secure_url" content="https://monolito.lat/img/logo-blanco.webp">
     <meta property="og:image:alt" content="Equipo de Monolito Ingeniería trabajando en revisiones estructural">
-    <meta property="og:image:type" content="image/hero-bg.webp">
+    <meta property="og:image:type" content="image/hero-bg.avif">
     <meta itemprop="address" content="Ciudad de México">
     <meta itemprop="email" content="consultoria@monolito.lat">
     <meta itemprop="telephone" content="+525643939397">
 ---
 <head>
-    <link rel="preload" href="/img/hero-bg.webp" as="image" media="(min-width: 600px)">
+    <link rel="preload" href="/img/hero-bg.avif" as="image" media="(min-width: 600px)">
     <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
     <link rel="preload" href="/img/logo-blanco.webp" as="image" imagesrcset="/img/logo-blanco.webp" imagesizes="100vw">
     <script type="application/ld+json">
@@ -341,9 +345,10 @@ metaTags: |
 <body>
 <div class="hero-bg">
       <img class="hero-bg-img loaded" 
-       src="img/hero-bg.webp" 
+       src="img/hero-bg.avif" 
        alt="Fondo hero"
        loading="eager"
+       fetchpriority="high"
        decoding="async">
     <div class="hero-overlay"></div>
   <section class="hero">

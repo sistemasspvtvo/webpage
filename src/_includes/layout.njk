@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title | default("My Site") }}</title>
   <meta name="description" content="{{ description | default('Default description') }}">
+  <!-- Dynamic canonical URL (auto-generates based on page URL) -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace('/index.html', '/') }}" />
+  <!-- Option for manual override in front matter -->
+  {% if canonicalUrl %}
+    <link rel="canonical" href="{{ canonicalUrl }}" />
+  {% endif %}
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://images.dmca.com" crossorigin>
+  <style>
+  {% if criticalCSS %}
+    {% include "critical.css" %}
+  {% endif %}
+  </style>
+  <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all'">
   {% for url in css %}
     <link rel="stylesheet" href="{{ url | url }}">
   {% endfor %}
@@ -14,12 +28,7 @@
   {% if metaTags %}
     {{ metaTags | safe }}
   {% endif %}
-  <!-- Dynamic canonical URL (auto-generates based on page URL) -->
-  <link rel="canonical" href="{{ site.url }}{{ page.url | replace('/index.html', '/') }}" />
-  <!-- Option for manual override in front matter -->
-  {% if canonicalUrl %}
-    <link rel="canonical" href="{{ canonicalUrl }}" />
-  {% endif %}
+
 </head>
 <body>
   {% include "header.njk" %}

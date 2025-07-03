@@ -1,7 +1,0 @@
-git add .
-git commit -m "1"
-git push -u origin main
-.
-
-
-npx babel main.js --out-file main.min.js --config-file ./babel.config.js

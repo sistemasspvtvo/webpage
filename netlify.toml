@@ -1,15 +1,6 @@
 [[plugins]]
 package = "@netlify/plugin-sitemap"
 
-[[headers]]
-  for = "/_includes/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-    Content-Type = "text/html"
-    Cache-Control = "no-cache"
-
-[[redirects]]
-  from = "/_includes/*"
-  to = "/_includes/:splat"
-  status = 200
-  force = true
+[build]
+command = "npm run build"
+publish = "_site"

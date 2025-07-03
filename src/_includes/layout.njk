@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title | default("My Site") }}</title>
+  <meta name="description" content="{{ description | default('Default description') }}">
+  {% for url in css %}
+    <link rel="stylesheet" href="{{ url | url }}">
+  {% endfor %}
+  {% if pageCss %}
+    <link rel="stylesheet" href="{{ pageCss }}">
+  {% endif %}
+  {% if metaTags %}
+    {{ metaTags | safe }}
+  {% endif %}
+  <!-- Dynamic canonical URL (auto-generates based on page URL) -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace('/index.html', '/') }}" />
+  <!-- Option for manual override in front matter -->
+  {% if canonicalUrl %}
+    <link rel="canonical" href="{{ canonicalUrl }}" />
+  {% endif %}
+</head>
+<body>
+  {% include "header.njk" %}
+  
+  <main>
+    {{ content | safe }}
+  </main>
+
+  {% include "footer.njk" %}
+  {% for url in scripts %}
+    <script src="{{ url | url }}"></script>
+  {% endfor %}
+  {% if pageScripts %}
+    {{ pageScripts | safe }}
+  {% endif %}
+</body>
+</html>

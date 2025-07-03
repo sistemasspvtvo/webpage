@@ -1,0 +1,64 @@
+<header>
+  <div class="header-container">
+    <a href="index.html">
+      <picture>
+        <source srcset="/img/logo.webp" type="image/webp">
+        <img src="/img/logo.png" alt="Logo Monolito" width="40" height="40">
+      </picture>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="Mobile menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav id="main-nav">
+      <a style="font-weight: bold;" href="https://monolito.lat/">Inicio</a>
+      <a style="font-weight: bold;" href="/servicios">Servicios</a>
+      <a style="font-weight: bold;" href="/equipo">Equipo</a>
+      <a style="font-weight: bold;" href="/casos-de-éxito">Casos de Éxito</a>
+      <a style="font-weight: bold;" href="/blog">Blog</a>
+      <a style="font-weight: bold;" href="/contacto">Contacto</a>
+    </nav>
+  </div>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const mainNav = document.getElementById('main-nav');
+  
+  // Set initial ARIA attributes
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.setAttribute('aria-label', 'Open menu');
+  
+  // Toggle menu function
+  function toggleMenu() {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    
+    // Toggle aria attributes
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    menuToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
+    
+    // Toggle menu visibility
+    mainNav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    
+    // Toggle icon between bars and times
+    const icon = menuToggle.querySelector('i');
+    if (icon.classList.contains('fa-bars')) {
+      icon.classList.replace('fa-bars', 'fa-times');
+    } else {
+      icon.classList.replace('fa-times', 'fa-bars');
+    }
+  }
+  
+  // Add click event
+  menuToggle.addEventListener('click', toggleMenu);
+  
+  // Close menu when clicking on a nav link (for mobile)
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      if (window.innerWidth <= 768) { // Adjust breakpoint as needed
+        toggleMenu();
+      }
+    });
+  });
+});
+  </script>
+</header>

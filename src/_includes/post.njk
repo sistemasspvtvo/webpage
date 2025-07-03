@@ -1,0 +1,29 @@
+
+### 3. Set Up Blog Templates
+
+Create these files if they don't exist:
+
+#### `_includes/layouts/post.njk`
+```html
+{% extends "layout.njk" %}
+
+{% block content %}
+<article class="post">
+  <header>
+    <h1>{{ title }}</h1>
+    <p class="post-meta">
+      Published {{ date | date("MMMM D, YYYY") }}
+      {% if tags %}
+        | Tags: {{ tags | join(", ") }}
+      {% endif %}
+    </p>
+    {% if image %}
+    <img src="{{ image }}" alt="{{ title }}" class="post-image">
+    {% endif %}
+  </header>
+  
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+</article>
+{% endblock %}

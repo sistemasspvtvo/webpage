@@ -19,6 +19,15 @@ module.exports = function(eleventyConfig) {
     showDirectoryListing: false
   });
 
+  // Add blog collection
+  eleventyConfig.addCollection("post", function(collection) {
+    return collection.getFilteredByGlob("src/blog/posts/*.md");
+  });
+
+  // Add date filter
+  eleventyConfig.addFilter("date", require("./filters/date.js"));
+
+
   return {
     dir: {
       input: "src",

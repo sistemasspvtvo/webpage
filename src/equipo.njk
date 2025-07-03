@@ -11,8 +11,8 @@ ogDescription: "Profesionales certificados con 10+ años de experiencia en segur
 socialImage: "/img/logo.webp"
 criticalCSS: true
 css:
-- /css/style.css
-preload: true
+- src: "/css/style.css"
+  preload: true
 fonts:
 - family: Roboto
   src: /fonts/roboto/roboto-light.tff
@@ -27,10 +27,10 @@ fonts:
   src: /fonts/roboto/roboto-medium.tff
   weight: 500
 scripts:
-- /js/main.js
-defer: true
-- https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js
-defer: true
+- src: "/js/main.js"
+  defer: true
+- src: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+  defer: true
 canonicalUrl: "https://www.monolito.lat{{ page.url | url }}"
 ---
 <!DOCTYPE html>

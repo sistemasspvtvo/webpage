@@ -1,16 +1,97 @@
----
-layout: layout.njk
-title: "Contacta a Nuestro Equipo en Coyoacán, CDMX y cotiza hoy mismo"
-description: "Expertos en dictámenes estructurales en CDMX. Soluciones certificadas al mejor costo-beneficio. Cotización sin costo."
-keywords: "constancia seguridad estructural, dictamen estructural CDMX, ingeniería estructural, corresponsable de obra, DRO, CSE, , ISC, monolito ingeniería, permisos construcción CDMX, mejor precio, mejoramos cotizaciones, dictamenes, planos, levantamientos, Coyoacán"
-robots: "index, follow, max-snippet:-1, max-image-preview:large"
-ogType: "website"
-ogLocale: "es_MX"
-ogTitle: "Monolito Ingeniería | Especialistas en Seguridad Estructural CDMX"
-ogDescription: "Profesionales certificados con 10+ años de experiencia en seguridad estructural y diseño sísmico en Ciudad de México."
-socialImage: "/img/logo.webp"
----
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacta a Nuestro Equipo en Coyoacán, CDMX y cotiza hoy mismo</title>
+  <meta name="description" content="Expertos en dictámenes estructurales en CDMX. Soluciones certificadas al mejor costo-beneficio. Cotización sin costo.">
+
+  <!-- Dynamic canonical URL (auto-generates based on page URL) -->
+  <link rel="canonical" href="http://localhost:8888/contacto/" />
+  <!-- Option for manual override in front matter -->
+  
+  
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://images.dmca.com" crossorigin>
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
+  <link rel="preload" href="/img/logo-blanco.webp" as="image" imagesrcset="/img/logo-blanco.webp" imagesizes="100vw">
+
+
+  
+
+</head>
+<body>
+  <header>
+  <div class="header-container">
+    <a href="index.html">
+      <picture>
+        <source srcset="/img/logo.webp" type="image/webp">
+        <img src="/img/logo.png" alt="Logo Monolito" width="40" height="40">
+      </picture>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="Mobile menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav id="main-nav">
+      <a style="font-weight: bold;" href="https://monolito.lat/">Inicio</a>
+      <a style="font-weight: bold;" href="/servicios">Servicios</a>
+      <a style="font-weight: bold;" href="/equipo">Equipo</a>
+      <a style="font-weight: bold;" href="/casos-de-éxito">Casos de Éxito</a>
+      <a style="font-weight: bold;" href="/blog">Blog</a>
+      <a style="font-weight: bold;" href="/contacto">Contacto</a>
+    </nav>
+  </div>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const mainNav = document.getElementById('main-nav');
+  
+  // Set initial ARIA attributes
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.setAttribute('aria-label', 'Open menu');
+  
+  // Toggle menu function
+  function toggleMenu() {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    
+    // Toggle aria attributes
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    menuToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
+    
+    // Toggle menu visibility
+    mainNav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    
+    // Toggle icon between bars and times
+    const icon = menuToggle.querySelector('i');
+    if (icon.classList.contains('fa-bars')) {
+      icon.classList.replace('fa-bars', 'fa-times');
+    } else {
+      icon.classList.replace('fa-times', 'fa-bars');
+    }
+  }
+  
+  // Add click event
+  menuToggle.addEventListener('click', toggleMenu);
+  
+  // Close menu when clicking on a nav link (for mobile)
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      if (window.innerWidth <= 768) { // Adjust breakpoint as needed
+        toggleMenu();
+      }
+    });
+  });
+});
+  </script>
+</header>
+  
+  <main>
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -256,3 +337,60 @@ socialImage: "/img/logo.webp"
         });
 </script>
 </body>
+
+  </main>
+
+  <footer>
+  <div class="footer-slogan">
+    <a href="index.html">
+    <picture>
+      <source srcset="img/logo-blanco.webp" type="image/webp">
+      <img src="/img/logo-blanco.png" alt="Logo Monolito" width="40" loading="lazy" height="40">
+    </picture>
+    </a>
+    <p><i>"En Monolito Ingeniería, transformamos cálculos en soluciones seguras...<br>porque tu tranquilidad no se negocia."</i></p>
+  </div>
+  
+  <div class="footer-bottom">
+    <div class="footer-info">
+      <p>Monolito Ingeniería S.A. de C.V.</p>
+      <p>Av. Pedro Henríquez Ureña 275</p><p></p> Col. Pedregal de Santo Domingo</p><p> Coyoacán, Ciudad de México</p>
+      <p>Tel: 56 4393 9397 | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
+      <p>&copy; 2025 Todos los derechos reservados</p>
+    </div>
+    
+    <div class="footer-social">
+        <p>¡Síguenos en nuestras redes!</p>
+      <div class="social-icons-footer">
+        <a href="https://wa.me/5215643939397" target="_blank" title="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/monolitoingenieria/" target="_blank" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.x.com/Monolito_Ing/" target="_blank" title="x.com">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="mailto:consultoria@monolito.lat" title="Correo electrónico">
+          <i class="far fa-envelope"></i>
+        </a>
+      </div>
+      <div class="dmca-badge">
+        <a href="//www.dmca.com/Protection/Status.aspx?ID=9119aef2-a242-43b7-86f1-d2a5bb4a5a6c" title="DMCA.com Protection Status">
+          <img src="https://images.dmca.com/Badges/DMCA_logo-std-btn140w.png?ID=9119aef2-a242-43b7-86f1-d2a5bb4a5a6c" loading="lazy" width="141" height="53" alt="DMCA.com Protection Status">
+        </a>
+        <script defer src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/js/main.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+
+
+  
+</body>
+</html>

@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Sitio web de ingeniería estructural",
   "scripts": {
-  "clean": "if exist _site rd /s /q _site",
-  "build": "npx eleventy",
-  "fullbuild": "npm run clean && npm run build"
+    "clean": "if exist _site rd /s /q _site",
+    "build": "npx eleventy",
+    "fullbuild": "npm run clean && npm run build"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
@@ -43,6 +43,7 @@
     "core-js-compat": "^3.43.0",
     "debug": "^4.4.1",
     "electron-to-chromium": "^1.5.178",
+    "eleventy-plugin-date": "^1.0.0",
     "escalade": "^3.2.0",
     "esutils": "^2.0.3",
     "fill-range": "^7.1.1",
@@ -67,6 +68,7 @@
     "json5": "^2.2.3",
     "lodash.debounce": "^4.0.8",
     "lru-cache": "^5.1.1",
+    "luxon": "^3.6.1",
     "make-dir": "^2.1.0",
     "minimatch": "^3.1.2",
     "ms": "^2.1.3",

@@ -5,26 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title | default("My Site") }}</title>
   <meta name="description" content="{{ description | default('Default description') }}">
+
   <!-- Dynamic canonical URL (auto-generates based on page URL) -->
   <link rel="canonical" href="{{ site.url }}{{ page.url | replace('/index.html', '/') }}" />
   <!-- Option for manual override in front matter -->
   {% if canonicalUrl %}
-    <link rel="canonical" href="{{ canonicalUrl }}" />
+  <link rel="canonical" href="{{ (page.url or '/') | url }}" />
   {% endif %}
+  
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://images.dmca.com" crossorigin>
-  <style>
-  {% if criticalCSS %}
-    {% include "critical.css" %}
+  
+  <link rel="stylesheet" href="{{ site.css.main | url }}">
+  {% if site.css.critical %}
+    <link rel="stylesheet" href="{{ site.css.critical | url }}">
   {% endif %}
-  </style>
-  <link rel="stylesheet" href="/css/main.css" media="print" onload="this.media='all'">
-  {% for url in css %}
-    <link rel="stylesheet" href="{{ url | url }}">
-  {% endfor %}
-  {% if pageCss %}
-    <link rel="stylesheet" href="{{ pageCss }}">
-  {% endif %}
+  
+  <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
+  <link rel="preload" href="/img/logo-blanco.webp" as="image" imagesrcset="/img/logo-blanco.webp" imagesizes="100vw">
+
+
   {% if metaTags %}
     {{ metaTags | safe }}
   {% endif %}
@@ -38,9 +38,11 @@
   </main>
 
   {% include "footer.njk" %}
-  {% for url in scripts %}
-    <script src="{{ url | url }}"></script>
-  {% endfor %}
+
+{% for script in site.scripts %}
+  <script src="{{ script.src }}" {% if script.defer %}defer{% endif %}></script>
+{% endfor %}
+
   {% if pageScripts %}
     {{ pageScripts | safe }}
   {% endif %}

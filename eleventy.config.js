@@ -1,7 +1,13 @@
 const fs = require('fs-extra');
 const path = require('path');
+const { DateTime } = require('luxon');
 
 module.exports = function(eleventyConfig) {
+
+    eleventyConfig.addFilter("date", (dateObj, format = "MMMM d, yyyy") => {
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(format);
+  });
+
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
@@ -24,10 +30,6 @@ module.exports = function(eleventyConfig) {
     return collection.getFilteredByGlob("src/blog/posts/*.md");
   });
 
-  // Add date filter
-  eleventyConfig.addFilter("date", require("./filters/date.js"));
-
-
   return {
     dir: {
       input: "src",
@@ -40,3 +42,4 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: "njk"
   };
 };
+

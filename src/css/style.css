@@ -50,7 +50,12 @@ body {
   background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-light) 100%);
   margin: 0;
   padding: 0;
+  padding-top: var(--header-height); /* 55px */
   -webkit-font-smoothing: antialiased;
+}
+
+main {
+  padding-bottom: 30px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -316,4 +321,3 @@ footer {
     order: -1; /* Puts social above info on mobile if desired */
   }
 }
-

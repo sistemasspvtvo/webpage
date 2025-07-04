@@ -6,8 +6,7 @@ module.exports = {
   },
 
   scripts: [
-    { src: "/js/main.js", defer: true },
-    { src: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js", defer: true }
+    { src: "/js/main.js", defer: true }
   ],
 
   typography: {

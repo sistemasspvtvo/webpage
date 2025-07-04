@@ -1,12 +1,29 @@
 const fs = require('fs-extra');
 const path = require('path');
 const { DateTime } = require('luxon');
+const katex = require('katex');
+const slugify = require("slugify");
 
 module.exports = function(eleventyConfig) {
 
-    eleventyConfig.addFilter("date", (dateObj, format = "MMMM d, yyyy") => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(format);
+  eleventyConfig.addFilter("date", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: "UTC" })
+      .setLocale("es")
+      .toLocaleString(DateTime.DATE_FULL);
   });
+
+  eleventyConfig.addShortcode('katex', function(content) {
+    return katex.renderToString(content, { throwOnError: false });
+  });
+
+  eleventyConfig.addFilter("slug", (str) => {
+  return slugify(str, {
+    lower: true,
+    strict: true,
+    remove: /[*+~.()'"!:@]/g,
+    locale: "es", // Acentos y ñ permitidos
+  });
+});
 
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/css");

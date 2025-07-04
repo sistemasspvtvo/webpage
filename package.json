@@ -66,6 +66,7 @@
     "js-tokens": "^4.0.0",
     "jsesc": "^3.1.0",
     "json5": "^2.2.3",
+    "katex": "^0.16.22",
     "lodash.debounce": "^4.0.8",
     "lru-cache": "^5.1.1",
     "luxon": "^3.6.1",

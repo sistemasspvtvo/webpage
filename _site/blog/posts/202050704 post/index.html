@@ -3,15 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi primer publicación del blog</title>
+  <title>Refuerzo estructural en Coyoacán: Solución eficiente para un cantilever en riesgo (Caso de estudio)</title>
   <meta name="description" content="Default description">
 
   <!-- Dynamic canonical URL (auto-generates based on page URL) -->
-  <link rel="canonical" href="https://monolito.lat/blog/posts/202050702 post/" />
+  <link rel="canonical" href="http://localhost:8888/blog/posts/202050704 post/" />
   <!-- Option for manual override in front matter -->
   
   
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+<style>
+    .rectangle-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-container {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        padding: 0 20px;
+    }
+    
+    .post-container.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .post {
+        display: grid;
+        gap: 20px;
+    }
+    
+    /* Additional styles for other elements */
+    .breadcrumb ol {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 8px;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        content: "›";
+        margin-left: 8px;
+    }
+    
+    .post-image {
+        max-width: 100%;
+        height: auto;
+        max-height: 400px;
+        border-radius: 4px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+</style>
+
+  
   <link rel="preconnect" href="https://images.dmca.com" crossorigin>
   
   <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
@@ -92,9 +144,74 @@
 </header>
   
   <main>
-    <h1>Bienvenidos a nuestro Blog</h1>
-<p>Esta es nuestra primera publicación.</p>
-<h2>Espera nuevas publicaciones técnicas próximamente</h2>
+  
+<nav aria-label="Breadcrumb" class="breadcrumb">
+    <ol>
+        <li><a href="https://monolito.lat">Inicio</a></li>
+        <li aria-current="page"><a href="/blog">Blog</a></li>
+    </ol>
+</nav>
+<main>
+    <section id="post" class="post-container" loading="eager" fetchpriority="high">
+        <div class="rectangle-container">
+            <article class="post">
+                
+                    <h1>Refuerzo estructural en Coyoacán: Solución eficiente para un cantilever en riesgo (Caso de estudio)</h1>
+                    <p class="post-meta">
+                        Publicado el 4 de julio de 2025
+                        
+                        | Tags: Ingeniería, vigas, NTC-2023, CDMX, Refuerzo estructural CDMX, Reparación de grietas en mampostería,	Normas NTC-2023 para casas, Cantilever peligroso solución
+                        
+                    </p>
+                    
+
+                    <img src="/img/blog/post-2.jpg" alt="Refuerzo estructural en Coyoacán: Solución eficiente para un cantilever en riesgo (Caso de estudio)" class="post-image">
+                    
+
+                <div class="post-content">
+                    <p>En la alcaldía Coyoacán, una propietaria detectó que la puerta de su habitación en voladizo ya no cerraba correctamente y aparecieron grietas diagonales preocupantes. Al ser una estructura de autoconstrucción con errores críticos de descarga, el riesgo de colapso progresivo era real. Este es el análisis y la solución que implementamos en solo 4 días.</p>
+<h1>Diagnóstico: Los errores técnicos clave</h1>
+<p>•	Falla original:
+o	Cantilever de 3x3x3m con solo 2/4 castillos llegando a cimentación.
+o	Cadena de cerramiento unilateral (carga excéntrica).
+o	Grietas diagonales en nudos (típicas de cortante por torsión no contemplada).
+•	Análisis bajo NTC-2023:
+o	Esfuerzos elásticos superaban el 85% de capacidad en castillos existentes.
+o	Deformaciones diferenciales &gt; L/400 (norma: L/500 para seguridad).</p>
+<h1>Solución: Ingeniería práctica y mínima invasión</h1>
+<p>•	Estrategia:
+o	Continuidad estructural: Nuevos castillos desde cimentación hasta cadena superior.
+o	Aprovechamiento de suelo firme (cimentación pequeña pero normativa).
+•	Proceso constructivo (paso a paso):</p>
+<ol>
+<li>Demolición parcial de castillos flotantes (exposición de armaduras).</li>
+<li>Armado y anclaje de nuevos castillos con estribos cerrados @15cm.</li>
+<li>Demolición controlada de firme para nuevas zapatas (acero Acero 42).</li>
+<li>Revestimiento con ladrillo rojo para integración estética.</li>
+</ol>
+<h1>Resultados y lecciones aprendidas</h1>
+<p>•	Beneficios para la clienta:
+o	Costo 40% menor vs. alternativas complejas (ej.: losa nervada).
+o	Obra limpia y rápida (2 días diseño + 2 días ejecución).
+•	Consejos para propietarios:
+o	&quot;Si tu casa tiene grietas diagonales en esquinas o puertas descuadradas, podría ser un problema de continuidad de cargas. Evita reparaciones cosméticas: un análisis estructural salva vidas.&quot;
+5. Cierre con llamado a la acción
+•	&quot;¿Tienes dudas sobre la estabilidad de tu inmueble? En [tu empresa] realizamos diagnósticos sin costo inicial. Contáctanos en [link] o comenta abajo tu caso.&quot;</p>
+
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+<script>
+    // Add show class when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const postContainer = document.querySelector('.post-container');
+        if (postContainer) {
+            postContainer.classList.add('show');
+        }
+    });
+</script>
 
   </main>
 
@@ -166,7 +283,13 @@
         <a href="//www.dmca.com/Protection/Status.aspx?ID=9119aef2-a242-43b7-86f1-d2a5bb4a5a6c" title="DMCA.com Protection Status">
           <img src="https://images.dmca.com/Badges/DMCA_logo-std-btn140w.png?ID=9119aef2-a242-43b7-86f1-d2a5bb4a5a6c" loading="lazy" width="141" height="53" alt="DMCA.com Protection Status">
         </a>
-        <script defer src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+        <script defer>
+          document.addEventListener('DOMContentLoaded', function() {
+          var dmcaScript = document.createElement('script');
+          dmcaScript.src = 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js';
+          document.body.appendChild(dmcaScript);
+          });
+        </script>
       </div>
     </div>
   </div>

@@ -12,8 +12,7 @@
   {% if canonicalUrl %}
   <link rel="canonical" href="{{ (page.url or '/') | url }}" />
   {% endif %}
-  
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
   <link rel="preconnect" href="https://images.dmca.com" crossorigin>
   
   <link rel="stylesheet" href="{{ site.css.main | url }}" media="print" onload="this.media='all'">
@@ -24,7 +23,6 @@
   
   <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
   <link rel="preload" href="/img/logo-blanco.webp" as="image" imagesrcset="/img/logo-blanco.webp" imagesizes="100vw">
-
 
   {% if metaTags %}
     {{ metaTags | safe }}

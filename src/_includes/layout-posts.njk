@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title | default("My Site") }}</title>
+  <meta name="description" content="{{ description | default('Default description') }}">
+
+  <!-- Dynamic canonical URL (auto-generates based on page URL) -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace('/index.html', '/') }}" />
+  <!-- Option for manual override in front matter -->
+  {% if canonicalUrl %}
+  <link rel="canonical" href="{{ (page.url or '/') | url }}" />
+  {% endif %}
+  
+  {% block styles %}{% endblock %}
+  
+  <link rel="preconnect" href="https://images.dmca.com" crossorigin>
+  
+  <link rel="stylesheet" href="{{ site.css.main | url }}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{{ site.css.main | url }}"></noscript>
+  {% if site.css.critical %}
+    <link rel="stylesheet" href="{{ site.css.critical | url }}">
+  {% endif %}
+  
+  <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
+  <link rel="preload" href="/img/logo-blanco.webp" as="image" imagesrcset="/img/logo-blanco.webp" imagesizes="100vw">
+
+
+  {% if metaTags %}
+    {{ metaTags | safe }}
+  {% endif %}
+
+</head>
+<body>
+  {% include "header.njk" %}
+  
+  <main>
+  {% block content %}{% endblock %}
+  </main>
+
+  {% include "footer.njk" %}
+
+{% for script in site.scripts %}
+  <script src="{{ script.src }}" {% if script.defer %}defer{% endif %}></script>
+{% endfor %}
+
+  {% if pageScripts %}
+    {{ pageScripts | safe }}
+  {% endif %}
+</body>
+</html>

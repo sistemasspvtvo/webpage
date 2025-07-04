@@ -7,11 +7,10 @@
   <meta name="description" content="Casos reales de ingeniería estructural en Coyoacán y CDMX: Soluciones de seguridad, regularización y diseño sísmico. Resultados comprobados.">
 
   <!-- Dynamic canonical URL (auto-generates based on page URL) -->
-  <link rel="canonical" href="https://monolito.lat/casos-de-éxito/" />
+  <link rel="canonical" href="http://localhost:8888/casos-de-éxito/" />
   <!-- Option for manual override in front matter -->
   
-  
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
   <link rel="preconnect" href="https://images.dmca.com" crossorigin>
   
   <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
@@ -20,7 +19,6 @@
   
   <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
   <link rel="preload" href="/img/logo-blanco.webp" as="image" imagesrcset="/img/logo-blanco.webp" imagesizes="100vw">
-
 
   
 
@@ -436,7 +434,7 @@
 <nav aria-label="Breadcrumb" class="breadcrumb">
     <ol>
         <li><a href="https://monolito.lat">Inicio</a></li>
-        <li aria-current="page">Casos de Éxito</li>
+        <li aria-current="page"><a href="/casos-de-éxito">Casos de Éxito</li>
     </ol>
 </nav>
     <main class="success-container">
@@ -720,7 +718,13 @@
         <a href="//www.dmca.com/Protection/Status.aspx?ID=9119aef2-a242-43b7-86f1-d2a5bb4a5a6c" title="DMCA.com Protection Status">
           <img src="https://images.dmca.com/Badges/DMCA_logo-std-btn140w.png?ID=9119aef2-a242-43b7-86f1-d2a5bb4a5a6c" loading="lazy" width="141" height="53" alt="DMCA.com Protection Status">
         </a>
-        <script defer src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+        <script defer>
+          document.addEventListener('DOMContentLoaded', function() {
+          var dmcaScript = document.createElement('script');
+          dmcaScript.src = 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js';
+          document.body.appendChild(dmcaScript);
+          });
+        </script>
       </div>
     </div>
   </div>

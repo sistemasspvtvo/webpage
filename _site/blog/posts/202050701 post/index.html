@@ -11,6 +11,13 @@
   <!-- Option for manual override in front matter -->
   
   
+  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Monolito" />
+  <link rel="manifest" href="/img/site.webmanifest" />
+
   
 <style>
     .rectangle-container {
@@ -34,6 +41,11 @@
         transform: translateY(0);
     }
     
+    .post-meta {
+        color: #2A5C9A
+        
+    }
+
     .post {
         display: grid;
         gap: 20px;
@@ -63,13 +75,25 @@
     }
 </style>
 
-  
+ 
   <link rel="preconnect" href="https://images.dmca.com" crossorigin>
   
   <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
   
   
+  <link rel="stylesheet" href="/css/katex.min.css">
+  <script src="/js/katex.min.js" defer></script>
+  <style>
+    .katex {
+    font: normal 1.21em KaTeX_Main,Times New Roman,serif;
+    font-style: normal;
+    line-height: normal;
+    line-height: 0;
+    text-indent: 0px;
+    text-rendering: geometricprecision;
+    }
+  </style>
   <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
   <link rel="preload" href="/img/logo-blanco.webp" as="image" imagesrcset="/img/logo-blanco.webp" imagesizes="100vw">
 
@@ -86,9 +110,19 @@
         <img src="/img/logo.png" alt="Logo Monolito" width="40" height="40">
       </picture>
     </a>
-    <button class="menu-toggle" id="menu-toggle" aria-expanded="Mobile menu">
-      <i class="fas fa-bars"></i>
-    </button>
+<button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Menu">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- Faint gray background square -->
+  <rect x="0" y="0" width="24" height="24" fill="gray" opacity="0.1" rx="2" />
+  
+  <!-- Hamburger lines -->
+  <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+
+</button>
     <nav id="main-nav">
       <a style="font-weight: bold;" href="https://monolito.lat/">Inicio</a>
       <a style="font-weight: bold;" href="/servicios">Servicios</a>
@@ -157,14 +191,18 @@
             <article class="post">
                 
                     <h1>Mi primer publicación del blog</h1>
-                    <p class="post-meta">
+                    <div class="post-meta">
+                    <p>
                         Publicado el 1 de julio de 2025
+                        <p style="margin-top:20px"><i>
                         
-                        | Tags: Ingeniería
+                        Tags: Ingeniería
                         
+                        </i>
+                        </p>
                     </p>
+                    </div>
                     
-
                     <img src="/img/blog/post-1.jpg" alt="Mi primer publicación del blog" class="post-image">
                     
 
@@ -185,6 +223,8 @@
 </ul>
 <h2>Espera nuevas publicaciones técnicas próximamente...</h2>
 
+
+                    <p aria-current="return" style="margin-top:30px" align="right">← <a href="/blog">Volver al Blog</a></p>
                 </div>
             </article>
         </div>
@@ -285,6 +325,9 @@
 
 
   <script src="/js/main.js" defer></script>
+
+
+
 
 
   

@@ -10,6 +10,13 @@
   <link rel="canonical" href="http://localhost:8888/equipo/" />
   <!-- Option for manual override in front matter -->
   
+
+  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Monolito" />
+  <link rel="manifest" href="/img/site.webmanifest" />
     
   <link rel="preconnect" href="https://images.dmca.com" crossorigin>
   
@@ -32,9 +39,19 @@
         <img src="/img/logo.png" alt="Logo Monolito" width="40" height="40">
       </picture>
     </a>
-    <button class="menu-toggle" id="menu-toggle" aria-expanded="Mobile menu">
-      <i class="fas fa-bars"></i>
-    </button>
+<button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Menu">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- Faint gray background square -->
+  <rect x="0" y="0" width="24" height="24" fill="gray" opacity="0.1" rx="2" />
+  
+  <!-- Hamburger lines -->
+  <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+
+</button>
     <nav id="main-nav">
       <a style="font-weight: bold;" href="https://monolito.lat/">Inicio</a>
       <a style="font-weight: bold;" href="/servicios">Servicios</a>
@@ -227,7 +244,7 @@
 <nav aria-label="Breadcrumb" class="breadcrumb">
     <ol>
         <li><a href="https://monolito.lat">Inicio</a></li>
-        <li aria-current="page"><a href="/equipo">Equipo</li>
+        <li aria-current="page"><a href="/equipo">Equipo</a></li>
     </ol>
 </nav>
     <main>

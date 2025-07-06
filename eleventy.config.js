@@ -1,36 +1,46 @@
-const fs = require('fs-extra');
-const path = require('path');
 const { DateTime } = require('luxon');
-const katex = require('katex');
 const slugify = require("slugify");
+const markdownIt = require('markdown-it');
+const markdownItKatex = require('markdown-it-katex');
+const md = markdownIt({
+  html: true,
+  breaks: true,
+  linkify: true
+}).use(markdownItKatex);
 
 module.exports = function(eleventyConfig) {
-
+  // Date filter
   eleventyConfig.addFilter("date", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "UTC" })
       .setLocale("es")
       .toLocaleString(DateTime.DATE_FULL);
   });
 
-  eleventyConfig.addShortcode('katex', function(content) {
-    return katex.renderToString(content, { throwOnError: false });
-  });
-
+  // Slug filter
   eleventyConfig.addFilter("slug", (str) => {
-  return slugify(str, {
-    lower: true,
-    strict: true,
-    remove: /[*+~.()'"!:@]/g,
-    locale: "es", // Acentos y ñ permitidos
+    return slugify(str, {
+      lower: true,
+      strict: true,
+      remove: /[*+~.()'"!:@]/g,
+      locale: "es",
+    });
   });
-});
 
+  // Set markdown library with KaTeX support
+  eleventyConfig.setLibrary('md', md);
+
+  // Passthrough copies
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/fonts");
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/katex/dist/katex.min.css": "css/katex.min.css",
+    "node_modules/katex/dist/katex.min.js": "js/katex.min.js",
+    "node_modules/katex/dist/fonts": "css/fonts"
+  });
   
-  // Copy Netlify specific files
+  // Netlify files
   eleventyConfig.addPassthroughCopy({ "src/netlify/_headers": "_headers" });
   eleventyConfig.addPassthroughCopy({ "src/netlify/_redirects": "_redirects" });
 
@@ -42,7 +52,7 @@ module.exports = function(eleventyConfig) {
     showDirectoryListing: false
   });
 
-  // Add blog collection
+  // Blog collection
   eleventyConfig.addCollection("post", function(collection) {
     return collection.getFilteredByGlob("src/blog/posts/*.md");
   });
@@ -59,4 +69,3 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: "njk"
   };
 };
-

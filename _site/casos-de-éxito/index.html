@@ -10,6 +10,13 @@
   <link rel="canonical" href="http://localhost:8888/casos-de-éxito/" />
   <!-- Option for manual override in front matter -->
   
+
+  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Monolito" />
+  <link rel="manifest" href="/img/site.webmanifest" />
     
   <link rel="preconnect" href="https://images.dmca.com" crossorigin>
   
@@ -32,9 +39,19 @@
         <img src="/img/logo.png" alt="Logo Monolito" width="40" height="40">
       </picture>
     </a>
-    <button class="menu-toggle" id="menu-toggle" aria-expanded="Mobile menu">
-      <i class="fas fa-bars"></i>
-    </button>
+<button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Menu">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- Faint gray background square -->
+  <rect x="0" y="0" width="24" height="24" fill="gray" opacity="0.1" rx="2" />
+  
+  <!-- Hamburger lines -->
+  <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+
+</button>
     <nav id="main-nav">
       <a style="font-weight: bold;" href="https://monolito.lat/">Inicio</a>
       <a style="font-weight: bold;" href="/servicios">Servicios</a>
@@ -113,23 +130,23 @@
 {
   "@context": "https://schema.org",
   "@type": "CaseStudy",
-  "name": "Rehabilitación Estructural en Edificio Histórico",
-  "description": "Refuerzo estructural con contravientos de acero ocultos que preservó el valor patrimonial mientras mejoraba la seguridad sísmica",
-  "datePublished": "2023-05-15",
+  "name": "Rehabilitación Edificio para Casa Habitación",
+  "description": "Refuerzo estructural con castillos que preservó la funcionalidad del patio principal mientras mejoraba la seguridad sísmica",
+  "datePublished": "2024-05-15",
   "about": {
     "@type": "EngineeringService",
     "name": "Rehabilitación Estructural",
-    "serviceType": "Refuerzo sísmico para edificios históricos"
+    "serviceType": "Refuerzo sísmico para edificios"
   },
   "location": {
     "@type": "Place",
-    "name": "Centro Histórico, CDMX"
+    "name": "Coyoacán, CDMX"
   },
-  "duration": "P8M",
+  "duration": "P4D",
   "result": {
     "@type": "QuantitativeValue",
     "value": "100%",
-    "unitText": "aprobación INAH"
+    "unitText": "aprobación cliente"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -143,7 +160,7 @@
   "@type": "CaseStudy",
   "name": "Regularización de Casa Habitación en Coyoacán",
   "description": "Solución estructural y legal que evitó la demolición de una ampliación sin permisos",
-  "datePublished": "2023-08-22",
+  "datePublished": "2024-08-22",
   "about": {
     "@type": "EngineeringService",
     "name": "Regularización Estructural",
@@ -169,9 +186,9 @@
 {
   "@context": "https://schema.org",
   "@type": "CaseStudy",
-  "name": "Diseño Estructural para Local Comercial en Santa Fe",
+  "name": "Diseño Estructural para Local Comercial en Huixquilucan",
   "description": "Solución innovadora que redujo costos en 30% para apertura de vanos en muro de carga",
-  "datePublished": "2023-11-10",
+  "datePublished": "2024-11-10",
   "about": {
     "@type": "EngineeringService",
     "name": "Diseño Estructural Comercial",
@@ -179,7 +196,7 @@
   },
   "location": {
     "@type": "Place",
-    "name": "Santa Fe, CDMX"
+    "name": "Huixquilucan, EDOMEX"
   },
   "duration": "P2M",
   "result": {
@@ -189,14 +206,14 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://monolito.lat/casos-de-exito#local-santa-fe"
+    "@id": "https://monolito.lat/casos-de-exito#local-huixquilucan"
   }
 }
 </script>
     <style>
         .success-container {
             max-width: 1200px;
-            margin: 40px auto;
+            margin: 0px auto;
             padding: 0 20px;
             width: 100%;
             flex-direction: column;
@@ -406,26 +423,34 @@
             background-color: #1E3A8A;
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            .case-studies {
-                grid-template-columns: 1fr;
-            }
-            
-            .page-header h1 {
-                font-size: 2rem;
-            }
-        }
-        @media (max-width: 768px) {
-    .case-filters {
-        justify-content: center;
-        gap: 10px;
+@media (max-width: 768px) {
+    .case-studies {
+        grid-template-columns: 1fr;
+        justify-items: center; /* This centers the cards in the grid */
+        padding: 0 20px; /* Add some padding to prevent edge touching */
     }
     
-    .filter-btn {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-        margin: 3px;
+    .case-card {
+        max-width: 100%; /* Allow card to expand to full width */
+        width: 100%; /* Take full width available */
+    }
+    
+    /* Optional: Add max-width if you want to limit expansion on very wide mobile screens */
+    .case-card {
+        max-width: 500px; /* Adjust this value as needed */
+    }
+}
+
+@media (max-width: 480px) {
+    .case-card {
+        max-width: 100%;
+    }
+}
+
+/* For slightly larger mobile screens */
+@media (min-width: 481px) and (max-width: 768px) {
+    .case-card {
+        max-width: 400px; /* Or whatever width looks good */
     }
 }
     </style>
@@ -434,7 +459,7 @@
 <nav aria-label="Breadcrumb" class="breadcrumb">
     <ol>
         <li><a href="https://monolito.lat">Inicio</a></li>
-        <li aria-current="page"><a href="/casos-de-éxito">Casos de Éxito</li>
+        <li aria-current="page"><a href="/casos-de-éxito">Casos de Éxito</a></li>
     </ol>
 </nav>
     <main class="success-container">
@@ -442,7 +467,7 @@
             <h1>Casos de Éxito en la Ciudad de México</h1>
             <p>Proyectos reales que demuestran nuestra expertise resolviendo desafíos complejos de seguridad estructural en la Ciudad de México y área metropolitana.</p>
         </div>
-
+<!--
         <div class="case-filters"  loading="eager" fetchpriority="high">
             <button class="filter-btn active" data-filter="all">Todos</button>
             <button class="filter-btn" data-filter="regularizacion">Regularización</button>
@@ -450,40 +475,40 @@
             <button class="filter-btn" data-filter="comercial">Comercial</button>
             <button class="filter-btn" data-filter="residencial">Residencial</button>
         </div>
-
+-->
         <div class="case-studies">
             <!-- Caso 1 -->
-            <div class="case-card" id="edificio-centro" data-category="rehabilitacion comercial">
+            <div class="case-card" id="edificio-coyoacán" data-category="rehabilitacion residencial">
                 <div class="case-image">
-                    <img src="/img/caso-edificio-centro.webp" alt="Rehabilitación estructural de edificio histórico en Centro CDMX" loading="lazy">
+                    <img src="/img/caso-edificio-coyoacán.webp" alt="Rehabilitación estructural de edificio histórico en Centro CDMX" loading="lazy">
                 </div>
                 <div class="case-content">
-                    <h2>Rehabilitación Estructural en Edificio Histórico</h2>
+                    <h2>Rehabilitación Estructural en Casa Habitación</h2>
                     <div class="case-meta">
-                        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Centro CDMX</span>
-                        <span class="meta-item"><i class="fas fa-building"></i> Edificio Comercial</span>
-                        <span class="meta-item"><i class="fas fa-calendar-alt"></i> 8 meses</span>
+                        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Coyoacán</span>
+                        <span class="meta-item"><i class="fas fa-building"></i> Edificio Casa Habitación</span>
+                        <span class="meta-item"><i class="fas fa-calendar-alt"></i> 4 días</span>
                     </div>
                     
                     <div class="case-summary">
-                        <p>Edificio de 1940 con daños estructurales tras sismo. Requería refuerzo sin alterar su valor histórico.</p>
+                        <p>Edificio de 1980 con daños estructurales tras sismo. Requería refuerzo sin alterar la funcionalidad del patio/estacionamiento.</p>
                     </div>
                     
                     <div class="case-features">
                         <h4>Solución Implementada:</h4>
                         <ul>
-                            <li>Refuerzo con contravientos de acero ocultos en muros</li>
-                            <li>Sistema de losa colaborante para redistribuir cargas</li>
+                            <li>Refuerzo con castillos cubiertos con ladrillo para cuidar la apariencia</li>
+                            <li>Sistema de cimentación colaborante para redistribuir cargas</li>
                             <li>Análisis sísmico con espectros específicos para zona</li>
-                            <li>Gestión ante INAH para aprobación de intervención</li>
+                            <li>Mínima intervención sobre los elementos estructurales existentes</li>
                         </ul>
                     </div>
                     
                     <div class="case-testimonial" itemscope itemtype="https://schema.org/Quotation">
-                    <blockquote itemprop="text">"Monolito resolvió el desafío técnico que otros no pudieron. Lograron el equilibrio perfecto entre seguridad estructural y conservación patrimonial."</blockquote>
+                    <blockquote itemprop="text">"Monolito Ingeniería logró mantener el equilibrio entre seguridad y funcionamiento."</blockquote>
                     <div class="testimonial-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                    <span itemprop="name">- Arq. Luis González</span>,
-                    <span itemprop="jobTitle">Restaurador</span>
+                    <span itemprop="name">- Sra. Luisa González</span>,
+                    <span itemprop="jobTitle">Ama de casa</span>
                     </div>
                     </div>
                     
@@ -494,7 +519,7 @@
             <!-- Caso 2 -->
             <div class="case-card" id="casa-coyoacan" data-category="regularizacion residencial">
                 <div class="case-image">
-                    <img src="/img/caso-casa-coyoacan.webp" alt="Regularización de casa habitación en Coyoacán" loading="lazy">
+                    <img src="/img/caso-regularización.webp" alt="Regularización de casa habitación en Coyoacán" loading="lazy">
                 </div>
                 <div class="case-content">
                     <h2>Regularización de Casa Habitación</h2>
@@ -532,14 +557,14 @@
             </div>
             
             <!-- Caso 3 -->
-            <div class="case-card" id="local-santa-fe" data-category="comercial">
+            <div class="case-card" id="local-huixquilucan-fe" data-category="comercial">
                 <div class="case-image">
-                    <img src="/img/caso-local-santafe.webp" alt="Diseño estructural para local comercial en Santa Fe" loading="lazy">
+                    <img src="/img/caso-local-huixquilucan.webp" alt="Diseño estructural para local comercial en Huixquilucan" loading="lazy">
                 </div>
                 <div class="case-content">
                     <h2>Diseño Estructural para Local Comercial</h2>
                     <div class="case-meta">
-                        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Santa Fe</span>
+                        <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Huixquilucan</span>
                         <span class="meta-item"><i class="fas fa-store"></i> Local Comercial</span>
                         <span class="meta-item"><i class="fas fa-calendar-alt"></i> 2 meses</span>
                     </div>
@@ -552,7 +577,7 @@
                         <h4>Trabajo Realizado:</h4>
                         <ul>
                             <li>Análisis de cargas y redistribución de esfuerzos</li>
-                            <li>Diseño de trabe de acero para sustituir muro de carga</li>
+                            <li>Diseño de trabe de concreto para sustituir muro de carga</li>
                             <li>Coordinación con arquitectos y contratistas</li>
                             <li>Solución que redujo costos en 30% vs. propuesta inicial</li>
                         </ul>

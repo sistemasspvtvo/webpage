@@ -6,12 +6,15 @@
   <title>{{ title | default("My Site") }}</title>
   <meta name="description" content="{{ description | default('Default description') }}">
 
-  <!-- Dynamic canonical URL (auto-generates based on page URL) -->
+  <!-- Dynamic canonical URL (auto-generates based on page URL)
   <link rel="canonical" href="{{ site.url }}{{ page.url | replace('/index.html', '/') }}" />
   <!-- Option for manual override in front matter -->
   {% if canonicalUrl %}
   <link rel="canonical" href="{{ (page.url or '/') | url }}" />
   {% endif %}
+  -->
+  
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace('/index.html', '/') }}" />
   
   <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
@@ -32,6 +35,25 @@
   
   <link rel="stylesheet" href="/css/katex.min.css">
   <script src="/js/katex.min.js" defer></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+    });
+</script>
   <style>
     .katex {
     font: normal 1.21em KaTeX_Main,Times New Roman,serif;

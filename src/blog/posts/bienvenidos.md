@@ -5,7 +5,7 @@ date: 2025-07-01
 tags:
   - Ingeniería
 excerpt: "Una breve introducción al nuevo blog"
-image: post-1.jpg
+image: post-1.webp
 ---
 
 # Bienvenidos a nuestro Blog

@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /private/
-Disallow: /tmp/
 
 Sitemap: https://www.monolito.lat/sitemap.xml

@@ -4,3 +4,8 @@ package = "@netlify/plugin-sitemap"
 [build]
 command = "npm run build"
 publish = "_site"
+
+[[redirects]]
+  from = "/old-path"
+  to = "/new-path"
+  status = 301

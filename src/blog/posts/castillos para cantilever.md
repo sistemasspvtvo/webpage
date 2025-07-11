@@ -30,13 +30,13 @@ Dado el tipo de suelo (Tipo II) y la geometría existente, se propuso una soluci
 
 #### Comportamiento Estructural y Patologías
 
-La frontera entre muros mostró grietas verticales acompañadas de una deformación de 12 mm en un vano de 3 metros, excediendo el límite de flecha permitido por el inciso b de la sección 13.4.1.1 de las NTC-2017 para elementos de concreto:
+La frontera entre muros mostró grietas verticales acompañadas de una deformación de 12 mm en un vano de 3 metros, excediendo el límite de flecha permitido para elementos de concreto:
 
 $$
 \delta = 12 \, \text{mm} > \frac{L}{480} = \frac{3000}{480} \approx 6.25 \, \text{mm}
 $$
 
-Además, una puerta visiblemente descuadrada evidenciaba desplazamientos verticales significativos. Este comportamiento se atribuyó a una configuración estructural deficiente, en contravención con lo indicado por la sección 6.2.1.1.a de las NTC-2017, que establece la obligación de colocar castillos en los extremos y encuentros de muros.
+Además, una puerta visiblemente descuadrada evidenciaba desplazamientos verticales significativos. Este comportamiento se atribuyó a una configuración estructural deficiente, en contravención con lo indicado por la sección 6.2.1.1.a de las NTC-2023, que establece la obligación de colocar castillos en los extremos y encuentros de muros.
 
 #### Análisis de Causas Probables
 

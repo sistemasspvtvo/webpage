@@ -5,15 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title | default("My Site") }}</title>
   <meta name="description" content="{{ description | default('Default description') }}">
-
-  <!-- Dynamic canonical URL (auto-generates based on page URL)
-  <link rel="canonical" href="{{ site.url }}{{ page.url | replace('/index.html', '/') }}" />
-  <!-- Option for manual override in front matter -->
-  {% if canonicalUrl %}
-  <link rel="canonical" href="{{ (page.url or '/') | url }}" />
-  {% endif %}
-  -->
-  
+ 
   <link rel="canonical" href="{{ site.url }}{{ page.url | replace('/index.html', '/') }}" />
 
   <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />

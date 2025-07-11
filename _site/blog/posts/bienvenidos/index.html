@@ -6,13 +6,8 @@
   <title>Mi primer publicación del blog</title>
   <meta name="description" content="Default description">
 
-  <!-- Dynamic canonical URL (auto-generates based on page URL)
-  <link rel="canonical" href="https://monolito.lat/blog/posts/bienvenidos/" />
-  <!-- Option for manual override in front matter -->
   
-  -->
-  
-  <link rel="canonical" href="https://monolito.lat/blog/posts/bienvenidos/" />
+  <link rel="canonical" href="http://localhost:8888/blog/posts/bienvenidos/" />
   
   <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
@@ -105,6 +100,13 @@
           throwOnError : false
         });
     });
+    document.querySelectorAll('.maybe-vertical img').forEach(img => {
+  img.onload = () => {
+    if (img.naturalHeight > img.naturalWidth) {
+      img.classList.add('is-vertical');
+    }
+  };
+});
 </script>
   <style>
     .katex {
@@ -114,6 +116,13 @@
     line-height: 0;
     text-indent: 0px;
     text-rendering: geometricprecision;
+    }
+    .maybe-vertical img {
+      max-height: 100vh;
+      height: auto;
+      width: auto;
+      display: block;
+      margin: 0 auto;
     }
   </style>
   <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
@@ -214,36 +223,28 @@
                 
                     <h1>Mi primer publicación del blog</h1>
                     <div class="post-meta">
-                    <p>
-                        Publicado el 1 de julio de 2025
+                    <p><b>
+                        Publicado el 1 de julio de 2025</b>
                         <p style="margin-top:20px"><i>
                         
-                        Tags: Ingeniería
+                        Tags: Ingeniería, blog, CDMX, Coyoacán, Estructuras, Dictámenes
                         
                         </i>
                         </p>
                     </p>
                     </div>
                     
-                    <img src="/img/blog/post-1.webp" alt="Mi primer publicación del blog" class="post-image">
+                    <img src="/img/blog/bienvenidos.webp" alt="Mi primer publicación del blog" class="post-image">
                     
 
                 <div class="post-content">
                     <h1>Bienvenidos a nuestro Blog</h1>
-<p>Blog Técnico en Desarrollo</p>
+<h2>Blog Técnico en Desarrollo</h2>
 <p>En nuestra primera publicación te informamos que estamos preparando contenido especializado en:</p>
-<ul>
-<li>
-<p>Casos de éxito a profundidad en rehabilitación estructural</p>
-</li>
-<li>
-<p>Análisis técnicos con normativa NTC-2023</p>
-</li>
-<li>
-<p>Guías paso a paso para regularizaciones en CDMX</p>
-</li>
-</ul>
-<h2>Espera nuevas publicaciones técnicas próximamente...</h2>
+<h3>Casos de éxito a profundidad en rehabilitación estructural</h3>
+<h3>Análisis técnicos con normativa NTC-2023</h3>
+<h3>Guías paso a paso para regularizaciones en CDMX</h3>
+<p>Espera nuevas publicaciones técnicas próximamente...</p>
 
 
                     <p aria-current="return" style="margin-top:30px" align="right">← <a href="/blog">Volver al Blog</a></p>

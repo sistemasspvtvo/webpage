@@ -6,13 +6,8 @@
   <title>Refuerzo estructural en Coyoacán: Solución eficiente para un cantilever en riesgo (Caso de estudio)</title>
   <meta name="description" content="Default description">
 
-  <!-- Dynamic canonical URL (auto-generates based on page URL)
-  <link rel="canonical" href="https://monolito.lat/private/castillos para cantiliver v1/" />
-  <!-- Option for manual override in front matter -->
   
-  -->
-  
-  <link rel="canonical" href="https://monolito.lat/private/castillos para cantiliver v1/" />
+  <link rel="canonical" href="http://localhost:8888/private/castillos para cantiliver v1/" />
   
   <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
@@ -105,6 +100,13 @@
           throwOnError : false
         });
     });
+    document.querySelectorAll('.maybe-vertical img').forEach(img => {
+  img.onload = () => {
+    if (img.naturalHeight > img.naturalWidth) {
+      img.classList.add('is-vertical');
+    }
+  };
+});
 </script>
   <style>
     .katex {
@@ -114,6 +116,13 @@
     line-height: 0;
     text-indent: 0px;
     text-rendering: geometricprecision;
+    }
+    .maybe-vertical img {
+      max-height: 100vh;
+      height: auto;
+      width: auto;
+      display: block;
+      margin: 0 auto;
     }
   </style>
   <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
@@ -214,8 +223,8 @@
                 
                     <h1>Refuerzo estructural en Coyoacán: Solución eficiente para un cantilever en riesgo (Caso de estudio)</h1>
                     <div class="post-meta">
-                    <p>
-                        Publicado el 6 de julio de 2025
+                    <p><b>
+                        Publicado el 6 de julio de 2025</b>
                         <p style="margin-top:20px"><i>
                         
                         Tags: Ingeniería, vigas, NTC-2023, CDMX, Refuerzo estructural CDMX, Reparación de grietas en mampostería,	Normas NTC-2023 para casas, Cantilever peligroso solución

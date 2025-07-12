@@ -724,7 +724,7 @@ A manera de comparación, en normas internacionales se emplean los siguientes va
 
 ## Proceso Constructivo: Minimizando Impactos
 
-La ejecución de obra en sitio se realizó en 2 días, con las siguientes etapas clave:
+La ejecución de obra en sitio se realizó en 3 días, con las siguientes etapas clave:
 
 
 

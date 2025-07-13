@@ -235,6 +235,101 @@
                 margin: 0 auto 20px;
             }
         }
+<!-- Form styles -->
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .form-container {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            padding: 0 20px;
+        }
+        
+        .form-container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        form {
+            display: grid;
+            gap: 20px;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            border-color: #2A5C9A;
+            box-shadow: 0 0 0 3px rgba(42, 92, 154, 0.2);
+            outline: none;
+        }
+        
+        input:valid, textarea:valid {
+            border-left: 3px solid #4CAF50;
+        }
+        
+        input:invalid:not(:placeholder-shown),
+        textarea:invalid:not(:placeholder-shown) {
+            border-left: 3px solid #f44336;
+        }
+        
+        .submit-btn {
+            background-color: #2A5C9A;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: auto;
+            text-align: center;
+        }
+        
+        button:hover {
+            background-color: #1E3A8A;
+        }
+        
+        .submit-btn {
+            position: relative;
+            display: block;
+        }
+        
+        .spinner {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: white;
+        }
+        
+        .spinner.active {
+            opacity: 1;
+        }
+        
+        .submit-btn-text {
+            transition: opacity 0.3s;
+        }
+        
+        .submit-btn-text.hidden {
+            opacity: 0;
+        }
     </style>
 </head>
 <body>
@@ -324,6 +419,36 @@
                 </div>
             </div>
         </section>
+
+<section id="talentos" class="content-box">
+    <div class="contact-container">
+        <h2 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">Colabora con Nosotros</h2>
+
+        <p>En Monolito Ingeniería construimos un <strong>banco de talentos</strong> para ingenieros estructurales en CDMX para colaboraciones freelance.</p>
+        <p><strong>Registra tu CV</strong> eligiendo tu área de especialidad y te contactaremos cuando haya proyectos compatibles con tu perfil.</p><br>
+
+        <form name="cv" netlify action="/success-cv" enctype="multipart/form-data">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <input type="tel" name="telefono" placeholder="Teléfono" required>
+            <select name="especialidad" required aria-labelledby="state">
+                <option value="" disabled selected>Selecciona tu especialidad</option>
+                <option value="levantamientos">Levantamientos de Inmueble</option>
+                <option value="calculos">Cálculos Estructurales</option>
+                <option value="licencias">Generación de planos</option>
+            </select>
+            <label for="cv" style="display: block; margin: 10px 0 5px; font-weight: bold;">Sube tu CV (PDF)*</label>
+            <input type="file" name="cv" id="cv" accept=".pdf" required>
+            <div data-netlify-recaptcha="true" style="margin: 0px 0;"></div>
+            <button type="submit" class="submit-btn" id="submit-btn">
+                <span class="submit-btn-text">Enviar tu CV</span>
+                <span class="spinner">⌛</span>
+            </button>
+        </form><br>
+        <em>*Tus datos solo se usarán para contactarte cuando haya oportunidades alineadas a tu perfil.</em>
+    </div>
+</section>
+
     </main>
 <script>
     // Intersection Observer for scroll animations
@@ -344,6 +469,41 @@
             observer.observe(section);
         });
     });
+</script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animación del formulario
+            const formSection = document.querySelector('.form-container');
+            if (formSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('show');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                observer.observe(formSection);
+            }
+            
+            // Spinner del botón de enviar
+            const submitBtn = document.getElementById('submit-btn');
+            if (submitBtn) {
+                submitBtn.addEventListener('click', function() {
+                    const spinner = this.querySelector('.spinner');
+                    const btnText = this.querySelector('.submit-btn-text');
+                    
+                    spinner.classList.add('active');
+                    btnText.classList.add('hidden');
+                    
+                    // Simular envío (eliminar en producción)
+                    setTimeout(() => {
+                        spinner.classList.remove('active');
+                        btnText.classList.remove('hidden');
+                    }, 2000);
+                });
+            }
+        });
 </script>
 </body>
   </main>

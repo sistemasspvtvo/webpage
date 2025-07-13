@@ -9,3 +9,9 @@ publish = "_site"
   from = "/old-path"
   to = "/new-path"
   status = 301
+
+  [[headers]]
+  for = "/success-cv"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://www.google.com/recaptcha/; style-src 'self' 'unsafe-inline';"
+    X-Netlify-Form-Size-Limit = "200000"

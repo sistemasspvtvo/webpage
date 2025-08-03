@@ -58,6 +58,32 @@ module.exports = function(eleventyConfig) {
     return collection.getFilteredByGlob("src/blog/posts/*.md");
   });
 
+  const cheerio = require('cheerio');
+
+  eleventyConfig.addShortcode("generateTOC", function(htmlContent) {
+    const $ = cheerio.load(htmlContent);
+    const headings = $('h1, h2, h3');
+    let tocHTML = '<ul>';
+    let lastLevel = 2;
+
+    headings.each((index, element) => {
+      const heading = $(element);
+      const level = parseInt(element.name.substring(1));
+      const id = heading.attr('id') || `section-${index}`;
+      heading.attr('id', id);
+
+      if (level > lastLevel) tocHTML += '<ul>';
+      else if (level < lastLevel) tocHTML += '</ul></li>'.repeat(lastLevel - level);
+      else if (index > 0) tocHTML += '</li>';
+
+      tocHTML += `<li><a href="#${id}">${heading.text()}</a>`;
+      lastLevel = level;
+    });
+
+    tocHTML += '</ul>';
+    return tocHTML;
+  });
+
   return {
     dir: {
       input: "src",

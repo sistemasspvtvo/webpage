@@ -4,6 +4,7 @@ package = "@netlify/plugin-sitemap"
 [build]
 command = "npm run build"
 publish = "_site"
+functions = "netlify/functions"
 
 [[redirects]]
   from = "/old-path"

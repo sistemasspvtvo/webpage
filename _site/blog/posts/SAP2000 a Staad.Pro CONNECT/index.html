@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo Convertir modelos SAP2000 a STAAD.Pro con C++</title>
+    <meta name="description" content="Default description">
+    <link rel="canonical" href="http://localhost:8888/blog/posts/SAP2000 a Staad.Pro CONNECT/" />
+    <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Monolito" />
+    <link rel="manifest" href="/img/site.webmanifest" />
+    
+<style>
+    .rectangle-container {
+        max-width: 1000px;
+        margin: 0px auto;
+        padding: 30px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .post-container {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        padding: 0 20px;
+    }
+    .post-container.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .post-meta {
+        color: #2A5C9A
+    }
+    .post {
+        display: grid;
+        gap: 20px;
+    }
+    .post-image {
+        max-width: 100%;
+        height: auto;
+        max-height: 400px;
+        border-radius: 4px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+</style>
+
+    <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
+    <link rel="preload" href="/img/logo-blanco.webp" as="image" imagesrcset="/img/logo-blanco.webp" imagesizes="100vw">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DDVMS8S75B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DDVMS8S75B');
+    </script>
+    <link rel="preconnect" href="https://images.dmca.com" crossorigin>
+    <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+    
+    <link rel="stylesheet" href="/css/katex.min.css">
+    <script src="/js/katex.min.js" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+      onload="renderMathInElement(document.body);">
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+      document.querySelectorAll('.maybe-vertical img').forEach(img => {
+      img.onload = () => {
+      if (img.naturalHeight > img.naturalWidth) {
+        img.classList.add('is-vertical');
+          }
+        };
+      });
+    </script>
+    <style>
+      .katex {
+      font: normal 1.21em KaTeX_Main,Times New Roman,serif;
+      font-style: normal;
+      line-height: normal;
+      line-height: 0;
+      text-indent: 0px;
+      text-rendering: geometricprecision;
+      }
+      .maybe-vertical img {
+        max-height: 100vh;
+        height: auto;
+        width: auto;
+        display: block;
+        margin: 0 auto;
+      }
+    .content-wrapper {
+      display: flex;
+      max-width: 1500px;
+      margin: 0 auto;
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+      .post-content {
+        flex: 1;
+        min-width: 0;
+      }
+      .toc-sidebar {
+        width: 300px;
+        flex-shrink: 0; 
+        position: sticky;
+        top: 43.033px;
+        align-self: flex-start;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+      .toc-container {
+        background: #f8f9fa;
+        border-left: 3px solid #4a6fa5;
+        padding-right: 1rem;
+        padding-left: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 4px;
+      }
+
+      .toc-container {
+        font-size: 0.875rem;
+      }
+
+      .toc-container h3 {
+        font-size: 1.2em;
+      }
+
+      #toc a {
+        font-size: 0.9em;
+        line-height: 1.4;
+      }
+
+      #toc ul {
+        list-style: none;
+        padding-left: 1rem;
+        margin: 0.5rem 0;
+      }
+      @media (max-width: 768px) {
+        /*
+        .content-wrapper {
+          flex-direction: column;
+        }
+        */
+        .toc-sidebar {
+          display: none;
+          /*
+          width: 100%;
+          position: static;
+          order: -1;
+          */
+        }
+        .post-content {
+        width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+  <div class="header-container">
+    <a href="index.html">
+      <picture>
+        <source srcset="/img/logo.webp" type="image/webp">
+        <img src="/img/logo.png" alt="Logo Monolito" width="40" height="40">
+      </picture>
+    </a>
+<button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Menu">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- Faint gray background square -->
+  <rect x="0" y="0" width="24" height="24" fill="gray" opacity="0.1" rx="2" />
+  
+  <!-- Hamburger lines -->
+  <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>
+
+</button>
+    <nav id="main-nav">
+      <a style="font-weight: bold;" href="https://monolito.lat/">Inicio</a>
+      <a style="font-weight: bold;" href="/servicios">Servicios</a>
+      <a style="font-weight: bold;" href="/equipo">Equipo</a>
+      <a style="font-weight: bold;" href="/casos-de-éxito">Casos de Éxito</a>
+      <a style="font-weight: bold;" href="/blog">Blog</a>
+      <a style="font-weight: bold;" href="/contacto">Contacto</a>
+    </nav>
+  </div>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const mainNav = document.getElementById('main-nav');
+  
+  // Set initial ARIA attributes
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.setAttribute('aria-label', 'Open menu');
+  
+  // Toggle menu function
+  function toggleMenu() {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    
+    // Toggle aria attributes
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    menuToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
+    
+    // Toggle menu visibility
+    mainNav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    
+    // Toggle icon between bars and times
+    const icon = menuToggle.querySelector('i');
+    if (icon.classList.contains('fa-bars')) {
+      icon.classList.replace('fa-bars', 'fa-times');
+    } else {
+      icon.classList.replace('fa-times', 'fa-bars');
+    }
+  }
+  
+  // Add click event
+  menuToggle.addEventListener('click', toggleMenu);
+  
+  // Close menu when clicking on a nav link (for mobile)
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      if (window.innerWidth <= 768) { // Adjust breakpoint as needed
+        toggleMenu();
+      }
+    });
+  });
+});
+  </script>
+</header>
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+    <ol>
+        <li><a href="https://monolito.lat">Inicio</a></li>
+        <li aria-current="page"><a href="/blog">Blog</a></li>
+    </ol>
+</nav>
+    <div class="content-wrapper">
+      <main>
+        
+<section id="post" class="post-container" loading="eager" fetchpriority="high">
+    <div class="rectangle-container">
+        <article class="post">            
+                <h1>Cómo Convertir modelos SAP2000 a STAAD.Pro con C++</h1>
+                <div class="post-meta">
+                <p><b>
+                    Publicado el 5 de agosto de 2025</b>
+                    <p style="margin-top:20px"><i>
+                    
+                    Tags: Ingeniería, automatización, programación, SAP2000, Staad.Pro, CONNECT, modelos, estructuras, API, OpenStaad, CDMX, Coyoacán
+                    
+                    </i>
+                    </p>
+                </p>
+                </div>
+                
+                <img src="/img/blog/SAP2000 a Staad-1.gif" alt="Cómo Convertir modelos SAP2000 a STAAD.Pro con C++" class="post-image">
+                
+            <div class="post-content">
+                <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Conversor SAP2000 a STAAD.Pro",
+  "description": "Programa en C++ para automatizar modelos estructurales.",
+  "operatingSystem": "Windows",
+  "downloadUrl": "https://tudominio.netlify.app/downloads/SAP2STAAD.exe"
+}
+</script>  
+<p><a href="#descarga">⬇️ Ir a Descarga</a></p>
+<h2>El Problema: Pérdida de Tiempo en Conversión Manual</h2>
+<p>Existe una cantidad considerable de softwares especializados en el cálculo estructural, tales como SAP2000 y Staad. Frecuentemente, la labor de un estructurista es la de revisar el trabajo de un colega, el cual muy posiblemente haya elaborado su modelo con un software diferente del que se tiene disponible, por lo que surge la necesidad de realizar un modelo analítico desde cero.</p>
+<br>
+<p>Recrear modelos de SAP2000 a STAAD es <strong>propenso a errores</strong> y consume horas valiosas. Mi objetivo fue desarrollar una herramienta que:</p>
+<br>
+<ul>
+<li><strong>Extraiga datos directamente</strong> del archivo .$2K de SAP2000.</li>
+<li><strong>Genere comandos nativos</strong> para STAAD.</li>
+</ul>
+<h2>¿Qué hace este programa?</h2>
+<ul>
+<li>Convierte <strong>geometría, cargas y soportes</strong> de SAP2000 versión 2022 a STAAD Pro CONNECT EDITION empleando el API OpenStaad.</li>
+<li>Soporta beams, plates de 4 nodos y cargas puntuales y distribuidas sobre beams y plates.</li>
+</ul>
+<h2>Cómo Funciona el Código</h2>
+<h3>1. Lectura del Archivo SAP2000</h3>
+<p>El programa analiza el archivo .$2K como texto plano. Aprovechando que la información de las propiedades de la estructura se encuentra organizada en tablas, se buscan patrones clave en su contenido:</p>
+<br>
+<pre><code class="language-cpp">SectionPositions SAP2000Parser::ParseFile(const string&amp; filePath) {
+    SectionPositions positions;
+...
+    string line;
+    long lineNumber = 1;
+
+    while (getline(inputFile, line)) {
+        replace(line.begin(), line.end(), ',', '.');
+
+        if (line.find(&quot;JOINT COORDINATES&quot;) != string::npos) {
+            positions.ijoint = lineNumber;
+        }
+        else if (line.find(&quot;CONNECTIVITY - FRAME&quot;) != string::npos) {
+            positions.iconnection = lineNumber;
+...
+}
+        lineNumber++;
+    }
+    return positions;
+}
+</code></pre>
+<br>
+<p>Después, se realiza el <em>parsing</em> de las tablas de acuerdo con el tipo de tabla y la información buscada. Por ejemplo, para crear la matriz de nodos &quot;JOINT COORDINATES&quot;:</p>
+<br>
+<pre><code class="language-cpp">vector&lt;Node&gt; SAP2000Parser::ExtractNodes(const string&amp; filePath, long startLine) {
+    vector&lt;Node&gt; nodes;
+    ifstream inputFile(filePath);
+...
+    string line;
+    long currentLine = 1;
+    while (currentLine &lt; startLine &amp;&amp; getline(inputFile, line)) {
+        currentLine++;
+    }
+    while (getline(inputFile, line) &amp;&amp; !line.empty()) {
+...
+        if (std::all_of(line.begin(), line.end(), isspace)) break;
+...
+        try {
+            size_t jointPos = line.find(&quot;Joint=&quot;);
+            if (jointPos != string::npos) {
+                size_t endPos = line.find(' ', jointPos);
+                string jointVal = line.substr(jointPos + 6, endPos - (jointPos + 6));
+                node.sapId = stoi(jointVal);
+            }
+            // Find XorR= value (X coordinate)
+            size_t xPos = line.find(&quot;XorR=&quot;);
+            if (xPos != string::npos) {
+                size_t endPos = line.find(' ', xPos);
+                string xVal = line.substr(xPos + 5, endPos - (xPos + 5));
+                node.x = stod(xVal);
+            }
+...
+            if (node.sapId != 0) {
+                nodes.push_back(node);
+            }
+</code></pre>
+<br>
+<h3>2. Generación de Geometría en <a href="http://STAAD.Pro">STAAD.Pro</a></h3>
+<p>Nodos y beams se crean con comandos como AddNode y AddBeam.</p>
+<br>
+<pre><code class="language-cpp">bool STAADWrapper::CreateNodes(IOSGeometryUIPtr geometry, vector&lt;Node&gt;&amp; nodes) {
+...
+    try {
+        for (auto&amp; node : nodes) {
+            _variant_t varX, varY, varZ;
+            varX.vt = VT_R8; varX.dblVal = node.x;
+            varY.vt = VT_R8; varY.dblVal = node.y;
+            varZ.vt = VT_R8; varZ.dblVal = node.z;
+            VARIANT result = geometry-&gt;AddNode(varX, varY, varZ);
+            if (result.vt == VT_I4 &amp;&amp; result.lVal &gt; 0) {
+                node.staadId = result.lVal;
+                nodeIdMap_[node.sapId] = node.staadId;
+            }
+            counter1= counter1+1;
+        }
+</code></pre>
+<br>
+<p>Plates de 3 y 4 nodos se asignan con AddPlate.</p>
+<br>
+<pre><code class="language-cpp">bool STAADWrapper::CreatePlate(OpenSTAADUI::IOSGeometryUIPtr geometry, int plateId, const std::vector&lt;int&gt;&amp; nodeIds) {
+    if (!geometry || nodeIds.size() &lt; 3 || nodeIds.size() &gt; 4) {
+        return false;
+    }
+    try {
+        switch (nodeIds.size()) {
+        case 3:
+            geometry-&gt;CreatePlate(plateId, nodeIds[0], nodeIds[1], nodeIds[2]);
+            break;
+        case 4:
+            geometry-&gt;CreatePlate(plateId, nodeIds[0], nodeIds[1], nodeIds[2], nodeIds[3]);
+            break;
+</code></pre>
+<br>
+<h3>3. Asignación de Cargas</h3>
+<p>Cargas puntuales → LOAD.</p>
+<p>Cargas distribuidas → UNIFORM LOAD.</p>
+<h2>Limitaciones Actuales</h2>
+<ul>
+<li>
+<p>Plates complejas (&gt;4 nodos) no son soportadas.</p>
+</li>
+<li>
+<p><a href="http://STAAD.Pro">STAAD.Pro</a> debe ser abierto manualmente sin ningún modelo cargado (el código no inicia la instancia del programa por sí mismo debido a las limitantes de la API OpenStaad).</p>
+</li>
+</ul>
+<h2>Descarga y Uso</h2>
+<h3>Requisitos:</h3>
+<p>1. Archivo .$2k de modelo en SAP2000 versión 2022.</p>
+<p>2. <a href="http://STAAD.Pro">STAAD.Pro</a> CONNECT Edition  <strong>abierto manualmente sin archivo cargado</strong>.</p>
+<p>3. Windows 10/11.</p>
+<p><span id="descarga"></span></p>
+<h3>Descarga</h3>
+<p>Código fuente: Disponible próximamente en GitHub.</p>
+<p>Versión compilada: Descargar .exe (hosteado en los servidores de Netlify CDN para mayor seguridad).</p>
+<br>
+<p><a href="https://tudominio.netlify.app/downloads/SAP2STAAD.exe">📥 Descargar v1.0 para Windows</a></p>
+<h3>Guía de Uso</h3>
+<p>1. Ejecuta el programa como administrador.<br>
+2. Selecciona tu archivo .$2K de SAP2000, arrastra y suelta en la ventana de comandos.<br>
+3. Elige las unidades de longitud y fuerza de tu modelo original.<br>
+4. ¡Listo! El programa generará el modelo en Staad automáticamente en &quot;C:\temp&quot;.</p>
+<h2>¿Qué Sigue?</h2>
+<p>Estamos trabajando en:</p>
+<p>1. Soporte para más tipos de elementos y plates de más de cuatro nodos.</p>
+<p>2. Conversión de comandos de diseño estructural.</p>
+<br>
+<p><strong>¿Problemas? ¿Te gustaría contribuir o necesitas una personalización? <a href="/contacto">¡Contáctanos!</a></strong></p>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+</script>
+                <p aria-current="return" style="margin-top:30px" align="right">← <a href="/blog">Volver al Blog</a></p>
+            </div>
+        </article>
+    </div>
+</section>
+<script>
+    // Add show class when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const postContainer = document.querySelector('.post-container');
+        if (postContainer) {
+            postContainer.classList.add('show');
+        }
+    });
+</script>
+
+      </main>
+      <aside class="toc-sidebar">
+        <div class="toc-container">
+          <h3>Contenidos</h3>
+          <ul><li><a href="#section-0">El Problema: Pérdida de Tiempo en Conversión Manual</a></li><li><a href="#section-1">¿Qué hace este programa?</a></li><li><a href="#section-2">Cómo Funciona el Código</a><ul><li><a href="#section-3">1. Lectura del Archivo SAP2000</a></li><li><a href="#section-4">2. Generación de Geometría en STAAD.Pro</a></li><li><a href="#section-5">3. Asignación de Cargas</a></ul></li><li><a href="#section-6">Limitaciones Actuales</a></li><li><a href="#section-7">Descarga y Uso</a><ul><li><a href="#section-8">Requisitos:</a></li><li><a href="#section-9">Descarga</a></li><li><a href="#section-10">Guía de Uso</a></ul></li><li><a href="#section-11">¿Qué Sigue?</a></ul>
+        </div>
+      </aside>
+    </div>
+    <footer>
+  <div class="footer-slogan">
+    <a href="index.html">
+      <picture>
+        <source srcset="/img/logo-blanco.webp" type="image/webp">
+        <img src="/img/logo-blanco.png" alt="Logo Monolito" width="40" loading="lazy" height="40">
+      </picture>
+    </a>
+    <p><i>"En Monolito Ingeniería, transformamos cálculos en soluciones seguras...<br>porque tu tranquilidad no se negocia."</i></p>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-info">
+    <a href="https://maps.app.goo.gl/9yLbMfPYGqB7xLMr7">
+      <p>Monolito Ingeniería S.A. de C.V.</p>
+      <p>Av. Pedro Henríquez Ureña 275</p>
+      <p>Col. Pedregal de Santo Domingo</p>
+      <p>Coyoacán, Ciudad de México</p>
+      </a>
+      <p>Tel: <a href="tel:+525643939397">56 4393 9397</a> | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
+      <p>&copy; 2025 Todos los derechos reservados</p>
+    </div>
+
+    <div class="footer-social">
+      <p>¡Síguenos en nuestras redes!</p>
+      <div class="social-icons-footer" style="margin-top: 10px">
+        <!-- WhatsApp (40x40) -->
+        <a href="https://wa.me/5215643939397" target="_blank" title="WhatsApp" aria-label="WhatsApp">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="#25D366">
+            <path d="M20.52 3.48A11.46 11.46 0 0012 0C5.373 0 0 5.372 0 12c0 2.124.555 4.127 1.608 5.887L0 24l6.207-1.6A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12 0-3.204-1.252-6.212-3.48-8.52zm-8.46 18.42a9.9 9.9 0 01-5.038-1.381l-.36-.217-3.688.95.985-3.6-.234-.37A9.87 9.87 0 012.1 12c0-5.454 4.446-9.9 9.9-9.9a9.84 9.84 0 016.996 2.894 9.77 9.77 0 012.904 6.987c0 5.453-4.446 9.9-9.9 9.9zm5.43-7.41c-.3-.15-1.768-.87-2.04-.97-.273-.1-.473-.15-.673.15-.2.3-.77.97-.945 1.17-.173.2-.347.225-.646.075-.3-.15-1.268-.47-2.417-1.49-.894-.796-1.497-1.776-1.675-2.076-.173-.3-.018-.46.13-.61.134-.134.3-.347.45-.52.15-.17.2-.3.3-.5.1-.2.05-.375-.025-.52-.075-.15-.673-1.618-.922-2.214-.242-.58-.488-.5-.673-.51l-.573-.01c-.2 0-.52.075-.79.375s-1.04 1.02-1.04 2.48 1.065 2.875 1.213 3.075c.15.2 2.095 3.2 5.075 4.487.71.306 1.263.488 1.695.625.712.227 1.36.195 1.87.118.57-.085 1.768-.72 2.02-1.415.253-.696.253-1.29.176-1.415-.074-.124-.273-.2-.573-.35z"/>
+          </svg>
+        </a>
+
+
+        <!-- Facebook (40x40) -->
+        <a href="https://www.facebook.com/profile.php?id=61578315800649 " target="_blank" title="WhatsApp" aria-label="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25" height="25">
+            <rect fill="#1877f2" width="512" height="512" rx="15%"/>
+            <path fill="#fff" d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram (40x40) -->
+        <a href="https://www.instagram.com/monolitoingenieria/" target="_blank" title="Instagram" aria-label="Instagram">
+<svg width="25" height="25" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="instaGrad" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#515bd4"/>
+      <stop offset="50%" stop-color="#dd2a7b"/>
+      <stop offset="100%" stop-color="#515bd4"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="10" ry="10" fill="url(#instaGrad)"/>
+  <rect x="6" y="6" width="36" height="36" rx="6" ry="6" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="24" cy="24" r="9.6" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="36" cy="12" r="3" fill="#ffffff"/>
+</svg>
+        </a>
+
+        <!-- X/Twitter (40x40) -->
+        <a href="https://www.x.com/Monolito_Ing/" target="_blank" title="X" aria-label="X.com">
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="#000000">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+
+      </div>
+
+      <div class="dmca-badge">
+        <a href="//www.dmca.com/Protection/Status.aspx?ID=9119aef2-a242-43b7-86f1-d2a5bb4a5a6c" title="DMCA.com Protection Status">
+          <img src="https://images.dmca.com/Badges/DMCA_logo-std-btn140w.png?ID=9119aef2-a242-43b7-86f1-d2a5bb4a5a6c" loading="lazy" width="141" height="53" alt="DMCA.com Protection Status">
+        </a>
+        <script defer>
+          document.addEventListener('DOMContentLoaded', function() {
+          var dmcaScript = document.createElement('script');
+          dmcaScript.src = 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js';
+          document.body.appendChild(dmcaScript);
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    
+      <script src="/js/main.js" defer></script>
+    
+    
+  </body>
+</html>

@@ -55,7 +55,7 @@ body {
 }
 
 main {
-  padding-bottom: 30px;
+  padding-bottom: 45px;
 }
 
 h2, h3, h4, h5, h6 {
@@ -103,6 +103,11 @@ img {
   font-size: 0.9rem;
 }
         
+.breadcrumb li:not(:last-child)::after {
+    content: "›";
+    margin-left: 8px;
+}
+
 .breadcrumb a {
   color: #2A5C9A;
   text-decoration: none;
@@ -214,11 +219,11 @@ nav a:hover {
   
   nav a {
     display: block;
-    margin: 8px 0;
+    margin: 0px 0;
     padding: 8px 0;
     text-align: center;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 4px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 0px;
     font-weight: 500;
     transition: color 0.3s;
   }

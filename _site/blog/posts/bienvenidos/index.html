@@ -1,67 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi primer publicación del blog</title>
-  <meta name="description" content="Default description">
-
-  
-  <link rel="canonical" href="https://monolito.lat/blog/posts/bienvenidos/" />
-  
-  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
-  <link rel="shortcut icon" href="/img/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Monolito" />
-  <link rel="manifest" href="/img/site.webmanifest" />
-
-  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primer publicación del blog</title>
+    <meta name="description" content="Default description">
+    <link rel="canonical" href="http://localhost:8888/blog/posts/bienvenidos/" />
+    <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Monolito" />
+    <link rel="manifest" href="/img/site.webmanifest" />
+    
 <style>
     .rectangle-container {
         max-width: 1000px;
-        margin: 40px auto;
+        margin: 0px auto;
         padding: 30px;
         background-color: white;
         border-radius: 8px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
-
     .post-container {
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         padding: 0 20px;
     }
-    
     .post-container.show {
         opacity: 1;
         transform: translateY(0);
     }
-    
     .post-meta {
         color: #2A5C9A
-        
     }
-
     .post {
         display: grid;
         gap: 20px;
     }
-    
-    /* Additional styles for other elements */
-    .breadcrumb ol {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        gap: 8px;
-    }
-    
-    .breadcrumb li:not(:last-child)::after {
-        content: "›";
-        margin-left: 8px;
-    }
-    
     .post-image {
         max-width: 100%;
         height: auto;
@@ -73,20 +50,27 @@
     }
 </style>
 
- 
-  <link rel="preconnect" href="https://images.dmca.com" crossorigin>
-  
-  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
-  
-  
-  <link rel="stylesheet" href="/css/katex.min.css">
-  <script src="/js/katex.min.js" defer></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
-
+    <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
+    <link rel="preload" href="/img/logo-blanco.webp" as="image" imagesrcset="/img/logo-blanco.webp" imagesizes="100vw">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DDVMS8S75B"></script>
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DDVMS8S75B');
+    </script>
+    <link rel="preconnect" href="https://images.dmca.com" crossorigin>
+    <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+    
+    <link rel="stylesheet" href="/css/katex.min.css">
+    <script src="/js/katex.min.js" defer></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+      onload="renderMathInElement(document.body);">
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {
           // customised options
           // • auto-render specific keys, e.g.:
@@ -99,51 +83,101 @@
           // • rendering keys, e.g.:
           throwOnError : false
         });
-    });
-    document.querySelectorAll('.maybe-vertical img').forEach(img => {
-  img.onload = () => {
-    if (img.naturalHeight > img.naturalWidth) {
-      img.classList.add('is-vertical');
-    }
-  };
-});
-</script>
-  <style>
-    .katex {
-    font: normal 1.21em KaTeX_Main,Times New Roman,serif;
-    font-style: normal;
-    line-height: normal;
-    line-height: 0;
-    text-indent: 0px;
-    text-rendering: geometricprecision;
-    }
-    .maybe-vertical img {
-      max-height: 100vh;
-      height: auto;
-      width: auto;
-      display: block;
+      });
+      document.querySelectorAll('.maybe-vertical img').forEach(img => {
+      img.onload = () => {
+      if (img.naturalHeight > img.naturalWidth) {
+        img.classList.add('is-vertical');
+          }
+        };
+      });
+    </script>
+    <style>
+      .katex {
+      font: normal 1.21em KaTeX_Main,Times New Roman,serif;
+      font-style: normal;
+      line-height: normal;
+      line-height: 0;
+      text-indent: 0px;
+      text-rendering: geometricprecision;
+      }
+      .maybe-vertical img {
+        max-height: 100vh;
+        height: auto;
+        width: auto;
+        display: block;
+        margin: 0 auto;
+      }
+    .content-wrapper {
+      display: flex;
+      max-width: 1500px;
       margin: 0 auto;
+      gap: 2rem;
+      padding: 0 1rem;
     }
-  </style>
-  <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
-  <link rel="preload" href="/img/logo-blanco.webp" as="image" imagesrcset="/img/logo-blanco.webp" imagesizes="100vw">
+      .post-content {
+        flex: 1;
+        min-width: 0;
+      }
+      .toc-sidebar {
+        width: 300px;
+        flex-shrink: 0; 
+        position: sticky;
+        top: 43.033px;
+        align-self: flex-start;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+      }
+      .toc-container {
+        background: #f8f9fa;
+        border-left: 3px solid #4a6fa5;
+        padding-right: 1rem;
+        padding-left: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 4px;
+      }
 
+      .toc-container {
+        font-size: 0.875rem;
+      }
 
-  
+      .toc-container h3 {
+        font-size: 1.2em;
+      }
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DDVMS8S75B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      #toc a {
+        font-size: 0.9em;
+        line-height: 1.4;
+      }
 
-  gtag('config', 'G-DDVMS8S75B');
-</script>
-
-</head>
-<body>
-  <header>
+      #toc ul {
+        list-style: none;
+        padding-left: 1rem;
+        margin: 0.5rem 0;
+      }
+      @media (max-width: 768px) {
+        /*
+        .content-wrapper {
+          flex-direction: column;
+        }
+        */
+        .toc-sidebar {
+          display: none;
+          /*
+          width: 100%;
+          position: static;
+          order: -1;
+          */
+        }
+        .post-content {
+        width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
   <div class="header-container">
     <a href="index.html">
       <picture>
@@ -217,52 +251,56 @@
 });
   </script>
 </header>
-  
-  <main>
-  
-<nav aria-label="Breadcrumb" class="breadcrumb">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
     <ol>
         <li><a href="https://monolito.lat">Inicio</a></li>
         <li aria-current="page"><a href="/blog">Blog</a></li>
     </ol>
 </nav>
-<main>
-    <section id="post" class="post-container" loading="eager" fetchpriority="high">
-        <div class="rectangle-container">
-            <article class="post">
-                
-                    <h1>Mi primer publicación del blog</h1>
-                    <div class="post-meta">
-                    <p><b>
-                        Publicado el 1 de julio de 2025</b>
-                        <p style="margin-top:20px"><i>
-                        
-                        Tags: Ingeniería, blog, CDMX, Coyoacán, Estructuras, Dictámenes
-                        
-                        </i>
-                        </p>
+    <div class="content-wrapper">
+      <main>
+        
+<section id="post" class="post-container" loading="eager" fetchpriority="high">
+    <div class="rectangle-container">
+        <article class="post">            
+                <h1>Mi primer publicación del blog</h1>
+                <div class="post-meta">
+                <p><b>
+                    Publicado el 1 de julio de 2025</b>
+                    <p style="margin-top:20px"><i>
+                    
+                    Tags: Ingeniería, blog, CDMX, Coyoacán, Estructuras, Dictámenes
+                    
+                    </i>
                     </p>
-                    </div>
-                    
-                    <img src="/img/blog/bienvenidos.webp" alt="Mi primer publicación del blog" class="post-image">
-                    
-
-                <div class="post-content">
-                    <h1>Bienvenidos a nuestro Blog</h1>
-<h2>Blog Técnico en Desarrollo</h2>
-<p>En nuestra primera publicación te informamos que estamos preparando contenido especializado en:</p>
-<h3>Casos de éxito a profundidad en rehabilitación estructural</h3>
-<h3>Análisis técnicos con normativa NTC-2023</h3>
-<h3>Guías paso a paso para regularizaciones en CDMX</h3>
+                </p>
+                </div>
+                
+                <img src="/img/blog/bienvenidos.webp" alt="Mi primer publicación del blog" class="post-image">
+                
+            <div class="post-content">
+                <h2>Bienvenidos a nuestro Blog</h2>
+<h3>Blog Técnico en Desarrollo</h3>
+<p>En nuestra primera publicación tenemos el gusto de informarte que seguimos trabajando en las futuras publicaciones. Todo diseñado para brindarte valor y ayudarte a que puedas alcanzar tus objetivos, estamos preparando contenido especializado en:</p>
+<ul>
+<li>
+<h4>Casos de éxito a profundidad en rehabilitación estructural</h4>
+</li>
+<li>
+<h4>Análisis técnicos con normativa NTC-2023</h4>
+</li>
+<li>
+<h4>Guías paso a paso para regularizaciones en CDMX</h4>
+</li>
+</ul>
+<br>
 <p>Espera nuevas publicaciones técnicas próximamente...</p>
 
-
-                    <p aria-current="return" style="margin-top:30px" align="right">← <a href="/blog">Volver al Blog</a></p>
-                </div>
-            </article>
-        </div>
-    </section>
-</main>
+                <p aria-current="return" style="margin-top:30px" align="right">← <a href="/blog">Volver al Blog</a></p>
+            </div>
+        </article>
+    </div>
+</section>
 <script>
     // Add show class when page loads
     document.addEventListener('DOMContentLoaded', function() {
@@ -273,9 +311,15 @@
     });
 </script>
 
-  </main>
-
-  <footer>
+      </main>
+      <aside class="toc-sidebar">
+        <div class="toc-container">
+          <h3>Contenidos</h3>
+          <ul><li><a href="#section-0">Bienvenidos a nuestro Blog</a><ul><li><a href="#section-1">Blog Técnico en Desarrollo</a></ul>
+        </div>
+      </aside>
+    </div>
+    <footer>
   <div class="footer-slogan">
     <a href="index.html">
       <picture>
@@ -288,17 +332,19 @@
 
   <div class="footer-bottom">
     <div class="footer-info">
+    <a href="https://maps.app.goo.gl/9yLbMfPYGqB7xLMr7">
       <p>Monolito Ingeniería S.A. de C.V.</p>
       <p>Av. Pedro Henríquez Ureña 275</p>
       <p>Col. Pedregal de Santo Domingo</p>
       <p>Coyoacán, Ciudad de México</p>
-      <p>Tel: 56 4393 9397 | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
+      </a>
+      <p>Tel: <a href="tel:+525643939397">56 4393 9397</a> | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
       <p>&copy; 2025 Todos los derechos reservados</p>
     </div>
 
     <div class="footer-social">
       <p>¡Síguenos en nuestras redes!</p>
-      <div class="social-icons-footer">
+      <div class="social-icons-footer" style="margin-top: 10px">
         <!-- WhatsApp (40x40) -->
         <a href="https://wa.me/5215643939397" target="_blank" title="WhatsApp" aria-label="WhatsApp">
           <svg width="25" height="25" viewBox="0 0 24 24" fill="#25D366">
@@ -339,13 +385,6 @@
           </svg>
         </a>
 
-        <!-- Email (40x40) -->
-        <a href="mailto:consultoria@monolito.lat" title="Correo electrónico" aria-label="Correo electrónico">
-          <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <path d="M2 6l10 7 10-7"/>
-          </svg>
-        </a>
       </div>
 
       <div class="dmca-badge">
@@ -364,14 +403,9 @@
   </div>
 </footer>
 
-
-
-  <script src="/js/main.js" defer></script>
-
-
-
-
-
-  
-</body>
+    
+      <script src="/js/main.js" defer></script>
+    
+    
+  </body>
 </html>

@@ -6,7 +6,7 @@
   <title>Nuestro Equipo de Ingenieros Estructurales en Coyoacán, CDMX</title>
   <meta name="description" content="Equipo de ingeniería estructural en CDMX. 10+ años de experiencia en seguridad estructural y diseño sísmico. Certificados.">
  
-  <link rel="canonical" href="https://monolito.lat/equipo/" />
+  <link rel="canonical" href="http://localhost:8888/equipo/" />
 
   <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
@@ -135,7 +135,6 @@
     <meta itemprop="address" content="Ciudad de México">
     <meta itemprop="email" content="consultoria@monolito.lat">
     <meta itemprop="telephone" content="+525643939397">
-    <link rel="canonical" href="https://www.monolito.lat/equipo" />    
     <link rel="preload" href="/img/hero-bg.webp" as="image" media="(min-width: 600px)">
     <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
     <link rel="preload" href="/img/logo-blanco.webp" as="image" imagesrcset="/img/logo-blanco.webp" imagesizes="100vw">
@@ -205,8 +204,8 @@
             margin-bottom: 10px;
         }
         section {
-            scroll-margin-top: 80px;
-            padding: 20px 20px 40px;
+            scroll-margin-top: 55px;
+            margin-bottom: 45px;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -245,11 +244,9 @@
                 margin: 0 auto 20px;
             }
         }
-<!-- Form styles -->
-
         .contact-container {
             max-width: 1000px;
-            margin: 40px auto;
+            margin: 0px auto;
             padding: 30px;
             background-color: white;
             border-radius: 8px;
@@ -342,14 +339,14 @@
         }
     </style>
 </head>
-<body>
+
 <nav aria-label="Breadcrumb" class="breadcrumb">
     <ol>
         <li><a href="https://monolito.lat">Inicio</a></li>
         <li aria-current="page"><a href="/equipo">Equipo</a></li>
     </ol>
 </nav>
-    <main>
+
         <section id="nosotros" loading="eager" fetchpriority="high">
             <div class="content-box">
                 <h1 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">Acerca de Nosotros | Monolito Ingeniería</h1>
@@ -413,7 +410,9 @@
                         <div style="margin: 20px 0;">
                             <span class="badge"><i class="fas fa-graduation-cap"></i> UNAM</span>
                             <span class="badge"><i class="fas fa-certificate"></i> NTC-2023</span>
-                            <span class="badge"><i class="fas fa-shield-alt"></i> ASCE</span>
+                            <span class="badge"><i class="fas fa-shield-alt"></i> ASCE-7</span>
+                            <span class="badge"><i class="fas fa-shield-alt"></i> ACI-318</span>
+                            <span class="badge"><i class="fas fa-shield-alt"></i> AISC-360</span>
                         </div>
                         
                         <blockquote style="border-left: 3px solid #2A5C9A; padding-left: 15px; font-style: italic; margin-top: 20px;">
@@ -431,21 +430,22 @@
         </section>
 
 <section id="talentos" class="content-box">
-    <div class="contact-container">
+
         <h2 style="color: #2A5C9A; text-align: center; margin-bottom: 40px;">Colabora con Nosotros</h2>
 
         <p>En Monolito Ingeniería construimos un <strong>banco de talentos</strong> para ingenieros estructurales en CDMX para colaboraciones freelance.</p>
         <p><strong>Registra tu CV</strong> eligiendo tu área de especialidad y te contactaremos cuando haya proyectos compatibles con tu perfil.</p><br>
 
-        <form name="cv" netlify action="/success-cv" enctype="multipart/form-data">
+        <form id="cv-form" name="cv" netlify action="/success-cv" enctype="multipart/form-data">
             <input type="text" name="nombre" placeholder="Nombre completo" required>
             <input type="email" name="email" placeholder="Correo electrónico" required>
             <input type="tel" name="telefono" placeholder="Teléfono" required>
             <select name="especialidad" required aria-labelledby="state">
                 <option value="" disabled selected>Selecciona tu especialidad</option>
-                <option value="levantamientos">Levantamientos de Inmueble</option>
-                <option value="calculos">Cálculos Estructurales</option>
-                <option value="licencias">Generación de planos</option>
+                <option value="Levantamientos">Levantamientos de Inmueble</option>
+                <option value="Cálculos">Cálculos Estructurales</option>
+                <option value="Licencias">Gestión de licencias</option>
+                <option value="Planos">Generación de planos</option>
             </select>
             <label for="cv" style="display: block; margin: 10px 0 5px; font-weight: bold;">Sube tu CV (PDF, tamaño máximo de archivo: 200 kB)* </label>
             <input type="file" name="cv" id="cv" accept=".pdf" required data-max-size="200000" onchange="validateFileSize(this)">
@@ -456,10 +456,9 @@
             </button>
         </form><br>
         <em>*Tus datos solo se usarán para contactarte cuando haya oportunidades alineadas a tu perfil.</em>
-    </div>
+
 </section>
 
-    </main>
 <script>
     // Intersection Observer for scroll animations
     document.addEventListener('DOMContentLoaded', () => {
@@ -517,14 +516,39 @@
 </script>
 <script>
     function validateFileSize(input) {
-  const maxSize = input.getAttribute('data-max-size'); // 5MB en bytes
+  const maxSize = input.getAttribute('data-max-size');
   if (input.files[0].size > maxSize) {
-    alert('El archivo excede el límite de 5MB');
+    alert('El archivo excede el límite de 200 kB.');
     input.value = ''; // Borra el archivo seleccionado
   }
 }
 </script>
-</body>
+<script>
+  document.getElementById("cv-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    if (document.getElementById("cv").files[0].size > 200000) {
+      alert("El archivo excede 200 KB");
+      return;
+    }
+    const response = await fetch("/.netlify/functions/validate-upload", {
+      method: "POST",
+      body: formData,
+    });
+    const result = await response.json();
+    if (response.status === 413) {
+      alert(result.error);
+    } else {
+      await fetch("/", {
+        method: "POST",
+        body: formData,
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      });
+      window.location.href = "/success-cv";
+    }
+  });
+</script>
+
   </main>
 
   <footer>
@@ -540,17 +564,19 @@
 
   <div class="footer-bottom">
     <div class="footer-info">
+    <a href="https://maps.app.goo.gl/9yLbMfPYGqB7xLMr7">
       <p>Monolito Ingeniería S.A. de C.V.</p>
       <p>Av. Pedro Henríquez Ureña 275</p>
       <p>Col. Pedregal de Santo Domingo</p>
       <p>Coyoacán, Ciudad de México</p>
-      <p>Tel: 56 4393 9397 | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
+      </a>
+      <p>Tel: <a href="tel:+525643939397">56 4393 9397</a> | email: <a href="mailto:consultoria@monolito.lat">consultoria@monolito.lat</a></p>
       <p>&copy; 2025 Todos los derechos reservados</p>
     </div>
 
     <div class="footer-social">
       <p>¡Síguenos en nuestras redes!</p>
-      <div class="social-icons-footer">
+      <div class="social-icons-footer" style="margin-top: 10px">
         <!-- WhatsApp (40x40) -->
         <a href="https://wa.me/5215643939397" target="_blank" title="WhatsApp" aria-label="WhatsApp">
           <svg width="25" height="25" viewBox="0 0 24 24" fill="#25D366">
@@ -591,13 +617,6 @@
           </svg>
         </a>
 
-        <!-- Email (40x40) -->
-        <a href="mailto:consultoria@monolito.lat" title="Correo electrónico" aria-label="Correo electrónico">
-          <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <path d="M2 6l10 7 10-7"/>
-          </svg>
-        </a>
       </div>
 
       <div class="dmca-badge">

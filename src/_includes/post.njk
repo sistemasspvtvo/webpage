@@ -1,98 +1,31 @@
 {% extends "layout-posts.njk" %}
-{% block content %}
-<nav aria-label="Breadcrumb" class="breadcrumb">
-    <ol>
-        <li><a href="https://monolito.lat">Inicio</a></li>
-        <li aria-current="page"><a href="/blog">Blog</a></li>
-    </ol>
-</nav>
-<main>
-    <section id="post" class="post-container" loading="eager" fetchpriority="high">
-        <div class="rectangle-container">
-            <article class="post">
-                
-                    <h1>{{ title }}</h1>
-                    <div class="post-meta">
-                    <p><b>
-                        Publicado el {{ page.date | date }}</b>
-                        <p style="margin-top:20px"><i>
-                        {% if tags %}
-                        Tags: {{ tags | join(", ") }}
-                        {% endif %}
-                        </i>
-                        </p>
-                    </p>
-                    </div>
-                    {% if image %}
-                    <img src="/img/blog/{{ image | replace('/img/blog/', '') }}" alt="{{ title }}" class="post-image">
-                    {% endif %}
-
-                <div class="post-content">
-                    {{ content | safe }}
-
-                    <p aria-current="return" style="margin-top:30px" align="right">← <a href="/blog">Volver al Blog</a></p>
-                </div>
-            </article>
-        </div>
-    </section>
-</main>
-<script>
-    // Add show class when page loads
-    document.addEventListener('DOMContentLoaded', function() {
-        const postContainer = document.querySelector('.post-container');
-        if (postContainer) {
-            postContainer.classList.add('show');
-        }
-    });
-</script>
-{% endblock %}
-
 {% block styles %}
 <style>
     .rectangle-container {
         max-width: 1000px;
-        margin: 40px auto;
+        margin: 0px auto;
         padding: 30px;
         background-color: white;
         border-radius: 8px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
-
     .post-container {
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         padding: 0 20px;
     }
-    
     .post-container.show {
         opacity: 1;
         transform: translateY(0);
     }
-    
     .post-meta {
         color: #2A5C9A
-        
     }
-
     .post {
         display: grid;
         gap: 20px;
     }
-    
-    /* Additional styles for other elements */
-    .breadcrumb ol {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        gap: 8px;
-    }
-    
-    .breadcrumb li:not(:last-child)::after {
-        content: "›";
-        margin-left: 8px;
-    }
-    
     .post-image {
         max-width: 100%;
         height: auto;
@@ -103,4 +36,40 @@
         display: block;
     }
 </style>
+{% endblock %}
+{% block content %}
+<section id="post" class="post-container" loading="eager" fetchpriority="high">
+    <div class="rectangle-container">
+        <article class="post">            
+                <h1>{{ title }}</h1>
+                <div class="post-meta">
+                <p><b>
+                    Publicado el {{ page.date | date }}</b>
+                    <p style="margin-top:20px"><i>
+                    {% if tags %}
+                    Tags: {{ tags | join(", ") }}
+                    {% endif %}
+                    </i>
+                    </p>
+                </p>
+                </div>
+                {% if image %}
+                <img src="/img/blog/{{ image | replace('/img/blog/', '') }}" alt="{{ title }}" class="post-image">
+                {% endif %}
+            <div class="post-content">
+                {{ content | safe }}
+                <p aria-current="return" style="margin-top:30px" align="right">← <a href="/blog">Volver al Blog</a></p>
+            </div>
+        </article>
+    </div>
+</section>
+<script>
+    // Add show class when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const postContainer = document.querySelector('.post-container');
+        if (postContainer) {
+            postContainer.classList.add('show');
+        }
+    });
+</script>
 {% endblock %}

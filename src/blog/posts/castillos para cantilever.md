@@ -1,7 +1,8 @@
 ---
 layout: post.njk
-title: "Refuerzo estructural en Coyoacán: Solución eficiente para un cantilever en riesgo (Caso de estudio)"
+title: "Refuerzo estructural Coyoacán: Solución para un cantilever en riesgo"
 date: 2025-07-10
+author: Angel Monroy Canales
 tags:
   - Ingeniería, vigas, NTC-2023, CDMX, Refuerzo estructural CDMX, Reparación de grietas en mampostería,	Normas NTC-2023 para casas, Cantilever peligroso solución
 
@@ -20,15 +21,15 @@ Demostramos cómo la correcta aplicación de la normativa, combinada con solucio
 
 ---
 
-### Planteamiento de Solución: Estrategia de Refuerzo para Cantilever en Mampostería
+## Planteamiento de Solución: Estrategia de Refuerzo para Cantilever en Mampostería
 
-#### Diagnóstico Inicial
+### Diagnóstico Inicial
 
 Durante la inspección del cantilever de mampostería, se identificó una falla estructural asociada a la falta de continuidad vertical de los castillos laterales, los cuales no llegaban hasta la cimentación. Las grietas verticales en la junta fría, típicas de esfuerzos cortantes excesivos, y la inclinación de la puerta, clara señal de desplazamientos diferenciales, confirmaban que el sistema actual no era capaz de resistir adecuadamente los momentos inducidos por la configuración en voladizo.
 
 Dado el tipo de suelo (Tipo II) y la geometría existente, se propuso una solución directa: integrar dos castillos nuevos desde la cadena superior hasta la cimentación, asegurando una transmisión continua de cargas verticales. Esta estrategia no requería cimentaciones sobredimensionadas, permite que el patio siga manteniendo los claros adecuados para seguir funcionando como estacionamiento y se apoyaba en experiencias previas con construcciones similares en zonas de autoconstrucción, como Coyoacán, donde comúnmente se omiten elementos fundamentales debido al escaso conocimiento de la mano de obra que a la vez es el proyectista.
 
-#### Comportamiento Estructural y Patologías
+### Comportamiento Estructural y Patologías
 
 La frontera entre muros mostró grietas verticales acompañadas de una deformación de 12 mm en un vano de 3 metros, excediendo el límite de flecha permitido para elementos de concreto:
 
@@ -38,7 +39,7 @@ $$
 
 Además, una puerta visiblemente descuadrada evidenciaba desplazamientos verticales significativos. Este comportamiento se atribuyó a una configuración estructural deficiente, en contravención con lo indicado por la sección 6.2.1.1.a de las NTC-2023, que establece la obligación de colocar castillos en los extremos y encuentros de muros.
 
-#### Análisis de Causas Probables
+### Análisis de Causas Probables
 
 Las grietas a 90° detectadas entre muros colindantes que desplanten sobre un cantilever pueden explicarse por varios factores combinados. La losa, al estar parcialmente apoyada sobre muros de mampostería, sufre flexión y deflexión bajo carga, generando asentamientos diferenciales. Este efecto se agrava si los muros se construyeron en momentos distintos, ya que la diferencia de rigidez entre ellos y la falta de una junta de separación inducen esfuerzos incompatibles.
 
@@ -46,7 +47,7 @@ La ausencia de una junta de construcción provoca una interacción rígida entre
 
 También debe considerarse la contracción diferencial de los materiales. Cuando uno de los muros se construye después, el mortero fresco puede retraerse más, generando tensiones internas que abren fisuras, lo cual recalca la importancia de controlar las deformaciones volumétricas en mampostería.
 
-#### Observaciones y Recomendación
+### Observaciones y Recomendación
 
 Las grietas verticales observadas se deben principalmente a asentamientos diferenciales por apoyo parcial, falta de juntas entre etapas constructivas, concentración de esfuerzos por rigidez discontinua y contracción no controlada de materiales. La solución estructural debe enfocarse en mejorar la continuidad vertical, reforzar la unión entre muros, insertar juntas de construcción apropiadas y revisar el diseño del voladizo conforme a lo establecido en las NTC-2023.<br><br>
 

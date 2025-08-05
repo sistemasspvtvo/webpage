@@ -82,65 +82,74 @@
       gap: 2rem;
       padding: 0 1rem;
     }
-      .post-content {
-        flex: 1;
-        min-width: 0;
+    h1, h2, h3 {
+    scroll-margin-top: 60px;
+    }
+    pre, code {
+      white-space: pre-wrap;  /* Respeta saltos de línea pero hace wrap */
+      word-wrap: break-word;  /* Rompe palabras largas */
+      overflow-x: auto;       /* Scroll horizontal solo si es necesario */
+      max-width: 100%;        /* Evita desbordamiento del contenedor */
+    }
+    .post-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .toc-sidebar {
+      width: 300px;
+      flex-shrink: 0; 
+      position: sticky;
+      top: 43.033px;
+      align-self: flex-start;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+    }
+    .toc-container {
+      background: #f8f9fa;
+      border-left: 3px solid #4a6fa5;
+      padding-right: 1rem;
+      padding-left: 2rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-radius: 4px;
+    }
+
+    .toc-container {
+      font-size: 0.875rem;
+    }
+
+    .toc-container h3 {
+      font-size: 1.2em;
+    }
+
+    #toc a {
+      font-size: 0.9em;
+      line-height: 1.4;
+    }
+
+    #toc ul {
+      list-style: none;
+      padding-left: 1rem;
+      margin: 0.5rem 0;
+    }
+    @media (max-width: 768px) {
+      /*
+      .content-wrapper {
+        flex-direction: column;
       }
+      */
       .toc-sidebar {
-        width: 300px;
-        flex-shrink: 0; 
-        position: sticky;
-        top: 43.033px;
-        align-self: flex-start;
-        max-height: calc(100vh - 120px);
-        overflow-y: auto;
-      }
-      .toc-container {
-        background: #f8f9fa;
-        border-left: 3px solid #4a6fa5;
-        padding-right: 1rem;
-        padding-left: 2rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        border-radius: 4px;
-      }
-
-      .toc-container {
-        font-size: 0.875rem;
-      }
-
-      .toc-container h3 {
-        font-size: 1.2em;
-      }
-
-      #toc a {
-        font-size: 0.9em;
-        line-height: 1.4;
-      }
-
-      #toc ul {
-        list-style: none;
-        padding-left: 1rem;
-        margin: 0.5rem 0;
-      }
-      @media (max-width: 768px) {
+        display: none;
         /*
-        .content-wrapper {
-          flex-direction: column;
-        }
-        */
-        .toc-sidebar {
-          display: none;
-          /*
-          width: 100%;
-          position: static;
-          order: -1;
-          */
-        }
-        .post-content {
         width: 100%;
-        }
+        position: static;
+        order: -1;
+        */
       }
+      .post-content {
+      width: 100%;
+      }
+    }
     </style>
   </head>
   <body>

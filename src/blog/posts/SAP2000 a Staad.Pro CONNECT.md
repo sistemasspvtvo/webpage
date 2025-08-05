@@ -16,6 +16,8 @@ tags:
   - OpenStaad
   - CDMX
   - Coyoacán
+  - Bentley
+  - CSi
 
 excerpt: "¿Cansado de perder horas recreando modelos manualmente entre SAP2000 y STAAD.Pro? ¡Desarrollé una solución en C++ que lo hace automáticamente!"
 image: SAP2000 a Staad-1.gif
@@ -36,11 +38,11 @@ image: SAP2000 a Staad-1.gif
 <a href="#descarga">⬇️ Ir a Descarga</a>
 
 ## El Problema: Pérdida de Tiempo en Conversión Manual
-Existe una cantidad considerable de softwares especializados en el cálculo estructural, tales como SAP2000 y Staad. Frecuentemente, la labor de un estructurista es la de revisar el trabajo de un colega, el cual muy posiblemente haya elaborado su modelo con un software diferente del que se tiene disponible, por lo que surge la necesidad de realizar un modelo analítico desde cero.
+Existe una cantidad considerable de softwares especializados en el cálculo estructural, tales como SAP2000 y Staad. Frecuentemente, la labor de un estructurista es la de revisar el trabajo de un colega, el cual muy posiblemente haya elaborado su modelo con un software diferente del que se tiene disponible, por lo que surge la necesidad de realizar un modelo analítico desde cero, mas aún cuando la única información con la que se cuenta de la estructura analizada es un archivo de SAP2000.
 
 <br>
 
-Recrear modelos de SAP2000 a STAAD es **propenso a errores** y consume horas valiosas. Mi objetivo fue desarrollar una herramienta que:
+Recrear modelos de SAP2000 a STAAD de manera manual es **propenso a errores** y consume horas valiosas. Mi objetivo fue desarrollar una herramienta que, automáticamente:
 
 <br>
 
@@ -52,6 +54,7 @@ Recrear modelos de SAP2000 a STAAD es **propenso a errores** y consume horas val
 - Soporta beams, plates de 4 nodos y cargas puntuales y distribuidas sobre beams y plates.  
 
 ## Cómo Funciona el Código
+
 ### 1. Lectura del Archivo SAP2000  
 
 El programa analiza el archivo .$2K como texto plano. Aprovechando que la información de las propiedades de la estructura se encuentra organizada en tablas, se buscan patrones clave en su contenido:
@@ -176,9 +179,19 @@ bool STAADWrapper::CreatePlate(OpenSTAADUI::IOSGeometryUIPtr geometry, int plate
 
 ## Limitaciones Actuales
 
-  - Plates complejas (>4 nodos) no son soportadas.
+  - Plates complejas (>4 nodos) no son soportadas debido a que Staad carece de plates de más de cuatro apoyos. 
+
+  - Soporta hasta 100'000 elementos beam. Los elementos plate son replicados con una numeración que empieza por 100'001.
 
   - STAAD.Pro debe ser abierto manualmente sin ningún modelo cargado (el código no inicia la instancia del programa por sí mismo debido a las limitantes de la API OpenStaad).
+
+  - Para respetar los nombres de los ejes de SAP2000, se deberá de configurar manualmente Staad con Z up en Configure->General->Global Axes
+
+<br>
+
+<p class="maybe-vertical">
+  <img src="/img/blog/SAP2000-a-Staad-2.webp" alt="Configuración manual">
+</p>
 
 ## Descarga y Uso
 
@@ -186,41 +199,44 @@ bool STAADWrapper::CreatePlate(OpenSTAADUI::IOSGeometryUIPtr geometry, int plate
 
     1. Archivo .$2k de modelo en SAP2000 versión 2022.
 
-    2. STAAD.Pro CONNECT Edition  **abierto manualmente sin archivo cargado**.
+    2. STAAD.Pro CONNECT Edition.
 
     3. Windows 10/11.
-
-<span id="descarga"></span>
 
 ### Descarga  
 
     Código fuente: Disponible próximamente en GitHub.
 
-    Versión compilada: Descargar .exe (hosteado en los servidores de Netlify CDN para mayor seguridad).
+    Versión de prueba ya compilada: Descargar .exe (hosteado en los servidores de Netlify CDN para mayor seguridad).
 
 <br>
  
-
-[📥 Descargar v1.0 para Windows](https://tudominio.netlify.app/downloads/SAP2STAAD.exe) 
+<a href="/downloads/SAP2000-a-STAAD.exe"
+   onclick="gtag('event', 'download', {
+     event_category: 'Archivo',
+     event_label: 'SAP2000-a-STAAD.exe'
+   })"
+   download> 📥 Descargar versión de prueba (únicamente transforma nodos, soportes y elementos beam) para Windows </a>
 
 ### Guía de Uso  
   
-    1. Ejecuta el programa como administrador.  
-    2. Selecciona tu archivo .$2K de SAP2000, arrastra y suelta en la ventana de comandos.
+    1.  [Abrir Staad.Pro CONNECT Edition manualmente y sin archivo cargado](https://docs.bentley.com/LiveContent/web/STAAD.Pro%20Help-v21/en/GUID-B8FDE305-22B3-44A8-93AE-5649689ABCB8.html)
+    2. Ejecuta el programa "SAP2000-a-Staad.exe" como administrador.  
+    2. Selecciona tu archivo ".$2K" de SAP2000, arrastra y suelta en la ventana de comandos.
     3. Elige las unidades de longitud y fuerza de tu modelo original.    
-    4. ¡Listo! El programa generará el modelo en Staad automáticamente en "C:\temp".  
+    4. ¡Listo! El programa generará el modelo en Staad automáticamente en "C:\temp". Dependiendo del tamaño del modelo será el tiempo de espera.  
 
 ## ¿Qué Sigue?
 
 Estamos trabajando en:
 
-    1. Soporte para más tipos de elementos y plates de más de cuatro nodos.
+    1. Soporte para más tipos de elementos y plates de más de cuatro nodos por medio de "triangular" los plates.
 
     2. Conversión de comandos de diseño estructural.
 
 <br>
 
-**¿Problemas? ¿Te gustaría contribuir o necesitas una personalización? [¡Contáctanos!](/contacto)**
+**¿Encontraste problemas? ¿Te gustaría contribuir o necesitas una personalización? [¡Contáctanos!](/contacto)**
 
 <script>
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

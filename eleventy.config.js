@@ -2,12 +2,30 @@ const { DateTime } = require('luxon');
 const slugify = require("slugify");
 const markdownIt = require('markdown-it');
 const markdownItKatex = require('markdown-it-katex');
+const markdownItAnchor = require('markdown-it-anchor');
 const md = markdownIt({
   html: true,
   breaks: true,
   linkify: true
-}).use(markdownItKatex);
-
+})
+.use(markdownItKatex)
+.use(markdownItAnchor, {
+    slugify: s =>
+      s
+        .trim()
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, '')   // limpia caracteres raros
+        .replace(/\s+/g, '-')      // espacios a guiones
+        .replace(/-+/g, '-'),      // evita guiones duplicados
+/*
+      permalink: markdownItAnchor.permalink.ariaHidden({
+      placement: 'after',
+      class: 'direct-link',
+      symbol: '#',
+      level: [1, 2, 3]
+    })
+*/
+  });
 module.exports = function(eleventyConfig) {
   // Date filter
   eleventyConfig.addFilter("date", (dateObj) => {
@@ -30,6 +48,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary('md', md);
 
   // Passthrough copies
+  eleventyConfig.addPassthroughCopy("src/downloads");
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
@@ -61,28 +80,36 @@ module.exports = function(eleventyConfig) {
   const cheerio = require('cheerio');
 
   eleventyConfig.addShortcode("generateTOC", function(htmlContent) {
-    const $ = cheerio.load(htmlContent);
-    const headings = $('h1, h2, h3');
-    let tocHTML = '<ul>';
-    let lastLevel = 2;
+  const $ = require('cheerio').load(htmlContent);
+  const headings = $('h1, h2, h3');
+  let tocHTML = '<ul class="toc-list">';
+  let lastLevel = 2;
 
-    headings.each((index, element) => {
-      const heading = $(element);
-      const level = parseInt(element.name.substring(1));
-      const id = heading.attr('id') || `section-${index}`;
-      heading.attr('id', id);
+  headings.each((index, el) => {
+    const level = +el.name.slice(1);
+    const text = $(el).text();
+    const id = $(el).attr('id');
 
-      if (level > lastLevel) tocHTML += '<ul>';
-      else if (level < lastLevel) tocHTML += '</ul></li>'.repeat(lastLevel - level);
-      else if (index > 0) tocHTML += '</li>';
+    if (!id) return;
 
-      tocHTML += `<li><a href="#${id}">${heading.text()}</a>`;
-      lastLevel = level;
-    });
+    if (level > lastLevel) {
+      tocHTML += '<ul class="toc-sublist">';
+    } else if (level < lastLevel) {
+      tocHTML += '</li></ul>'.repeat(lastLevel - level) + '</li>';
+    } else if (index > 0) {
+      tocHTML += '</li>';
+    }
 
-    tocHTML += '</ul>';
-    return tocHTML;
+    tocHTML += `<li class="toc-item toc-level-${level}">` +
+               `<a href="#${id}" class="toc-link">${text}</a>`;
+
+    lastLevel = level;
   });
+
+  tocHTML += '</li></ul>'.repeat(Math.max(0, lastLevel - 2)) + '</ul>';
+  return tocHTML;
+});
+
 
   return {
     dir: {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cómo Convertir modelos SAP2000 a STAAD.Pro con C++</title>
     <meta name="description" content="Default description">
-    <link rel="canonical" href="http://localhost:8888/blog/posts/SAP2000 a Staad.Pro CONNECT/" />
+    <link rel="canonical" href="https://monolito.lat/blog/posts/SAP2000 a Staad.Pro CONNECT/" />
     <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
     <link rel="shortcut icon" href="/img/favicon.ico" />
@@ -115,65 +115,74 @@
       gap: 2rem;
       padding: 0 1rem;
     }
-      .post-content {
-        flex: 1;
-        min-width: 0;
+    h1, h2, h3 {
+    scroll-margin-top: 60px;
+    }
+    pre, code {
+      white-space: pre-wrap;  /* Respeta saltos de línea pero hace wrap */
+      word-wrap: break-word;  /* Rompe palabras largas */
+      overflow-x: auto;       /* Scroll horizontal solo si es necesario */
+      max-width: 100%;        /* Evita desbordamiento del contenedor */
+    }
+    .post-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .toc-sidebar {
+      width: 300px;
+      flex-shrink: 0; 
+      position: sticky;
+      top: 43.033px;
+      align-self: flex-start;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+    }
+    .toc-container {
+      background: #f8f9fa;
+      border-left: 3px solid #4a6fa5;
+      padding-right: 1rem;
+      padding-left: 2rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-radius: 4px;
+    }
+
+    .toc-container {
+      font-size: 0.875rem;
+    }
+
+    .toc-container h3 {
+      font-size: 1.2em;
+    }
+
+    #toc a {
+      font-size: 0.9em;
+      line-height: 1.4;
+    }
+
+    #toc ul {
+      list-style: none;
+      padding-left: 1rem;
+      margin: 0.5rem 0;
+    }
+    @media (max-width: 768px) {
+      /*
+      .content-wrapper {
+        flex-direction: column;
       }
+      */
       .toc-sidebar {
-        width: 300px;
-        flex-shrink: 0; 
-        position: sticky;
-        top: 43.033px;
-        align-self: flex-start;
-        max-height: calc(100vh - 120px);
-        overflow-y: auto;
-      }
-      .toc-container {
-        background: #f8f9fa;
-        border-left: 3px solid #4a6fa5;
-        padding-right: 1rem;
-        padding-left: 2rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        border-radius: 4px;
-      }
-
-      .toc-container {
-        font-size: 0.875rem;
-      }
-
-      .toc-container h3 {
-        font-size: 1.2em;
-      }
-
-      #toc a {
-        font-size: 0.9em;
-        line-height: 1.4;
-      }
-
-      #toc ul {
-        list-style: none;
-        padding-left: 1rem;
-        margin: 0.5rem 0;
-      }
-      @media (max-width: 768px) {
+        display: none;
         /*
-        .content-wrapper {
-          flex-direction: column;
-        }
-        */
-        .toc-sidebar {
-          display: none;
-          /*
-          width: 100%;
-          position: static;
-          order: -1;
-          */
-        }
-        .post-content {
         width: 100%;
-        }
+        position: static;
+        order: -1;
+        */
       }
+      .post-content {
+      width: 100%;
+      }
+    }
     </style>
   </head>
   <body>
@@ -269,7 +278,7 @@
                     Publicado el 5 de agosto de 2025</b>
                     <p style="margin-top:20px"><i>
                     
-                    Tags: Ingeniería, automatización, programación, SAP2000, Staad.Pro, CONNECT, modelos, estructuras, API, OpenStaad, CDMX, Coyoacán
+                    Tags: Ingeniería, automatización, programación, SAP2000, Staad.Pro, CONNECT, modelos, estructuras, API, OpenStaad, CDMX, Coyoacán, Bentley, CSi
                     
                     </i>
                     </p>
@@ -290,22 +299,22 @@
 }
 </script>  
 <p><a href="#descarga">⬇️ Ir a Descarga</a></p>
-<h2>El Problema: Pérdida de Tiempo en Conversión Manual</h2>
-<p>Existe una cantidad considerable de softwares especializados en el cálculo estructural, tales como SAP2000 y Staad. Frecuentemente, la labor de un estructurista es la de revisar el trabajo de un colega, el cual muy posiblemente haya elaborado su modelo con un software diferente del que se tiene disponible, por lo que surge la necesidad de realizar un modelo analítico desde cero.</p>
+<h2 id="el-problema-prdida-de-tiempo-en-conversin-manual" tabindex="-1">El Problema: Pérdida de Tiempo en Conversión Manual</h2>
+<p>Existe una cantidad considerable de softwares especializados en el cálculo estructural, tales como SAP2000 y Staad. Frecuentemente, la labor de un estructurista es la de revisar el trabajo de un colega, el cual muy posiblemente haya elaborado su modelo con un software diferente del que se tiene disponible, por lo que surge la necesidad de realizar un modelo analítico desde cero, mas aún cuando la única información con la que se cuenta de la estructura analizada es un archivo de SAP2000.</p>
 <br>
-<p>Recrear modelos de SAP2000 a STAAD es <strong>propenso a errores</strong> y consume horas valiosas. Mi objetivo fue desarrollar una herramienta que:</p>
+<p>Recrear modelos de SAP2000 a STAAD de manera manual es <strong>propenso a errores</strong> y consume horas valiosas. Mi objetivo fue desarrollar una herramienta que, automáticamente:</p>
 <br>
 <ul>
 <li><strong>Extraiga datos directamente</strong> del archivo .$2K de SAP2000.</li>
 <li><strong>Genere comandos nativos</strong> para STAAD.</li>
 </ul>
-<h2>¿Qué hace este programa?</h2>
+<h2 id="qu-hace-este-programa" tabindex="-1">¿Qué hace este programa?</h2>
 <ul>
 <li>Convierte <strong>geometría, cargas y soportes</strong> de SAP2000 versión 2022 a STAAD Pro CONNECT EDITION empleando el API OpenStaad.</li>
 <li>Soporta beams, plates de 4 nodos y cargas puntuales y distribuidas sobre beams y plates.</li>
 </ul>
-<h2>Cómo Funciona el Código</h2>
-<h3>1. Lectura del Archivo SAP2000</h3>
+<h2 id="cmo-funciona-el-cdigo" tabindex="-1">Cómo Funciona el Código</h2>
+<h3 id="1-lectura-del-archivo-sap2000" tabindex="-1">1. Lectura del Archivo SAP2000</h3>
 <p>El programa analiza el archivo .$2K como texto plano. Aprovechando que la información de las propiedades de la estructura se encuentra organizada en tablas, se buscan patrones clave en su contenido:</p>
 <br>
 <pre><code class="language-cpp">SectionPositions SAP2000Parser::ParseFile(const string&amp; filePath) {
@@ -365,7 +374,7 @@
             }
 </code></pre>
 <br>
-<h3>2. Generación de Geometría en <a href="http://STAAD.Pro">STAAD.Pro</a></h3>
+<h3 id="2-generacin-de-geometra-en-staadpro" tabindex="-1">2. Generación de Geometría en <a href="http://STAAD.Pro">STAAD.Pro</a></h3>
 <p>Nodos y beams se crean con comandos como AddNode y AddBeam.</p>
 <br>
 <pre><code class="language-cpp">bool STAADWrapper::CreateNodes(IOSGeometryUIPtr geometry, vector&lt;Node&gt;&amp; nodes) {
@@ -401,40 +410,55 @@
             break;
 </code></pre>
 <br>
-<h3>3. Asignación de Cargas</h3>
+<h3 id="3-asignacin-de-cargas" tabindex="-1">3. Asignación de Cargas</h3>
 <p>Cargas puntuales → LOAD.</p>
 <p>Cargas distribuidas → UNIFORM LOAD.</p>
-<h2>Limitaciones Actuales</h2>
+<h2 id="limitaciones-actuales" tabindex="-1">Limitaciones Actuales</h2>
 <ul>
 <li>
-<p>Plates complejas (&gt;4 nodos) no son soportadas.</p>
+<p>Plates complejas (&gt;4 nodos) no son soportadas debido a que Staad carece de plates de más de cuatro apoyos.</p>
+</li>
+<li>
+<p>Soporta hasta 100'000 elementos beam. Los elementos plate son replicados con una numeración que empieza por 100'001.</p>
 </li>
 <li>
 <p><a href="http://STAAD.Pro">STAAD.Pro</a> debe ser abierto manualmente sin ningún modelo cargado (el código no inicia la instancia del programa por sí mismo debido a las limitantes de la API OpenStaad).</p>
 </li>
+<li>
+<p>Para respetar los nombres de los ejes de SAP2000, se deberá de configurar manualmente Staad con Z up en Configure-&gt;General-&gt;Global Axes</p>
+</li>
 </ul>
-<h2>Descarga y Uso</h2>
-<h3>Requisitos:</h3>
-<p>1. Archivo .$2k de modelo en SAP2000 versión 2022.</p>
-<p>2. <a href="http://STAAD.Pro">STAAD.Pro</a> CONNECT Edition  <strong>abierto manualmente sin archivo cargado</strong>.</p>
-<p>3. Windows 10/11.</p>
-<p><span id="descarga"></span></p>
-<h3>Descarga</h3>
-<p>Código fuente: Disponible próximamente en GitHub.</p>
-<p>Versión compilada: Descargar .exe (hosteado en los servidores de Netlify CDN para mayor seguridad).</p>
 <br>
-<p><a href="https://tudominio.netlify.app/downloads/SAP2STAAD.exe">📥 Descargar v1.0 para Windows</a></p>
-<h3>Guía de Uso</h3>
-<p>1. Ejecuta el programa como administrador.<br>
-2. Selecciona tu archivo .$2K de SAP2000, arrastra y suelta en la ventana de comandos.<br>
+<p class="maybe-vertical">
+  <img src="/img/blog/SAP2000-a-Staad-2.webp" alt="Configuración manual">
+</p>
+<h2 id="descarga-y-uso" tabindex="-1">Descarga y Uso</h2>
+<h3 id="requisitos" tabindex="-1">Requisitos:</h3>
+<p>1. Archivo .$2k de modelo en SAP2000 versión 2022.</p>
+<p>2. <a href="http://STAAD.Pro">STAAD.Pro</a> CONNECT Edition.</p>
+<p>3. Windows 10/11.</p>
+<h3 id="descarga" tabindex="-1">Descarga</h3>
+<p>Código fuente: Disponible próximamente en GitHub.</p>
+<p>Versión de prueba ya compilada: Descargar .exe (hosteado en los servidores de Netlify CDN para mayor seguridad).</p>
+<br>
+<p><a href="/downloads/SAP2000-a-STAAD.exe"
+   onclick="gtag('event', 'download', {
+     event_category: 'Archivo',
+     event_label: 'SAP2000-a-STAAD.exe'
+   })"
+   download> 📥 Descargar versión de prueba (únicamente transforma nodos, soportes y elementos beam) para Windows </a></p>
+<h3 id="gua-de-uso" tabindex="-1">Guía de Uso</h3>
+<p>1.  <a href="https://docs.bentley.com/LiveContent/web/STAAD.Pro%20Help-v21/en/GUID-B8FDE305-22B3-44A8-93AE-5649689ABCB8.html">Abrir Staad.Pro CONNECT Edition manualmente y sin archivo cargado</a><br>
+2. Ejecuta el programa &quot;SAP2000-a-Staad.exe&quot; como administrador.<br>
+2. Selecciona tu archivo &quot;.$2K&quot; de SAP2000, arrastra y suelta en la ventana de comandos.<br>
 3. Elige las unidades de longitud y fuerza de tu modelo original.<br>
-4. ¡Listo! El programa generará el modelo en Staad automáticamente en &quot;C:\temp&quot;.</p>
-<h2>¿Qué Sigue?</h2>
+4. ¡Listo! El programa generará el modelo en Staad automáticamente en &quot;C:\temp&quot;. Dependiendo del tamaño del modelo será el tiempo de espera.</p>
+<h2 id="qu-sigue" tabindex="-1">¿Qué Sigue?</h2>
 <p>Estamos trabajando en:</p>
-<p>1. Soporte para más tipos de elementos y plates de más de cuatro nodos.</p>
+<p>1. Soporte para más tipos de elementos y plates de más de cuatro nodos por medio de &quot;triangular&quot; los plates.</p>
 <p>2. Conversión de comandos de diseño estructural.</p>
 <br>
-<p><strong>¿Problemas? ¿Te gustaría contribuir o necesitas una personalización? <a href="/contacto">¡Contáctanos!</a></strong></p>
+<p><strong>¿Encontraste problemas? ¿Te gustaría contribuir o necesitas una personalización? <a href="/contacto">¡Contáctanos!</a></strong></p>
 <script>
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -464,13 +488,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       <aside class="toc-sidebar">
         <div class="toc-container">
           <h3>Contenidos</h3>
-          <ul><li><a href="#section-0">El Problema: Pérdida de Tiempo en Conversión Manual</a></li><li><a href="#section-1">¿Qué hace este programa?</a></li><li><a href="#section-2">Cómo Funciona el Código</a><ul><li><a href="#section-3">1. Lectura del Archivo SAP2000</a></li><li><a href="#section-4">2. Generación de Geometría en STAAD.Pro</a></li><li><a href="#section-5">3. Asignación de Cargas</a></ul></li><li><a href="#section-6">Limitaciones Actuales</a></li><li><a href="#section-7">Descarga y Uso</a><ul><li><a href="#section-8">Requisitos:</a></li><li><a href="#section-9">Descarga</a></li><li><a href="#section-10">Guía de Uso</a></ul></li><li><a href="#section-11">¿Qué Sigue?</a></ul>
+          <ul class="toc-list"><li class="toc-item toc-level-2"><a href="#el-problema-prdida-de-tiempo-en-conversin-manual" class="toc-link">El Problema: Pérdida de Tiempo en Conversión Manual</a></li><li class="toc-item toc-level-2"><a href="#qu-hace-este-programa" class="toc-link">¿Qué hace este programa?</a></li><li class="toc-item toc-level-2"><a href="#cmo-funciona-el-cdigo" class="toc-link">Cómo Funciona el Código</a><ul class="toc-sublist"><li class="toc-item toc-level-3"><a href="#1-lectura-del-archivo-sap2000" class="toc-link">1. Lectura del Archivo SAP2000</a></li><li class="toc-item toc-level-3"><a href="#2-generacin-de-geometra-en-staadpro" class="toc-link">2. Generación de Geometría en STAAD.Pro</a></li><li class="toc-item toc-level-3"><a href="#3-asignacin-de-cargas" class="toc-link">3. Asignación de Cargas</a></li></ul></li><li class="toc-item toc-level-2"><a href="#limitaciones-actuales" class="toc-link">Limitaciones Actuales</a></li><li class="toc-item toc-level-2"><a href="#descarga-y-uso" class="toc-link">Descarga y Uso</a><ul class="toc-sublist"><li class="toc-item toc-level-3"><a href="#requisitos" class="toc-link">Requisitos:</a></li><li class="toc-item toc-level-3"><a href="#descarga" class="toc-link">Descarga</a></li><li class="toc-item toc-level-3"><a href="#gua-de-uso" class="toc-link">Guía de Uso</a></li></ul></li><li class="toc-item toc-level-2"><a href="#qu-sigue" class="toc-link">¿Qué Sigue?</a></ul>
         </div>
       </aside>
     </div>
     <footer>
   <div class="footer-slogan">
-    <a href="index.html">
+    <a href="https://monolito.lat">
       <picture>
         <source srcset="/img/logo-blanco.webp" type="image/webp">
         <img src="/img/logo-blanco.png" alt="Logo Monolito" width="40" loading="lazy" height="40">
@@ -500,8 +524,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             <path d="M20.52 3.48A11.46 11.46 0 0012 0C5.373 0 0 5.372 0 12c0 2.124.555 4.127 1.608 5.887L0 24l6.207-1.6A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12 0-3.204-1.252-6.212-3.48-8.52zm-8.46 18.42a9.9 9.9 0 01-5.038-1.381l-.36-.217-3.688.95.985-3.6-.234-.37A9.87 9.87 0 012.1 12c0-5.454 4.446-9.9 9.9-9.9a9.84 9.84 0 016.996 2.894 9.77 9.77 0 012.904 6.987c0 5.453-4.446 9.9-9.9 9.9zm5.43-7.41c-.3-.15-1.768-.87-2.04-.97-.273-.1-.473-.15-.673.15-.2.3-.77.97-.945 1.17-.173.2-.347.225-.646.075-.3-.15-1.268-.47-2.417-1.49-.894-.796-1.497-1.776-1.675-2.076-.173-.3-.018-.46.13-.61.134-.134.3-.347.45-.52.15-.17.2-.3.3-.5.1-.2.05-.375-.025-.52-.075-.15-.673-1.618-.922-2.214-.242-.58-.488-.5-.673-.51l-.573-.01c-.2 0-.52.075-.79.375s-1.04 1.02-1.04 2.48 1.065 2.875 1.213 3.075c.15.2 2.095 3.2 5.075 4.487.71.306 1.263.488 1.695.625.712.227 1.36.195 1.87.118.57-.085 1.768-.72 2.02-1.415.253-.696.253-1.29.176-1.415-.074-.124-.273-.2-.573-.35z"/>
           </svg>
         </a>
-
-
         <!-- Facebook (40x40) -->
         <a href="https://www.facebook.com/profile.php?id=61578315800649 " target="_blank" title="WhatsApp" aria-label="WhatsApp">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25" height="25">
@@ -509,7 +531,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             <path fill="#fff" d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z"/>
           </svg>
         </a>
-
+        <a href="https://m.me/667562636447764">
+        <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+        <radialGradient id="8O3wK6b5ASW2Wn6hRCB5xa_YFbzdUk7Q3F8_gr1" cx="11.087" cy="7.022" r="47.612" gradientTransform="matrix(1 0 0 -1 0 50)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1292ff"></stop><stop offset=".079" stop-color="#2982ff"></stop><stop offset=".23" stop-color="#4e69ff"></stop><stop offset=".351" stop-color="#6559ff"></stop><stop offset=".428" stop-color="#6d53ff"></stop><stop offset=".754" stop-color="#df47aa"></stop><stop offset=".946" stop-color="#ff6257"></stop></radialGradient><path fill="url(#8O3wK6b5ASW2Wn6hRCB5xa_YFbzdUk7Q3F8_gr1)" d="M44,23.5C44,34.27,35.05,43,24,43c-1.651,0-3.25-0.194-4.784-0.564	c-0.465-0.112-0.951-0.069-1.379,0.145L13.46,44.77C12.33,45.335,11,44.513,11,43.249v-4.025c0-0.575-0.257-1.111-0.681-1.499	C6.425,34.165,4,29.11,4,23.5C4,12.73,12.95,4,24,4S44,12.73,44,23.5z"></path><path d="M34.992,17.292c-0.428,0-0.843,0.142-1.2,0.411l-5.694,4.215	c-0.133,0.1-0.28,0.15-0.435,0.15c-0.15,0-0.291-0.047-0.41-0.136l-3.972-2.99c-0.808-0.601-1.76-0.918-2.757-0.918	c-1.576,0-3.025,0.791-3.876,2.116l-1.211,1.891l-4.12,6.695c-0.392,0.614-0.422,1.372-0.071,2.014	c0.358,0.654,1.034,1.06,1.764,1.06c0.428,0,0.843-0.142,1.2-0.411l5.694-4.215c0.133-0.1,0.28-0.15,0.435-0.15	c0.15,0,0.291,0.047,0.41,0.136l3.972,2.99c0.809,0.602,1.76,0.918,2.757,0.918c1.576,0,3.025-0.791,3.876-2.116l1.211-1.891	l4.12-6.695c0.392-0.614,0.422-1.372,0.071-2.014C36.398,17.698,35.722,17.292,34.992,17.292L34.992,17.292z" opacity=".05"></path><path d="M34.992,17.792c-0.319,0-0.63,0.107-0.899,0.31l-5.697,4.218	c-0.216,0.163-0.468,0.248-0.732,0.248c-0.259,0-0.504-0.082-0.71-0.236l-3.973-2.991c-0.719-0.535-1.568-0.817-2.457-0.817	c-1.405,0-2.696,0.705-3.455,1.887l-1.21,1.891l-4.115,6.688c-0.297,0.465-0.32,1.033-0.058,1.511c0.266,0.486,0.787,0.8,1.325,0.8	c0.319,0,0.63-0.107,0.899-0.31l5.697-4.218c0.216-0.163,0.468-0.248,0.732-0.248c0.259,0,0.504,0.082,0.71,0.236l3.973,2.991	c0.719,0.535,1.568,0.817,2.457,0.817c1.405,0,2.696-0.705,3.455-1.887l1.21-1.891l4.115-6.688c0.297-0.465,0.32-1.033,0.058-1.511	C36.051,18.106,35.531,17.792,34.992,17.792L34.992,17.792z" opacity=".07"></path><path fill="#fff" d="M34.394,18.501l-5.7,4.22c-0.61,0.46-1.44,0.46-2.04,0.01L22.68,19.74	c-1.68-1.25-4.06-0.82-5.19,0.94l-1.21,1.89l-4.11,6.68c-0.6,0.94,0.55,2.01,1.44,1.34l5.7-4.22c0.61-0.46,1.44-0.46,2.04-0.01	l3.974,2.991c1.68,1.25,4.06,0.82,5.19-0.94l1.21-1.89l4.11-6.68C36.434,18.901,35.284,17.831,34.394,18.501z"></path>
+        </svg>
+        </a>
         <!-- Instagram (40x40) -->
         <a href="https://www.instagram.com/monolitoingenieria/" target="_blank" title="Instagram" aria-label="Instagram">
 <svg width="25" height="25" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">

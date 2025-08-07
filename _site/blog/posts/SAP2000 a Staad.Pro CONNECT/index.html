@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cómo Convertir modelos SAP2000 a STAAD.Pro con C++</title>
     <meta name="description" content="Default description">
-    <link rel="canonical" href="https://monolito.lat/blog/posts/SAP2000 a Staad.Pro CONNECT/" />
+    <link rel="canonical" href="http://localhost:8888/blog/posts/SAP2000 a Staad.Pro CONNECT/" />
     <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
     <link rel="shortcut icon" href="/img/favicon.ico" />
@@ -108,6 +108,16 @@
         display: block;
         margin: 0 auto;
       }
+
+.katex-display {
+  overflow-x: auto;
+  overflow-y: visible; /* allow tall formulas to render fully */
+  padding-bottom: 1.30rem; /* optional breathing room */
+  max-width: 100%;
+}
+.katex-display > .katex {
+  white-space: nowrap;
+}
     .content-wrapper {
       display: flex;
       max-width: 1500px;
@@ -166,6 +176,9 @@
       margin: 0.5rem 0;
     }
     @media (max-width: 768px) {
+      .katex-display {
+        font-size: 0.95em;
+      }
       /*
       .content-wrapper {
         flex-direction: column;

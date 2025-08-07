@@ -75,6 +75,16 @@
         display: block;
         margin: 0 auto;
       }
+
+.katex-display {
+  overflow-x: auto;
+  overflow-y: visible; /* allow tall formulas to render fully */
+  padding-bottom: 1.30rem; /* optional breathing room */
+  max-width: 100%;
+}
+.katex-display > .katex {
+  white-space: nowrap;
+}
     .content-wrapper {
       display: flex;
       max-width: 1500px;
@@ -133,6 +143,9 @@
       margin: 0.5rem 0;
     }
     @media (max-width: 768px) {
+      .katex-display {
+        font-size: 0.95em;
+      }
       /*
       .content-wrapper {
         flex-direction: column;

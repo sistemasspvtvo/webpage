@@ -1,13 +1,6 @@
 const { DateTime } = require('luxon');
 const slugify = require("slugify");
 const markdownIt = require('markdown-it');
-const markdownItKatex = require('markdown-it-katex');
-const markdownItAnchor = require('markdown-it-anchor');
-const md = markdownIt({
-  html: true,
-  breaks: true,
-  linkify: true
-})
 .use(markdownItKatex)
 .use(markdownItAnchor, {
     slugify: s =>
@@ -27,6 +20,7 @@ const md = markdownIt({
 */
   });
 module.exports = function(eleventyConfig) {
+   
   // Date filter
   eleventyConfig.addFilter("date", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "UTC" })

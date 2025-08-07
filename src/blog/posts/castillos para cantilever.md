@@ -12,8 +12,11 @@ image: castillos-para-cantilever-1.webp
 
 En la alcaldía de Coyoacán, CDMX, donde la autoconstrucción es una realidad cotidiana, un caso emblemático puso en evidencia los riesgos ocultos tras errores de diseño en estructuras de mampostería confinada. Una propietaria alerta notó que la puerta de su habitación en voladizo (cantilever) ya no cerraba correctamente, acompañado por la aparición de grietas verticales en la esquina de dos muros de mampostería encontrados a 90 grados. Lo que parecía un problema cosmético era, en realidad, una falla crítica en la construcción de dos muros contiguos con junta fría acompañada con una deflexión mayor a la permitida que amenazaba con un colapso progresivo. <br>
 Este artículo detalla el proceso integral de diagnóstico, análisis normativo (NTC-2023), diseño de refuerzo y ejecución que permitió resolver el problema en solo una semana, con un costo 40% menor frente a alternativas convencionales. A través del: <br>
-- Análisis numérico con fórmulas clave como: <br>
-$V_\text{mR} = F_R\left( 0.5 v_m^ {\ast} A_T + 0.3 P \right)\leq 1.5 F_R v_m^{\ast} A_T$ <br><br>
+- Análisis numérico con fórmulas clave como: <br><br>
+
+$_\text{mR} = F_R\left( 0.5 v_m^ {\ast} A_T + 0.3 P \right)\leq 1.5 F_R v_m^{\ast} A_T$
+
+<br><br>
 
 - Estrategias de refuerzo mínimamente invasivas (continuidad de castillos, zapatas aisladas). <br><br>
 

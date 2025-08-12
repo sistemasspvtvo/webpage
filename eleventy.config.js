@@ -1,26 +1,35 @@
 const { DateTime } = require('luxon');
 const slugify = require("slugify");
 const markdownIt = require('markdown-it');
-.use(markdownItKatex)
-.use(markdownItAnchor, {
+const markdownItKatex = require('markdown-it-katex');
+const markdownItAnchor = require('markdown-it-anchor');
+
+// Create markdown-it instance with plugins
+const md = markdownIt({
+  html: true,
+  breaks: true,
+  linkify: true
+})
+  .use(markdownItKatex)
+  .use(markdownItAnchor, {
     slugify: s =>
       s
         .trim()
         .toLowerCase()
         .replace(/[^\w\s-]/g, '')   // limpia caracteres raros
         .replace(/\s+/g, '-')      // espacios a guiones
-        .replace(/-+/g, '-'),      // evita guiones duplicados
-/*
-      permalink: markdownItAnchor.permalink.ariaHidden({
+        .replace(/-+/g, '-'),
+    /*
+    permalink: markdownItAnchor.permalink.ariaHidden({
       placement: 'after',
       class: 'direct-link',
       symbol: '#',
       level: [1, 2, 3]
     })
-*/
+    */
   });
+
 module.exports = function(eleventyConfig) {
-   
   // Date filter
   eleventyConfig.addFilter("date", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "UTC" })
@@ -53,7 +62,7 @@ module.exports = function(eleventyConfig) {
     "node_modules/katex/dist/katex.min.js": "js/katex.min.js",
     "node_modules/katex/dist/fonts": "css/fonts"
   });
-  
+
   // Netlify files
   eleventyConfig.addPassthroughCopy({ "src/netlify/_headers": "_headers" });
   eleventyConfig.addPassthroughCopy({ "src/netlify/_redirects": "_redirects" });
@@ -74,36 +83,35 @@ module.exports = function(eleventyConfig) {
   const cheerio = require('cheerio');
 
   eleventyConfig.addShortcode("generateTOC", function(htmlContent) {
-  const $ = require('cheerio').load(htmlContent);
-  const headings = $('h1, h2, h3');
-  let tocHTML = '<ul class="toc-list">';
-  let lastLevel = 2;
+    const $ = cheerio.load(htmlContent);
+    const headings = $('h1, h2, h3');
+    let tocHTML = '<ul class="toc-list">';
+    let lastLevel = 2;
 
-  headings.each((index, el) => {
-    const level = +el.name.slice(1);
-    const text = $(el).text();
-    const id = $(el).attr('id');
+    headings.each((index, el) => {
+      const level = +el.name.slice(1);
+      const text = $(el).text();
+      const id = $(el).attr('id');
 
-    if (!id) return;
+      if (!id) return;
 
-    if (level > lastLevel) {
-      tocHTML += '<ul class="toc-sublist">';
-    } else if (level < lastLevel) {
-      tocHTML += '</li></ul>'.repeat(lastLevel - level) + '</li>';
-    } else if (index > 0) {
-      tocHTML += '</li>';
-    }
+      if (level > lastLevel) {
+        tocHTML += '<ul class="toc-sublist">';
+      } else if (level < lastLevel) {
+        tocHTML += '</li></ul>'.repeat(lastLevel - level) + '</li>';
+      } else if (index > 0) {
+        tocHTML += '</li>';
+      }
 
-    tocHTML += `<li class="toc-item toc-level-${level}">` +
-               `<a href="#${id}" class="toc-link">${text}</a>`;
+      tocHTML += `<li class="toc-item toc-level-${level}">` +
+                 `<a href="#${id}" class="toc-link">${text}</a>`;
 
-    lastLevel = level;
+      lastLevel = level;
+    });
+
+    tocHTML += '</li></ul>'.repeat(Math.max(0, lastLevel - 2)) + '</ul>';
+    return tocHTML;
   });
-
-  tocHTML += '</li></ul>'.repeat(Math.max(0, lastLevel - 2)) + '</ul>';
-  return tocHTML;
-});
-
 
   return {
     dir: {
@@ -113,7 +121,7 @@ module.exports = function(eleventyConfig) {
     },
     passthroughFileCopy: true,
     templateFormats: ["njk", "md", "html", "11ty.js"],
-    htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk"
+    markdownTemplateEngine: false,
+    htmlTemplateEngine: "njk"
   };
 };

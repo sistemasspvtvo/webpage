@@ -205,7 +205,7 @@ bool STAADWrapper::CreatePlate(OpenSTAADUI::IOSGeometryUIPtr geometry, int plate
 
 ### Descarga  
 
-    Código fuente: Disponible próximamente en GitHub.
+    Código fuente: Disponible en **[Github](https://github.com/angelmc09/sap2000-to-staad-pro-geometry)**
 
     Versión de prueba ya compilada: Descargar .exe (hosteado en los servidores de Netlify CDN para mayor seguridad).
 
@@ -220,7 +220,7 @@ bool STAADWrapper::CreatePlate(OpenSTAADUI::IOSGeometryUIPtr geometry, int plate
 
 ### Guía de Uso  
   
-    1.  [Abrir Staad.Pro CONNECT Edition manualmente y sin archivo cargado](https://docs.bentley.com/LiveContent/web/STAAD.Pro%20Help-v21/en/GUID-B8FDE305-22B3-44A8-93AE-5649689ABCB8.html)
+    1. [Abrir Staad.Pro CONNECT Edition manualmente y sin archivo cargado](https://docs.bentley.com/LiveContent/web/STAAD.Pro%20Help-v21/en/GUID-B8FDE305-22B3-44A8-93AE-5649689ABCB8.html)
     2. Ejecuta el programa "SAP2000-a-Staad.exe" como administrador.  
     2. Selecciona tu archivo ".$2K" de SAP2000, arrastra y suelta en la ventana de comandos.
     3. Elige las unidades de longitud y fuerza de tu modelo original.    

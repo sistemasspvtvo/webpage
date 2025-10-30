@@ -2,7 +2,6 @@
 layout: post.njk
 title: "Mi primer publicación del blog"
 date: 2025-07-01
-author: Angel Monroy Canales
 tags:
   - Ingeniería
   - blog

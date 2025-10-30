@@ -2,7 +2,6 @@
 layout: post.njk
 title: "Cómo Convertir modelos SAP2000 a STAAD.Pro con C++"
 date: 2025-08-05
-author: Angel Monroy Canales
 tags:
   - Ingeniería
   - automatización
@@ -205,7 +204,7 @@ bool STAADWrapper::CreatePlate(OpenSTAADUI::IOSGeometryUIPtr geometry, int plate
 
 ### Descarga  
 
-    Código fuente: Disponible en **[Github](https://github.com/angelmc09/sap2000-to-staad-pro-geometry)**
+    Código fuente: Disponible en **[Github]**
 
     Versión de prueba ya compilada: Descargar .exe (hosteado en los servidores de Netlify CDN para mayor seguridad).
 

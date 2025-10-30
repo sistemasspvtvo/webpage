@@ -2,7 +2,6 @@
 layout: post.njk
 title: "Refuerzo estructural Coyoacán: Solución para un cantilever en riesgo"
 date: 2025-07-10
-author: Angel Monroy Canales
 tags:
   - Ingeniería, vigas, NTC-2023, CDMX, Refuerzo estructural CDMX, Reparación de grietas en mampostería,	Normas NTC-2023 para casas, Cantilever peligroso solución
 

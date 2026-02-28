@@ -1,4 +1,4 @@
 # Force HTTPS + non-www for ALL pages (home + subpages)
-http://www.monolito.lat/* https://monolito.lat/:splat 301!
-http://monolito.lat/* https://monolito.lat/:splat 301!
-https://www.monolito.lat/* https://monolito.lat/:splat 301!
+http://www.sistemastvo.com/* https://sistemastvo.com/:splat 301!
+http://sistemastvo.com/* https://sistemastvo.com/:splat 301!
+https://www.sistemastvo.com/* https://sistemastvo.com/:splat 301!

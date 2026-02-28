@@ -1,74 +1,73 @@
 <header>
   <div class="header-container">
-    <a href="index.html">
+
+    <!-- Logo -->
+    <a href="/" aria-label="Sistemas TVO — Inicio">
       <picture>
         <source srcset="/img/logo.webp" type="image/webp">
-        <img src="/img/logo.png" alt="Logo Monolito" width="40" height="40">
+        <img class="logo" src="/img/logo.png" alt="Sistemas TVO" width="40" height="40">
       </picture>
     </a>
-<button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Menu">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-     xmlns="http://www.w3.org/2000/svg">
-  <!-- Faint gray background square -->
-  <rect x="0" y="0" width="24" height="24" fill="gray" opacity="0.1" rx="2" />
-  
-  <!-- Hamburger lines -->
-  <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-  <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-  <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-</svg>
 
-</button>
-    <nav id="main-nav">
-      <a style="font-weight: bold;" href="https://monolito.lat/">Inicio</a>
-      <a style="font-weight: bold;" href="/servicios">Servicios</a>
-      <a style="font-weight: bold;" href="/equipo">Equipo</a>
-      <a style="font-weight: bold;" href="/casos-de-éxito">Casos de Éxito</a>
-      <a style="font-weight: bold;" href="/blog">Blog</a>
-      <a style="font-weight: bold;" href="/contacto">Contacto</a>
+    <!-- Hamburger (mobile) -->
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Abrir menú" aria-controls="main-nav">
+      <svg id="icon-bars" width="22" height="22" viewBox="0 0 24 24" fill="none"
+           xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none"
+           xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none;">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <!-- Nav -->
+    <nav id="main-nav" role="navigation" aria-label="Navegación principal">
+      <a href="/" class="nav-link">Inicio</a>
+      <a href="/servicios" class="nav-link">Servicios</a>
+      <a href="/casos-de-exito" class="nav-link">Casos de Éxito</a>
+      <a href="/contacto" class="nav-cta">Cotizar</a>
     </nav>
+
   </div>
+
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.getElementById('menu-toggle');
-  const mainNav = document.getElementById('main-nav');
-  
-  // Set initial ARIA attributes
-  menuToggle.setAttribute('aria-expanded', 'false');
-  menuToggle.setAttribute('aria-label', 'Open menu');
-  
-  // Toggle menu function
-  function toggleMenu() {
-    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-    
-    // Toggle aria attributes
-    menuToggle.setAttribute('aria-expanded', !isExpanded);
-    menuToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
-    
-    // Toggle menu visibility
-    mainNav.classList.toggle('active');
-    menuToggle.classList.toggle('active');
-    
-    // Toggle icon between bars and times
-    const icon = menuToggle.querySelector('i');
-    if (icon.classList.contains('fa-bars')) {
-      icon.classList.replace('fa-bars', 'fa-times');
-    } else {
-      icon.classList.replace('fa-times', 'fa-bars');
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav    = document.getElementById('main-nav');
+    const iconBars   = document.getElementById('icon-bars');
+    const iconClose  = document.getElementById('icon-close');
+
+    function toggleMenu() {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      const nowExpanded = !isExpanded;
+
+      menuToggle.setAttribute('aria-expanded', nowExpanded);
+      menuToggle.setAttribute('aria-label', nowExpanded ? 'Cerrar menú' : 'Abrir menú');
+      mainNav.classList.toggle('active', nowExpanded);
+
+      iconBars.style.display  = nowExpanded ? 'none'  : 'block';
+      iconClose.style.display = nowExpanded ? 'block' : 'none';
     }
-  }
-  
-  // Add click event
-  menuToggle.addEventListener('click', toggleMenu);
-  
-  // Close menu when clicking on a nav link (for mobile)
-  mainNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function() {
-      if (window.innerWidth <= 768) { // Adjust breakpoint as needed
-        toggleMenu();
-      }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Cerrar al hacer clic en un enlace (mobile)
+    mainNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 768) {
+          toggleMenu();
+        }
+      });
     });
+
+    // Sombra al hacer scroll
+    window.addEventListener('scroll', function () {
+      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
   });
-});
   </script>
 </header>

@@ -1,0 +1,652 @@
+---
+layout: layout.njk
+title: "Casos de Éxito | Sistemas TVO — Proyectos de Seguridad Electrónica CDMX"
+description: "Proyectos reales de instalación de sistemas de seguridad, CCTV, alarmas contra incendio Notifier y más en CDMX y Estado de México. 20 años de experiencia."
+keywords: "casos de éxito seguridad electrónica CDMX, proyectos CCTV, alarma incendio Notifier instalación, control acceso biométrico proyecto, sistemas TVO"
+robots: "index, follow, max-snippet:-1, max-image-preview:large"
+metaTags: |
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Casos de Éxito | Sistemas TVO">
+    <meta property="og:description" content="Proyectos reales de seguridad electrónica en CDMX y Estado de México.">
+    <meta property="og:url" content="https://sistemastvo.com/casos-de-exito">
+    <meta property="og:site_name" content="Sistemas TVO">
+    <meta property="og:image" content="https://sistemastvo.com/img/logo.webp">
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "CaseStudy",
+        "name": "Sistema de Alarma Contra Incendio Notifier para Planta Industrial",
+        "description": "Diseño e instalación de sistema Notifier NFS2-3030 con memoria de cálculo Verifire Tools para planta de manufactura en Vallejo",
+        "datePublished": "2024-03-10",
+        "location": { "@type": "Place", "name": "Azcapotzalco, CDMX" }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "CaseStudy",
+        "name": "CCTV y Control de Acceso para Corporativo",
+        "description": "Red de 48 cámaras IP 4K con control biométrico en 6 accesos para edificio de oficinas en Santa Fe",
+        "datePublished": "2024-07-18",
+        "location": { "@type": "Place", "name": "Santa Fe, CDMX" }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "CaseStudy",
+        "name": "Sistema Fotovoltaico e Instalación Soft-Restaurant",
+        "description": "Instalación de 24 paneles solares y punto de venta Soft-Restaurant para cadena de restaurantes en Satélite",
+        "datePublished": "2024-10-05",
+        "location": { "@type": "Place", "name": "Naucalpan, Estado de México" }
+      }
+    ]
+    </script>
+    <style>
+      /* ---- Hero ---- */
+      .page-hero {
+        background: var(--dark-2);
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 52px 0 40px;
+      }
+
+      /* ---- Filtros ---- */
+      .case-filters {
+        background: var(--dark-3);
+        border-bottom: 1px solid var(--border-subtle);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .case-filters::-webkit-scrollbar { display: none; }
+      .case-filters-inner {
+        display: flex;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 40px;
+        white-space: nowrap;
+        gap: 4px;
+      }
+      .filter-btn {
+        display: inline-block;
+        padding: 13px 18px;
+        font-family: var(--font-display);
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        background: none;
+        border: none;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+        transition: color 0.2s, border-color 0.2s;
+        white-space: nowrap;
+      }
+      .filter-btn:hover { color: var(--text-light); }
+      .filter-btn.active {
+        color: var(--yellow);
+        border-bottom-color: var(--yellow);
+      }
+
+      /* ---- Grid de casos ---- */
+      .cases-wrap {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 60px 40px 80px;
+      }
+
+      .cases-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 2px;
+        margin-bottom: 2px;
+      }
+
+      .case-card {
+        background: var(--dark-3);
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out, background 0.2s;
+      }
+      .case-card.show { opacity: 1; transform: translateY(0); }
+      .case-card:hover { background: var(--dark-4); }
+
+      /* Imagen / placeholder visual */
+      .case-visual {
+        height: 180px;
+        background: var(--dark-2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+      .case-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .case-visual-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .case-visual-placeholder svg {
+        width: 48px; height: 48px;
+        color: var(--yellow);
+        opacity: 0.5;
+      }
+      .case-visual-placeholder span {
+        font-family: var(--font-display);
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+
+      /* Badge de categoría */
+      .case-badge {
+        position: absolute;
+        top: 12px; left: 12px;
+        background: var(--dark);
+        border: 1px solid var(--border-yellow);
+        border-radius: 2px;
+        padding: 4px 10px;
+        font-family: var(--font-display);
+        font-size: 0.65rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--yellow);
+      }
+
+      .case-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+
+      .case-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+      .case-meta-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        font-family: var(--font-display);
+        letter-spacing: 0.5px;
+      }
+      .case-meta-item svg { width: 12px; height: 12px; }
+
+      .case-body h2 {
+        font-size: 1.25rem;
+        margin: 0 0 12px;
+        color: var(--text-light);
+        text-transform: uppercase;
+        line-height: 1.2;
+      }
+
+      .case-body p {
+        font-size: 0.9rem;
+        font-weight: 300;
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin: 0 0 18px;
+      }
+
+      .case-results {
+        list-style: none;
+        padding: 0; margin: 0 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .case-results li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+      .case-results li::before {
+        content: '▶';
+        color: var(--yellow);
+        font-size: 0.5rem;
+        margin-top: 4px;
+        flex-shrink: 0;
+      }
+
+      .case-testimonial {
+        background: var(--dark);
+        border-left: 3px solid var(--yellow);
+        padding: 14px 16px;
+        margin: 0 0 20px;
+        flex: 1;
+      }
+      .case-testimonial blockquote {
+        font-size: 0.88rem;
+        font-style: italic;
+        color: var(--text-muted);
+        margin: 0 0 8px;
+        line-height: 1.6;
+      }
+      .case-testimonial cite {
+        font-family: var(--font-display);
+        font-size: 0.72rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--yellow);
+        font-style: normal;
+      }
+
+      .case-cta-link {
+        font-family: var(--font-display);
+        font-size: 0.82rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--yellow);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: gap 0.2s;
+        margin-top: auto;
+      }
+      .case-cta-link:hover { gap: 12px; color: var(--text-light); }
+
+      /* ---- CTA final ---- */
+      .cases-cta {
+        background: var(--dark-2);
+        border: 1px solid var(--border-subtle);
+        border-left: 3px solid var(--yellow);
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin-top: 60px;
+      }
+      .cases-cta h3 {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        color: var(--text-light);
+        margin: 0 0 8px;
+        text-transform: uppercase;
+      }
+      .cases-cta p {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin: 0;
+        font-weight: 300;
+      }
+
+      /* ---- Responsive ---- */
+      @media (max-width: 768px) {
+        .cases-wrap { padding: 40px 20px 60px; }
+        .case-filters-inner { padding: 0 20px; }
+        .cases-grid { grid-template-columns: 1fr; }
+        .cases-cta { padding: 28px 20px; }
+      }
+    </style>
+---
+
+<!-- PAGE HERO -->
+<div class="page-hero section">
+  <div class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb" style="padding: 0 0 16px;">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li aria-current="page"><span>Casos de Éxito</span></li>
+      </ol>
+    </nav>
+    <span class="section-label">Resultados reales</span>
+    <h1 class="section-title">Casos de Éxito</h1>
+    <p class="section-sub">20 años protegiendo empresas, industrias y hogares en CDMX y Estado de México. Estos son algunos de los proyectos que nos enorgullecen.</p>
+  </div>
+</div>
+
+<!-- FILTROS -->
+<div class="case-filters">
+  <div class="case-filters-inner">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="incendio">Incendio</button>
+    <button class="filter-btn" data-filter="cctv">CCTV</button>
+    <button class="filter-btn" data-filter="acceso">Acceso</button>
+    <button class="filter-btn" data-filter="energia">Energía</button>
+    <button class="filter-btn" data-filter="software">Software</button>
+    <button class="filter-btn" data-filter="industrial">Industrial</button>
+    <button class="filter-btn" data-filter="comercial">Comercial</button>
+    <button class="filter-btn" data-filter="residencial">Residencial</button>
+  </div>
+</div>
+
+<div class="cases-wrap">
+  <div class="cases-grid" id="cases-grid">
+
+    <!-- CASO 1: Notifier planta industrial -->
+    <div class="case-card" id="planta-vallejo" data-category="incendio industrial">
+      <div class="case-visual">
+        <div class="case-visual-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2c0 0-4 4.5-4 8a4 4 0 008 0c0-3.5-4-8-4-8z"/>
+            <path d="M5 20h14"/>
+          </svg>
+          <span>Alarma contra incendio</span>
+        </div>
+        <span class="case-badge">Industrial · Notifier</span>
+      </div>
+      <div class="case-body">
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Azcapotzalco, CDMX
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Planta industrial
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            6 semanas
+          </span>
+        </div>
+        <h2>Sistema Notifier para Planta de Manufactura</h2>
+        <p>Planta de 4,800 m² sin sistema de detección de incendios certificado, con riesgo de clausura por inspección de Protección Civil. Requerían cumplir NOM-002-STPS en menos de 2 meses.</p>
+        <ul class="case-results">
+          <li>Diseño de memoria de cálculo con Verifire Tools para cobertura total</li>
+          <li>Instalación de panel Notifier NFS2-3030 con 3 lazos de detección</li>
+          <li>86 detectores de humo fotoeléctrico y 12 detectores de calor</li>
+          <li>Sistema de bocinas y estrobos en todas las zonas de trabajo</li>
+          <li>Aprobación de Protección Civil en primera inspección</li>
+        </ul>
+        <div class="case-testimonial" itemscope itemtype="https://schema.org/Quotation">
+          <blockquote itemprop="text">"Nos ayudaron a cumplir la normativa en tiempo récord. El sistema pasó la inspección de Protección Civil a la primera, sin observaciones."</blockquote>
+          <cite itemprop="author">Ing. Roberto Sánchez — Gerente de Planta</cite>
+        </div>
+        <a href="/contacto" class="case-cta-link">¿Tu instalación necesita certificarse? →</a>
+      </div>
+    </div>
+
+    <!-- CASO 2: CCTV corporativo -->
+    <div class="case-card" id="corporativo-santa-fe" data-category="cctv acceso comercial">
+      <div class="case-visual">
+        <div class="case-visual-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/>
+          </svg>
+          <span>CCTV y Control de Acceso</span>
+        </div>
+        <span class="case-badge">Corporativo</span>
+      </div>
+      <div class="case-body">
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Santa Fe, CDMX
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Edificio de oficinas
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            8 semanas
+          </span>
+        </div>
+        <h2>CCTV 4K y Biométricos para Edificio Corporativo</h2>
+        <p>Edificio de 12 pisos con sistema de cámaras analógico obsoleto y control de acceso por tarjeta sin registro de bitácora. La administración requería modernizar la seguridad y tener reportes de acceso por empleado.</p>
+        <ul class="case-results">
+          <li>48 cámaras IP 4K con analítica de video e inteligencia artificial</li>
+          <li>NVR con 90 días de grabación continua en alta resolución</li>
+          <li>Control biométrico facial en 6 accesos con software de reportes</li>
+          <li>Integración con torniquetes de entrada y parteluces de estacionamiento</li>
+          <li>Acceso remoto para administración desde cualquier dispositivo</li>
+        </ul>
+        <div class="case-testimonial" itemscope itemtype="https://schema.org/Quotation">
+          <blockquote itemprop="text">"La instalación fue impecable y el sistema de reportes nos ahorró horas de trabajo administrativo cada semana."</blockquote>
+          <cite itemprop="author">Lic. Claudia Torres — Directora Administrativa</cite>
+        </div>
+        <a href="/contacto" class="case-cta-link">¿Necesitas modernizar tu seguridad? →</a>
+      </div>
+    </div>
+
+    <!-- CASO 3: Fotovoltaico + Soft-Restaurant -->
+    <div class="case-card" id="restaurante-satelite" data-category="energia software comercial">
+      <div class="case-visual">
+        <div class="case-visual-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+          <span>Fotovoltaico · Soft-Restaurant</span>
+        </div>
+        <span class="case-badge">Comercial · Destacado</span>
+      </div>
+      <div class="case-body">
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Naucalpan, Edomex
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Cadena de restaurantes
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            4 semanas
+          </span>
+        </div>
+        <h2>Solar + Punto de Venta para Cadena de Restaurantes</h2>
+        <p>Cadena de 3 sucursales con facturas de CFE elevadas y sistema de punto de venta desactualizado que generaba errores en el inventario y tiempos muertos en caja. Buscaban reducir costos operativos en ambos frentes.</p>
+        <ul class="case-results">
+          <li>24 paneles monocristalinos de 550W por sucursal (sistema híbrido)</li>
+          <li>Reducción del 60% en facturación eléctrica mensual</li>
+          <li>Instalación de Soft-Restaurant en 3 terminales por sucursal</li>
+          <li>Impresoras de cocina, barra y cajones de dinero integrados</li>
+          <li>Capacitación completa al personal en 2 días por sucursal</li>
+        </ul>
+        <div class="case-testimonial" itemscope itemtype="https://schema.org/Quotation">
+          <blockquote itemprop="text">"En el primer mes ya recuperamos parte de la inversión con el ahorro en luz. Y el punto de venta le dio orden a nuestras cocinas."</blockquote>
+          <cite itemprop="author">Chef Marco Reyes — Dueño</cite>
+        </div>
+        <a href="/contacto" class="case-cta-link">¿Quieres reducir tus costos operativos? →</a>
+      </div>
+    </div>
+
+    <!-- CASO 4: Portones + Cercas residencial -->
+    <div class="case-card" id="condominio-tlalnepantla" data-category="acceso residencial">
+      <div class="case-visual">
+        <div class="case-visual-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2"/>
+            <path d="M7 11V7a5 5 0 0110 0v4"/>
+          </svg>
+          <span>Acceso y Perímetro</span>
+        </div>
+        <span class="case-badge">Residencial</span>
+      </div>
+      <div class="case-body">
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Tlalnepantla, Edomex
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Condominio horizontal
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            3 semanas
+          </span>
+        </div>
+        <h2>Perímetro Inteligente para Condominio</h2>
+        <p>Condominio de 40 casas con portones manuales, sin control de acceso de visitas y con historial de robos en el perímetro. La administración buscaba una solución integral sin obra civil mayor.</p>
+        <ul class="case-results">
+          <li>2 portones automáticos corredizos con motor de alta resistencia</li>
+          <li>Videoportero con apertura remota en acceso peatonal y vehicular</li>
+          <li>Cerca electrificada en 380 metros lineales de perímetro</li>
+          <li>Control de acceso RFID con tarjetas por vivienda y registro de visitas</li>
+          <li>Cero incidentes de robo en los 8 meses posteriores a la instalación</li>
+        </ul>
+        <div class="case-testimonial" itemscope itemtype="https://schema.org/Quotation">
+          <blockquote itemprop="text">"La tranquilidad que nos dio el sistema no tiene precio. Los vecinos están muy satisfechos y la administración tiene todo bajo control."</blockquote>
+          <cite itemprop="author">Lic. Patricia Vega — Administradora de Condominio</cite>
+        </div>
+        <a href="/contacto" class="case-cta-link">¿Necesitas proteger tu condominio? →</a>
+      </div>
+    </div>
+
+    <!-- CASO 5: Fibra óptica + UPS industrial -->
+    <div class="case-card" id="datacenter-ecatepec" data-category="industrial">
+      <div class="case-visual">
+        <div class="case-visual-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/>
+          </svg>
+          <span>Fibra Óptica · UPS</span>
+        </div>
+        <span class="case-badge">Industrial · Telecom</span>
+      </div>
+      <div class="case-body">
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ecatepec, Edomex
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Bodega logística
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            5 semanas
+          </span>
+        </div>
+        <h2>Backbone de Fibra Óptica y Respaldo UPS</h2>
+        <p>Bodega de 8,000 m² con red de cobre deteriorada que causaba caídas frecuentes en el sistema de inventarios y CCTV. Los cortes de luz también afectaban los equipos críticos de almacén.</p>
+        <ul class="case-results">
+          <li>Tendido de 1,200 m de fibra óptica monomodo certificada con OTDR</li>
+          <li>4 gabinetes de telecomunicaciones con patch panels y switches</li>
+          <li>3 UPS on-line trifásicos de 10 KVA para equipos críticos</li>
+          <li>Autonomía de 45 minutos ante corte total de suministro</li>
+          <li>Cero caídas de red en los 6 meses posteriores a la instalación</li>
+        </ul>
+        <div class="case-testimonial" itemscope itemtype="https://schema.org/Quotation">
+          <blockquote itemprop="text">"Antes perdíamos horas por caídas de red. Desde la instalación no hemos tenido un solo problema. La inversión se pagó sola en productividad."</blockquote>
+          <cite itemprop="author">Ing. Luis Mendoza — Jefe de TI</cite>
+        </div>
+        <a href="/contacto" class="case-cta-link">¿Tu red necesita una actualización? →</a>
+      </div>
+    </div>
+
+    <!-- CASO 6: Alarma intrusión + radios residencial -->
+    <div class="case-card" id="casa-interlomas" data-category="cctv residencial">
+      <div class="case-visual">
+        <div class="case-visual-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 01-3.46 0"/>
+          </svg>
+          <span>Alarma · CCTV · Videoportero</span>
+        </div>
+        <span class="case-badge">Residencial</span>
+      </div>
+      <div class="case-body">
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Huixquilucan, Edomex
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Casa habitación
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            1 semana
+          </span>
+        </div>
+        <h2>Seguridad Integral para Casa Habitación</h2>
+        <p>Familia que había sufrido un intento de robo y quería una solución completa: cámaras, alarma con notificación a celular y videoportero. Presupuesto definido y plazo de una semana para la instalación.</p>
+        <ul class="case-results">
+          <li>8 cámaras HD con visión nocturna en accesos y perímetro</li>
+          <li>Alarma con detectores PIR, contactos en puertas y ventanas</li>
+          <li>Videoportero con apertura remota y grabación de visitas</li>
+          <li>Notificación en tiempo real al celular del propietario</li>
+          <li>Instalación completada en 5 días hábiles dentro del presupuesto</li>
+        </ul>
+        <div class="case-testimonial" itemscope itemtype="https://schema.org/Quotation">
+          <blockquote itemprop="text">"Ahora nos vamos de viaje sin preocupaciones. Podemos ver las cámaras desde el celular y el videoportero nos avisa de cualquier visita."</blockquote>
+          <cite itemprop="author">Familia Herrera — Propietarios</cite>
+        </div>
+        <a href="/contacto" class="case-cta-link">¿Quieres proteger tu hogar? →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="cases-cta section">
+    <div>
+      <h3>¿Listo para ser nuestro próximo caso de éxito?</h3>
+      <p>Cuéntanos tu proyecto y te damos una cotización sin costo en menos de 24 horas.</p>
+    </div>
+    <a href="/contacto" class="btn-primary">Contactar ahora</a>
+  </div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Reveal de secciones
+  document.querySelectorAll('.section').forEach(el => {
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+    }, { threshold: 0.05 }).observe(el);
+  });
+
+  // Reveal de tarjetas con stagger
+  const grid = document.getElementById('cases-grid');
+  if (grid) {
+    new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.case-card').forEach((card, i) => {
+            setTimeout(() => card.classList.add('show'), i * 100);
+          });
+        }
+      });
+    }, { threshold: 0.05 }).observe(grid);
+  }
+
+  // Filtrado
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const caseCards  = document.querySelectorAll('.case-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.getAttribute('data-filter');
+
+      caseCards.forEach((card, i) => {
+        const cats = card.getAttribute('data-category');
+        const show = filter === 'all' || cats.includes(filter);
+        card.style.display = show ? 'flex' : 'none';
+        if (show) {
+          card.classList.remove('show');
+          setTimeout(() => card.classList.add('show'), i * 80);
+        }
+      });
+    });
+  });
+});
+</script>

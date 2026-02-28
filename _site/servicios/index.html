@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios de Seguridad Electrónica CDMX | Sistemas TVO</title>
+  <meta name="description" content="CCTV, control de acceso biométrico, alarmas contra incendio Notifier, videoporteros, automatización de portones, fibra óptica y más. CDMX y Área Metropolitana.">
+
+  <link rel="canonical" href="http://localhost:8888/servicios/" />
+
+  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Sistemas TVO" />
+  <link rel="manifest" href="/img/site.webmanifest" />
+
+  <link rel="preconnect" href="https://images.dmca.com" crossorigin>
+
+  <!-- Fuentes locales -->
+  <link rel="stylesheet" href="/css/font.css">
+
+  <!-- Estilos principales (carga diferida para performance) -->
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+
+  <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
+
+  
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Servicios de Seguridad Electrónica | Sistemas TVO">
+<meta property="og:description" content="Instalación y mantenimiento de sistemas de seguridad, CCTV, alarmas contra incendio Notifier, videoporteros, fotovoltaico y más en CDMX y Estado de México.">
+<meta property="og:url" content="https://sistemastvo.com/servicios">
+<meta property="og:site_name" content="Sistemas TVO">
+<meta property="og:image" content="https://sistemastvo.com/img/logo.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Sistemas TVO",
+  "image": "https://sistemastvo.com/img/logo.webp",
+  "@id": "https://sistemastvo.com",
+  "url": "https://sistemastvo.com",
+  "telephone": "+52XXXXXXXXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ciudad de México",
+    "addressRegion": "CDMX",
+    "addressCountry": "MX"
+  },
+  "areaServed": ["Ciudad de México", "Estado de México"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Seguridad Electrónica",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CCTV y Videovigilancia" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Control de Acceso Biométrico" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistemas de Alarma" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alarmas Contra Incendio Notifier Honeywell" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Videoporteros" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cercas Electrificadas" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización de Portones" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radios de Comunicación" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UPS Inteligentes" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistemas Fotovoltaicos" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Puntos de Venta Soft-Restaurant" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Instalación de Fibra Óptica" } }
+    ]
+  }
+}
+</script>
+<style>
+  .page-hero {
+    background: var(--dark-2);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 52px 0 40px;
+  }
+  .page-hero h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin: 0 0 12px;
+    color: var(--text-light);
+  }
+  .page-hero p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 620px;
+    margin: 0;
+    font-weight: 300;
+  }
+  .cat-nav {
+    background: var(--dark-3);
+    border-bottom: 1px solid var(--border-subtle);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .cat-nav::-webkit-scrollbar { display: none; }
+  .cat-nav-inner {
+    display: flex;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 40px;
+    white-space: nowrap;
+  }
+  .cat-nav a {
+    display: inline-block;
+    padding: 14px 18px;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .cat-nav a:hover {
+    color: var(--text-light);
+    border-bottom-color: var(--border-subtle);
+  }
+  .services-wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 60px 40px 0;
+  }
+  .svc-group { margin-bottom: 80px; }
+  .svc-group-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 36px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .svc-group-icon {
+    width: 36px; height: 36px;
+    color: var(--yellow);
+    flex-shrink: 0;
+  }
+  .svc-group-header h2 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    margin: 0;
+    color: var(--text-light);
+  }
+  .svc-group-label {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .svc-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+  .svc-card-main {
+    background: var(--dark-3);
+    padding: 32px 36px;
+  }
+  .svc-card-main p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin: 0 0 20px;
+  }
+  .svc-card-details {
+    background: var(--dark-2);
+    padding: 32px 36px;
+  }
+  .svc-card-details h4 {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin: 0 0 16px;
+    font-weight: 600;
+  }
+  .svc-list {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .svc-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .svc-list li::before {
+    content: '▶';
+    color: var(--yellow);
+    font-size: 0.55rem;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .svc-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--yellow-dim);
+    border: 1px solid var(--yellow);
+    border-radius: 2px;
+    padding: 4px 10px;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 14px;
+  }
+  .svc-cta {
+    background: var(--dark);
+    border: 1px solid var(--border-subtle);
+    border-left: 3px solid var(--yellow);
+    padding: 28px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 2px;
+  }
+  .svc-cta p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin: 4px 0 0;
+    font-weight: 300;
+  }
+  .svc-cta h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin: 0;
+    text-transform: uppercase;
+  }
+  @media (max-width: 860px) {
+    .svc-card { grid-template-columns: 1fr; }
+    .cat-nav-inner { padding: 0 20px; }
+    .services-wrap { padding: 40px 20px 0; }
+    .svc-card-main,
+    .svc-card-details,
+    .svc-cta { padding: 24px 20px; }
+  }
+</style>
+
+  
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NC6XELGW6F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NC6XELGW6F');
+  </script>
+
+</head>
+<body>
+  <header>
+  <div class="header-container">
+
+    <!-- Logo -->
+    <a href="/" aria-label="Sistemas TVO — Inicio">
+      <picture>
+        <source srcset="/img/logo.webp" type="image/webp">
+        <img class="logo" src="/img/logo.png" alt="Sistemas TVO" width="40" height="40">
+      </picture>
+    </a>
+
+    <!-- Hamburger (mobile) -->
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Abrir menú" aria-controls="main-nav">
+      <svg id="icon-bars" width="22" height="22" viewBox="0 0 24 24" fill="none"
+           xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none"
+           xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none;">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <!-- Nav -->
+    <nav id="main-nav" role="navigation" aria-label="Navegación principal">
+      <a href="/" class="nav-link">Inicio</a>
+      <a href="/servicios" class="nav-link">Servicios</a>
+      <a href="/casos-de-exito" class="nav-link">Casos de Éxito</a>
+      <a href="/contacto" class="nav-cta">Cotizar</a>
+    </nav>
+
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav    = document.getElementById('main-nav');
+    const iconBars   = document.getElementById('icon-bars');
+    const iconClose  = document.getElementById('icon-close');
+
+    function toggleMenu() {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      const nowExpanded = !isExpanded;
+
+      menuToggle.setAttribute('aria-expanded', nowExpanded);
+      menuToggle.setAttribute('aria-label', nowExpanded ? 'Cerrar menú' : 'Abrir menú');
+      mainNav.classList.toggle('active', nowExpanded);
+
+      iconBars.style.display  = nowExpanded ? 'none'  : 'block';
+      iconClose.style.display = nowExpanded ? 'block' : 'none';
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Cerrar al hacer clic en un enlace (mobile)
+    mainNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 768) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Sombra al hacer scroll
+    window.addEventListener('scroll', function () {
+      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  });
+  </script>
+</header>
+
+
+  <main>
+    
+<!-- PAGE HERO -->
+<div class="page-hero section">
+  <div class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb" style="padding: 0 0 16px;">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li aria-current="page"><span>Servicios</span></li>
+      </ol>
+    </nav>
+    <span class="section-label">Catálogo completo</span>
+    <h1>Nuestros Servicios</h1>
+    <p>Instalación, configuración y mantenimiento de sistemas de seguridad electrónica, energía y telecomunicaciones para empresas y hogares en CDMX y Estado de México.</p>
+  </div>
+</div>
+
+<!-- CATEGORIES NAV -->
+<div class="cat-nav">
+  <div class="cat-nav-inner">
+    <a href="#seguridad">Seguridad</a>
+    <a href="#incendio">Incendio</a>
+    <a href="#acceso">Acceso y Perímetro</a>
+    <a href="#telecomunicaciones">Telecom</a>
+    <a href="#energia">Energía</a>
+    <a href="#software">Software</a>
+  </div>
+</div>
+
+<div class="services-wrap">
+
+  <!-- GRUPO 1: SEGURIDAD -->
+  <div class="svc-group section" id="seguridad">
+    <div class="svc-group-header">
+      <svg class="svc-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/>
+      </svg>
+      <div>
+        <span class="svc-group-label">Vigilancia y monitoreo</span>
+        <h2>CCTV y Videovigilancia</h2>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-card-main">
+        <p>Diseñamos e instalamos sistemas de videovigilancia analógicos e IP adaptados al tamaño y riesgo de cada instalación. Desde una cámara en un local hasta redes de decenas de puntos en complejos industriales. Incluimos configuración de acceso remoto desde celular o PC y grabación continua o por evento.</p>
+        <a href="/contacto" class="btn-primary" style="font-size:0.85rem; padding: 10px 24px;">Solicitar cotización →</a>
+      </div>
+      <div class="svc-card-details">
+        <h4>Incluye</h4>
+        <ul class="svc-list">
+          <li>Cámaras domo, bala y PTZ en resolución HD / 4K</li>
+          <li>DVR y NVR con almacenamiento local y en nube</li>
+          <li>Visión nocturna y detección de movimiento por IA</li>
+          <li>Monitoreo remoto 24/7 vía app móvil</li>
+          <li>Cableado estructurado o sistema inalámbrico</li>
+          <li>Mantenimiento preventivo programado</li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc-cta">
+      <div>
+        <h3>¿Cuántas cámaras necesitas?</h3>
+        <p>Te asesoramos sin costo para definir la solución correcta para tu espacio.</p>
+      </div>
+      <a href="/contacto" class="btn-secondary">Asesoría gratuita</a>
+    </div>
+    <div class="svc-card" id="videoporteros">
+      <div class="svc-card-main">
+        <div class="svc-highlight">⭐ Servicio destacado</div>
+        <p>Los videoporteros combinan control de acceso visual con comunicación bidireccional en tiempo real. Ideales para residencias, condominios y oficinas que requieren identificar visitas antes de permitir el ingreso. Instalamos equipos con pantalla a color, visión nocturna y apertura remota desde smartphone.</p>
+        <a href="/contacto" class="btn-primary" style="font-size:0.85rem; padding: 10px 24px;">Solicitar cotización →</a>
+      </div>
+      <div class="svc-card-details">
+        <h4>Videoporteros — características</h4>
+        <ul class="svc-list">
+          <li>Pantalla a color con audio bidireccional</li>
+          <li>Apertura remota desde celular (WiFi / 4G)</li>
+          <li>Grabación de visitas con marca de tiempo</li>
+          <li>Integración con chapa eléctrica o portón automático</li>
+          <li>Compatible con sistemas de alarma existentes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRUPO 2: INCENDIO -->
+  <div class="svc-group section" id="incendio">
+    <div class="svc-group-header">
+      <svg class="svc-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2c0 0-4 4.5-4 8a4 4 0 008 0c0-3.5-4-8-4-8z"/>
+        <path d="M12 12c0 0-2 2-2 3.5a2 2 0 004 0C14 14 12 12 12 12z"/>
+        <path d="M5 20h14"/>
+      </svg>
+      <div>
+        <span class="svc-group-label">Instaladores certificados Honeywell</span>
+        <h2>Alarmas Contra Incendio Notifier</h2>
+      </div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-card-main">
+        <div class="svc-highlight">🛡 Certificado Honeywell · Verifire Tools</div>
+        <p>Somos instaladores certificados de la línea Notifier de Honeywell, líder mundial en detección y alarma contra incendios. Diseñamos sistemas completos con memorias de cálculo generadas en Verifire Tools, garantizando la cobertura exacta requerida por normativa. Atendemos desde pequeños comercios hasta plantas industriales y edificios de uso mixto.</p>
+        <a href="/contacto" class="btn-primary" style="font-size:0.85rem; padding: 10px 24px;">Solicitar proyecto →</a>
+      </div>
+      <div class="svc-card-details">
+        <h4>Alcance del servicio</h4>
+        <ul class="svc-list">
+          <li>Memoria de cálculo con Verifire Tools</li>
+          <li>Detectores de humo fotoeléctrico, iónico, calor y CO</li>
+          <li>Paneles Notifier NFS2-3030, AFP-400 y serie ONYX</li>
+          <li>Bocinas, estrobos y sistemas de notificación</li>
+          <li>Integración con supresión de incendios</li>
+          <li>Cumplimiento NOM-002-STPS, NFPA 72 y NFPA 101</li>
+          <li>Mantenimiento preventivo con refacciones originales</li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc-cta">
+      <div>
+        <h3>¿Tu instalación cumple con NOM-002-STPS?</h3>
+        <p>Revisamos tu sistema actual sin costo y te decimos si está en regla.</p>
+      </div>
+      <a href="/contacto" class="btn-secondary">Revisar mi sistema</a>
+    </div>
+    <div class="svc-card" id="alarmas">
+      <div class="svc-card-main">
+        <p>Instalamos sistemas de alarma de intrusión con detectores de movimiento PIR, contactos magnéticos en puertas y ventanas, sirenas interiores y exteriores, y paneles con comunicación a central de monitoreo o notificación directa al propietario vía app.</p>
+        <a href="/contacto" class="btn-primary" style="font-size:0.85rem; padding: 10px 24px;">Solicitar cotización →</a>
+      </div>
+      <div class="svc-card-details">
+        <h4>Alarmas de intrusión — incluye</h4>
+        <ul class="svc-list">
+          <li>Detectores de movimiento PIR doble tecnología</li>
+          <li>Contactos magnéticos para puertas y ventanas</li>
+          <li>Panel con teclado y código de usuario</li>
+          <li>Sirena interior y exterior con batería de respaldo</li>
+          <li>Notificación a celular en tiempo real</li>
+          <li>Opcional: monitoreo central 24/7</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRUPO 3: ACCESO Y PERÍMETRO -->
+  <div class="svc-group section" id="acceso">
+    <div class="svc-group-header">
+      <svg class="svc-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2"/>
+        <path d="M7 11V7a5 5 0 0110 0v4"/>
+        <circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      <div>
+        <span class="svc-group-label">Control de acceso y perímetro</span>
+        <h2>Acceso, Portones y Cercas</h2>
+      </div>
+    </div>
+    <div class="svc-card" id="biometrico">
+      <div class="svc-card-main">
+        <p>Instalamos lectores biométricos de huella digital, reconocimiento facial y tarjetas RFID para el control de acceso en áreas restringidas. Administramos usuarios, horarios de acceso y generamos reportes de entradas y salidas. Ideal para oficinas, bodegas, plantas y condominios.</p>
+        <a href="/contacto" class="btn-primary" style="font-size:0.85rem; padding: 10px 24px;">Solicitar cotización →</a>
+      </div>
+      <div class="svc-card-details">
+        <h4>Control biométrico — incluye</h4>
+        <ul class="svc-list">
+          <li>Lectores de huella, facial y tarjeta RFID</li>
+          <li>Software de administración de usuarios y horarios</li>
+          <li>Reportes de acceso exportables</li>
+          <li>Integración con torniquetes y chapas eléctricas</li>
+          <li>Control vehicular con barreras y lectores de placa</li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc-card" id="portones">
+      <div class="svc-card-main">
+        <div class="svc-highlight">⭐ Servicio destacado</div>
+        <p>Automatizamos portones corredizos, abatibles y levadizos para uso residencial, comercial e industrial. Instalamos motores de alta resistencia con control remoto, apertura por tarjeta, código o app, y sensores de seguridad para evitar accidentes.</p>
+        <a href="/contacto" class="btn-primary" style="font-size:0.85rem; padding: 10px 24px;">Solicitar cotización →</a>
+      </div>
+      <div class="svc-card-details">
+        <h4>Automatización de portones — incluye</h4>
+        <ul class="svc-list">
+          <li>Motores para portón corredizo, abatible y levadizo</li>
+          <li>Control remoto, tarjeta RFID y apertura por app</li>
+          <li>Sensor de presencia y reversa automática</li>
+          <li>Batería de respaldo ante corte de luz</li>
+          <li>Integración con videoportero y sistema de acceso</li>
+          <li>Mantenimiento preventivo y correctivo</li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc-card" id="cercas">
+      <div class="svc-card-main">
+        <p>Las cercas electrificadas son una de las barreras perimetrales más efectivas y disuasivas. Instalamos sistemas con energizadores de alta tensión y baja corriente, seguros para personas y animales, con alarma ante intento de corte o contacto.</p>
+        <a href="/contacto" class="btn-primary" style="font-size:0.85rem; padding: 10px 24px;">Solicitar cotización →</a>
+      </div>
+      <div class="svc-card-details">
+        <h4>Cercas electrificadas — incluye</h4>
+        <ul class="svc-list">
+          <li>Energizadores certificados alta tensión / baja corriente</li>
+          <li>Alarma ante corte o contacto con el cable</li>
+          <li>Zonas independientes por sector</li>
+          <li>Señalización de advertencia reglamentaria</li>
+          <li>Integración con panel de alarma general</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRUPO 4: TELECOMUNICACIONES -->
+  <div class="svc-group section" id="telecomunicaciones">
+    <div class="svc-group-header">
+      <svg class="svc-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/>
+      </svg>
+      <div>
+        <span class="svc-group-label">Conectividad y comunicación</span>
+        <h2>Telecomunicaciones</h2>
+      </div>
+    </div>
+    <div class="svc-card" id="fibra">
+      <div class="svc-card-main">
+        <p>Instalamos redes de fibra óptica monomodo y multimodo para empresas que requieren alta velocidad y estabilidad en su infraestructura de red. Realizamos tendido, fusión, certificación y documentación de la red. Ideal para edificios de oficinas, plantas industriales y centros de datos.</p>
+        <a href="/contacto" class="btn-primary" style="font-size:0.85rem; padding: 10px 24px;">Solicitar cotización →</a>
+      </div>
+      <div class="svc-card-details">
+        <h4>Fibra óptica — incluye</h4>
+        <ul class="svc-list">
+          <li>Fibra monomodo y multimodo OM3 / OM4</li>
+          <li>Fusión mecánica y por arco eléctrico</li>
+          <li>Certificación con OTDR y reflectómetro</li>
+          <li>Documentación y planos de red</li>
+          <li>Patch panels, bandejas y gabinetes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc-card" id="radios">
+      <div class="svc-card-main">
+        <p>Suministramos e instalamos sistemas de radiocomunicación analógica y digital (DMR) para equipos de seguridad, logística y operaciones. Cobertura en interiores con repetidores y antenas. Soluciones para comunicación privada sin depender de señal celular.</p>
+        <a href="/contacto" class="btn-primary" style="font-size:0.85rem; padding: 10px 24px;">Solicitar cotización →</a>
+      </div>
+      <div class="svc-card-details">
+        <h4>Radios de comunicación — incluye</h4>
+        <ul class="svc-list">
+          <li>Radios portátiles analógicos y digitales DMR</li>
+          <li>Repetidores para cobertura interior y exterior</li>
+          <li>Programación de canales y grupos</li>
+          <li>Accesorios: auriculares, cargadores múltiples</li>
+          <li>Mantenimiento y reparación de equipos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRUPO 5: ENERGÍA -->
+  <div class="svc-group section" id="energia">
+    <div class="svc-group-header">
+      <svg class="svc-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+      </svg>
+      <div>
+        <span class="svc-group-label">Respaldo y generación</span>
+        <h2>Energía y UPS</h2>
+      </div>
+    </div>
+    <div class="svc-card" id="fotovoltaico">
+      <div class="svc-card-main">
+        <div class="svc-highlight">⭐ Servicio destacado</div>
+        <p>Instalamos sistemas fotovoltaicos para autoconsumo en casas, negocios y empresas. Realizamos el estudio de consumo, dimensionamiento del sistema, instalación de paneles e inversores, y gestión de la interconexión con CFE. Reduce tu factura eléctrica y obtén independencia energética.</p>
+        <a href="/contacto" class="btn-primary" style="font-size:0.85rem; padding: 10px 24px;">Solicitar estudio →</a>
+      </div>
+      <div class="svc-card-details">
+        <h4>Sistemas fotovoltaicos — incluye</h4>
+        <ul class="svc-list">
+          <li>Estudio de consumo y dimensionamiento del sistema</li>
+          <li>Paneles monocristalinos de alta eficiencia</li>
+          <li>Inversores string y microinversores</li>
+          <li>Sistemas on-grid, off-grid e híbridos</li>
+          <li>Gestión de interconexión con CFE</li>
+          <li>Monitoreo de producción en tiempo real</li>
+          <li>Mantenimiento preventivo anual</li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc-card" id="ups">
+      <div class="svc-card-main">
+        <p>Instalamos UPS para proteger equipos críticos ante cortes, fluctuaciones y picos de voltaje. Desde UPS individuales para servidores hasta sistemas trifásicos para plantas industriales. Incluimos cálculo de autonomía y mantenimiento de baterías.</p>
+        <a href="/contacto" class="btn-primary" style="font-size:0.85rem; padding: 10px 24px;">Solicitar cotización →</a>
+      </div>
+      <div class="svc-card-details">
+        <h4>UPS inteligentes — incluye</h4>
+        <ul class="svc-list">
+          <li>UPS on-line, line-interactive y stand-by</li>
+          <li>Cálculo de carga y autonomía requerida</li>
+          <li>Monitoreo remoto vía SNMP / app</li>
+          <li>Mantenimiento y reemplazo de baterías</li>
+          <li>Protección para servidores, CCTV, alarmas y más</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRUPO 6: SOFTWARE -->
+  <div class="svc-group section" id="software">
+    <div class="svc-group-header">
+      <svg class="svc-group-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2"/>
+        <path d="M8 21h8M12 17v4"/>
+        <path d="M9 8l2 2-2 2M13 12h2"/>
+      </svg>
+      <div>
+        <span class="svc-group-label">Punto de venta</span>
+        <h2>Software Soft-Restaurant</h2>
+      </div>
+    </div>
+    <div class="svc-card" id="softrestaurant">
+      <div class="svc-card-main">
+        <div class="svc-highlight">⭐ Servicio destacado</div>
+        <p>Somos distribuidores e instaladores de Soft-Restaurant, el software de punto de venta líder para restaurantes, cafeterías y negocios de alimentos en México. Instalamos el sistema completo: software, hardware y capacitamos a tu equipo para que arranquen sin contratiempos.</p>
+        <a href="/contacto" class="btn-primary" style="font-size:0.85rem; padding: 10px 24px;">Solicitar instalación →</a>
+      </div>
+      <div class="svc-card-details">
+        <h4>Soft-Restaurant — incluye</h4>
+        <ul class="svc-list">
+          <li>Licencia e instalación de Soft-Restaurant</li>
+          <li>Terminales táctiles y equipos de hardware</li>
+          <li>Impresoras de cocina y barra</li>
+          <li>Cajón de dinero y lector de código de barras</li>
+          <li>Capacitación al personal operativo y administrativo</li>
+          <li>Soporte técnico post-instalación</li>
+          <li>Configuración de menú, mesas e impuestos</li>
+        </ul>
+      </div>
+    </div>
+    <div class="svc-cta">
+      <div>
+        <h3>¿Abres un restaurante o cafetería?</h3>
+        <p>Te ayudamos a arrancar con el punto de venta correcto desde el primer día.</p>
+      </div>
+      <a href="/contacto" class="btn-secondary">Hablar con un asesor</a>
+    </div>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="section" style="text-align:center; padding: 60px 0 80px;">
+    <span class="section-label" style="display:block; text-align:center;">¿No encontraste lo que buscas?</span>
+    <h2 class="section-title" style="margin: 0 auto 16px;">Cuéntanos tu proyecto</h2>
+    <p class="section-sub" style="margin: 0 auto 32px; text-align:center;">Si necesitas algo que no está en esta lista, escríbenos. Con 20 años de experiencia seguramente tenemos la solución.</p>
+    <a href="/contacto" class="btn-primary">Contactar ahora</a>
+  </div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    requestAnimationFrame(() => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+  sections.forEach(s => observer.observe(s));
+});
+</script>
+
+  </main>
+
+  <footer>
+  <div class="footer-slogan">
+    <a href="/" aria-label="Sistemas TVO — Inicio">
+      <picture>
+        <source srcset="/img/logo.webp" type="image/webp">
+        <img src="/img/logo.png" alt="Sistemas TVO" width="40" height="40" loading="lazy">
+      </picture>
+    </a>
+    <p><i>"Tecnología que protege. Experiencia que respalda."</i></p>
+  </div>
+
+  <div class="footer-bottom">
+
+    <!-- Info de contacto -->
+    <div class="footer-info">
+      <p class="footer-brand">Sistemas TVO</p>
+      <p>Ciudad de México y Área Metropolitana</p>
+      <p>Tel: <a href="tel:+52XXXXXXXXXX">XX XXXX XXXX</a></p>
+      <p>Email: <a href="mailto:contacto@sistemastvo.com.mx">contacto@sistemastvo.com.mx</a></p>
+      <p class="footer-copy">&copy; 2025 Sistemas TVO. Todos los derechos reservados.</p>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="footer-social">
+      <p>Síguenos</p>
+      <div class="social-icons-footer">
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5215643939397" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+            <path d="M20.52 3.48A11.46 11.46 0 0012 0C5.373 0 0 5.372 0 12c0 2.124.555 4.127 1.608 5.887L0 24l6.207-1.6A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12 0-3.204-1.252-6.212-3.48-8.52zm-8.46 18.42a9.9 9.9 0 01-5.038-1.381l-.36-.217-3.688.95.985-3.6-.234-.37A9.87 9.87 0 012.1 12c0-5.454 4.446-9.9 9.9-9.9a9.84 9.84 0 016.996 2.894 9.77 9.77 0 012.904 6.987c0 5.453-4.446 9.9-9.9 9.9zm5.43-7.41c-.3-.15-1.768-.87-2.04-.97-.273-.1-.473-.15-.673.15-.2.3-.77.97-.945 1.17-.173.2-.347.225-.646.075-.3-.15-1.268-.47-2.417-1.49-.894-.796-1.497-1.776-1.675-2.076-.173-.3-.018-.46.13-.61.134-.134.3-.347.45-.52.15-.17.2-.3.3-.5.1-.2.05-.375-.025-.52-.075-.15-.673-1.618-.922-2.214-.242-.58-.488-.5-.673-.51l-.573-.01c-.2 0-.52.075-.79.375s-1.04 1.02-1.04 2.48 1.065 2.875 1.213 3.075c.15.2 2.095 3.2 5.075 4.487.71.306 1.263.488 1.695.625.712.227 1.36.195 1.87.118.57-.085 1.768-.72 2.02-1.415.253-.696.253-1.29.176-1.415-.074-.124-.273-.2-.573-.35z"/>
+          </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61578315800649" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" aria-hidden="true">
+            <rect fill="#1877f2" width="512" height="512" rx="15%"/>
+            <path fill="#fff" d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z"/>
+          </svg>
+        </a>
+
+        <!-- Messenger -->
+        <a href="https://m.me/667562636447764" target="_blank" rel="noopener" title="Messenger" aria-label="Messenger">
+          <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true">
+            <radialGradient id="msgGrad" cx="11.087" cy="7.022" r="47.612" gradientTransform="matrix(1 0 0 -1 0 50)" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#1292ff"/>
+              <stop offset=".079" stop-color="#2982ff"/>
+              <stop offset=".23" stop-color="#4e69ff"/>
+              <stop offset=".351" stop-color="#6559ff"/>
+              <stop offset=".428" stop-color="#6d53ff"/>
+              <stop offset=".754" stop-color="#df47aa"/>
+              <stop offset=".946" stop-color="#ff6257"/>
+            </radialGradient>
+            <path fill="url(#msgGrad)" d="M44,23.5C44,34.27,35.05,43,24,43c-1.651,0-3.25-0.194-4.784-0.564c-0.465-0.112-0.951-0.069-1.379,0.145L13.46,44.77C12.33,45.335,11,44.513,11,43.249v-4.025c0-0.575-0.257-1.111-0.681-1.499C6.425,34.165,4,29.11,4,23.5C4,12.73,12.95,4,24,4S44,12.73,44,23.5z"/>
+            <path fill="#fff" d="M34.394,18.501l-5.7,4.22c-0.61,0.46-1.44,0.46-2.04,0.01L22.68,19.74c-1.68-1.25-4.06-0.82-5.19,0.94l-1.21,1.89l-4.11,6.68c-0.6,0.94,0.55,2.01,1.44,1.34l5.7-4.22c0.61-0.46,1.44-0.46,2.04-0.01l3.974,2.991c1.68,1.25,4.06,0.82,5.19-0.94l1.21-1.89l4.11-6.68C36.434,18.901,35.284,17.831,34.394,18.501z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/sistemastvo/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="instaGrad2" x1="100%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="#515bd4"/>
+                <stop offset="50%" stop-color="#dd2a7b"/>
+                <stop offset="100%" stop-color="#515bd4"/>
+              </linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="10" ry="10" fill="url(#instaGrad2)"/>
+            <rect x="6" y="6" width="36" height="36" rx="6" ry="6" fill="none" stroke="#fff" stroke-width="2"/>
+            <circle cx="24" cy="24" r="9.6" fill="none" stroke="#fff" stroke-width="3"/>
+            <circle cx="36" cy="12" r="3" fill="#fff"/>
+          </svg>
+        </a>
+
+        <!-- X / Twitter -->
+        <a href="https://www.x.com/sistemastvo/" target="_blank" rel="noopener" title="X" aria-label="X (Twitter)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#F0F0F0" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+
+      </div>
+
+      <div class="dmca-badge">
+        <a href="//www.dmca.com/Protection/Status.aspx?ID=9119aef2-a242-43b7-86f1-d2a5bb4a5a6c"
+           title="DMCA.com Protection Status" target="_blank" rel="noopener">
+          <img src="https://images.dmca.com/Badges/DMCA_logo-std-btn140w.png?ID=x"
+               loading="lazy" width="141" height="53" alt="DMCA.com Protection Status">
+        </a>
+        <script defer>
+          document.addEventListener('DOMContentLoaded', function () {
+            var s = document.createElement('script');
+            s.src = 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js';
+            document.body.appendChild(s);
+          });
+        </script>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+  
+    <script src="/js/main.js" defer></script>
+  
+
+  
+</body>
+</html>

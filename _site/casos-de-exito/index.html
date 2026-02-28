@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casos de Éxito | Sistemas TVO — Proyectos de Seguridad Electrónica CDMX</title>
+  <meta name="description" content="Proyectos reales de instalación de sistemas de seguridad, CCTV, alarmas contra incendio Notifier y más en CDMX y Estado de México. 20 años de experiencia.">
+
+  <link rel="canonical" href="http://localhost:8888/casos-de-exito/" />
+
+  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Sistemas TVO" />
+  <link rel="manifest" href="/img/site.webmanifest" />
+
+  <link rel="preconnect" href="https://images.dmca.com" crossorigin>
+
+  <!-- Fuentes locales -->
+  <link rel="stylesheet" href="/css/font.css">
+
+  <!-- Estilos principales (carga diferida para performance) -->
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+
+  <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
+
+  
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Casos de Éxito | Sistemas TVO">
+<meta property="og:description" content="Proyectos reales de seguridad electrónica en CDMX y Estado de México.">
+<meta property="og:url" content="https://sistemastvo.com/casos-de-exito">
+<meta property="og:site_name" content="Sistemas TVO">
+<meta property="og:image" content="https://sistemastvo.com/img/logo.webp">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "CaseStudy",
+    "name": "Sistema de Alarma Contra Incendio Notifier para Planta Industrial",
+    "description": "Diseño e instalación de sistema Notifier NFS2-3030 con memoria de cálculo Verifire Tools para planta de manufactura en Vallejo",
+    "datePublished": "2024-03-10",
+    "location": { "@type": "Place", "name": "Azcapotzalco, CDMX" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "CaseStudy",
+    "name": "CCTV y Control de Acceso para Corporativo",
+    "description": "Red de 48 cámaras IP 4K con control biométrico en 6 accesos para edificio de oficinas en Santa Fe",
+    "datePublished": "2024-07-18",
+    "location": { "@type": "Place", "name": "Santa Fe, CDMX" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "CaseStudy",
+    "name": "Sistema Fotovoltaico e Instalación Soft-Restaurant",
+    "description": "Instalación de 24 paneles solares y punto de venta Soft-Restaurant para cadena de restaurantes en Satélite",
+    "datePublished": "2024-10-05",
+    "location": { "@type": "Place", "name": "Naucalpan, Estado de México" }
+  }
+]
+</script>
+<style>
+  /* ---- Hero ---- */
+  .page-hero {
+    background: var(--dark-2);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 52px 0 40px;
+  }
+
+  /* ---- Filtros ---- */
+  .case-filters {
+    background: var(--dark-3);
+    border-bottom: 1px solid var(--border-subtle);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .case-filters::-webkit-scrollbar { display: none; }
+  .case-filters-inner {
+    display: flex;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 40px;
+    white-space: nowrap;
+    gap: 4px;
+  }
+  .filter-btn {
+    display: inline-block;
+    padding: 13px 18px;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+  .filter-btn:hover { color: var(--text-light); }
+  .filter-btn.active {
+    color: var(--yellow);
+    border-bottom-color: var(--yellow);
+  }
+
+  /* ---- Grid de casos ---- */
+  .cases-wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+  }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+
+  .case-card {
+    background: var(--dark-3);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, background 0.2s;
+  }
+  .case-card.show { opacity: 1; transform: translateY(0); }
+  .case-card:hover { background: var(--dark-4); }
+
+  /* Imagen / placeholder visual */
+  .case-visual {
+    height: 180px;
+    background: var(--dark-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .case-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .case-visual-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .case-visual-placeholder svg {
+    width: 48px; height: 48px;
+    color: var(--yellow);
+    opacity: 0.5;
+  }
+  .case-visual-placeholder span {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* Badge de categoría */
+  .case-badge {
+    position: absolute;
+    top: 12px; left: 12px;
+    background: var(--dark);
+    border: 1px solid var(--border-yellow);
+    border-radius: 2px;
+    padding: 4px 10px;
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--yellow);
+  }
+
+  .case-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+
+  .case-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .case-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    letter-spacing: 0.5px;
+  }
+  .case-meta-item svg { width: 12px; height: 12px; }
+
+  .case-body h2 {
+    font-size: 1.25rem;
+    margin: 0 0 12px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+
+  .case-body p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0 0 18px;
+  }
+
+  .case-results {
+    list-style: none;
+    padding: 0; margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .case-results li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .case-results li::before {
+    content: '▶';
+    color: var(--yellow);
+    font-size: 0.5rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .case-testimonial {
+    background: var(--dark);
+    border-left: 3px solid var(--yellow);
+    padding: 14px 16px;
+    margin: 0 0 20px;
+    flex: 1;
+  }
+  .case-testimonial blockquote {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin: 0 0 8px;
+    line-height: 1.6;
+  }
+  .case-testimonial cite {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    font-style: normal;
+  }
+
+  .case-cta-link {
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+    margin-top: auto;
+  }
+  .case-cta-link:hover { gap: 12px; color: var(--text-light); }
+
+  /* ---- CTA final ---- */
+  .cases-cta {
+    background: var(--dark-2);
+    border: 1px solid var(--border-subtle);
+    border-left: 3px solid var(--yellow);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+  }
+  .cases-cta h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--text-light);
+    margin: 0 0 8px;
+    text-transform: uppercase;
+  }
+  .cases-cta p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+    font-weight: 300;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 768px) {
+    .cases-wrap { padding: 40px 20px 60px; }
+    .case-filters-inner { padding: 0 20px; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .cases-cta { padding: 28px 20px; }
+  }
+</style>
+
+  
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NC6XELGW6F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NC6XELGW6F');
+  </script>
+
+</head>
+<body>
+  <header>
+  <div class="header-container">
+
+    <!-- Logo -->
+    <a href="/" aria-label="Sistemas TVO — Inicio">
+      <picture>
+        <source srcset="/img/logo.webp" type="image/webp">
+        <img class="logo" src="/img/logo.png" alt="Sistemas TVO" width="40" height="40">
+      </picture>
+    </a>
+
+    <!-- Hamburger (mobile) -->
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Abrir menú" aria-controls="main-nav">
+      <svg id="icon-bars" width="22" height="22" viewBox="0 0 24 24" fill="none"
+           xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none"
+           xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none;">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <!-- Nav -->
+    <nav id="main-nav" role="navigation" aria-label="Navegación principal">
+      <a href="/" class="nav-link">Inicio</a>
+      <a href="/servicios" class="nav-link">Servicios</a>
+      <a href="/casos-de-exito" class="nav-link">Casos de Éxito</a>
+      <a href="/contacto" class="nav-cta">Cotizar</a>
+    </nav>
+
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav    = document.getElementById('main-nav');
+    const iconBars   = document.getElementById('icon-bars');
+    const iconClose  = document.getElementById('icon-close');
+
+    function toggleMenu() {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      const nowExpanded = !isExpanded;
+
+      menuToggle.setAttribute('aria-expanded', nowExpanded);
+      menuToggle.setAttribute('aria-label', nowExpanded ? 'Cerrar menú' : 'Abrir menú');
+      mainNav.classList.toggle('active', nowExpanded);
+
+      iconBars.style.display  = nowExpanded ? 'none'  : 'block';
+      iconClose.style.display = nowExpanded ? 'block' : 'none';
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Cerrar al hacer clic en un enlace (mobile)
+    mainNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 768) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Sombra al hacer scroll
+    window.addEventListener('scroll', function () {
+      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  });
+  </script>
+</header>
+
+
+  <main>
+    
+<!-- PAGE HERO -->
+<div class="page-hero section">
+  <div class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb" style="padding: 0 0 16px;">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li aria-current="page"><span>Casos de Éxito</span></li>
+      </ol>
+    </nav>
+    <span class="section-label">Resultados reales</span>
+    <h1 class="section-title">Casos de Éxito</h1>
+    <p class="section-sub">20 años protegiendo empresas, industrias y hogares en CDMX y Estado de México. Estos son algunos de los proyectos que nos enorgullecen.</p>
+  </div>
+</div>
+
+<!-- FILTROS -->
+<div class="case-filters">
+  <div class="case-filters-inner">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="incendio">Incendio</button>
+    <button class="filter-btn" data-filter="cctv">CCTV</button>
+    <button class="filter-btn" data-filter="acceso">Acceso</button>
+    <button class="filter-btn" data-filter="energia">Energía</button>
+    <button class="filter-btn" data-filter="software">Software</button>
+    <button class="filter-btn" data-filter="industrial">Industrial</button>
+    <button class="filter-btn" data-filter="comercial">Comercial</button>
+    <button class="filter-btn" data-filter="residencial">Residencial</button>
+  </div>
+</div>
+
+<div class="cases-wrap">
+  <div class="cases-grid" id="cases-grid">
+
+    <!-- CASO 1: Notifier planta industrial -->
+    <div class="case-card" id="planta-vallejo" data-category="incendio industrial">
+      <div class="case-visual">
+        <div class="case-visual-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2c0 0-4 4.5-4 8a4 4 0 008 0c0-3.5-4-8-4-8z"/>
+            <path d="M5 20h14"/>
+          </svg>
+          <span>Alarma contra incendio</span>
+        </div>
+        <span class="case-badge">Industrial · Notifier</span>
+      </div>
+      <div class="case-body">
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Azcapotzalco, CDMX
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Planta industrial
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            6 semanas
+          </span>
+        </div>
+        <h2>Sistema Notifier para Planta de Manufactura</h2>
+        <p>Planta de 4,800 m² sin sistema de detección de incendios certificado, con riesgo de clausura por inspección de Protección Civil. Requerían cumplir NOM-002-STPS en menos de 2 meses.</p>
+        <ul class="case-results">
+          <li>Diseño de memoria de cálculo con Verifire Tools para cobertura total</li>
+          <li>Instalación de panel Notifier NFS2-3030 con 3 lazos de detección</li>
+          <li>86 detectores de humo fotoeléctrico y 12 detectores de calor</li>
+          <li>Sistema de bocinas y estrobos en todas las zonas de trabajo</li>
+          <li>Aprobación de Protección Civil en primera inspección</li>
+        </ul>
+        <div class="case-testimonial" itemscope itemtype="https://schema.org/Quotation">
+          <blockquote itemprop="text">"Nos ayudaron a cumplir la normativa en tiempo récord. El sistema pasó la inspección de Protección Civil a la primera, sin observaciones."</blockquote>
+          <cite itemprop="author">Ing. Roberto Sánchez — Gerente de Planta</cite>
+        </div>
+        <a href="/contacto" class="case-cta-link">¿Tu instalación necesita certificarse? →</a>
+      </div>
+    </div>
+
+    <!-- CASO 2: CCTV corporativo -->
+    <div class="case-card" id="corporativo-santa-fe" data-category="cctv acceso comercial">
+      <div class="case-visual">
+        <div class="case-visual-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/>
+          </svg>
+          <span>CCTV y Control de Acceso</span>
+        </div>
+        <span class="case-badge">Corporativo</span>
+      </div>
+      <div class="case-body">
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Santa Fe, CDMX
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Edificio de oficinas
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            8 semanas
+          </span>
+        </div>
+        <h2>CCTV 4K y Biométricos para Edificio Corporativo</h2>
+        <p>Edificio de 12 pisos con sistema de cámaras analógico obsoleto y control de acceso por tarjeta sin registro de bitácora. La administración requería modernizar la seguridad y tener reportes de acceso por empleado.</p>
+        <ul class="case-results">
+          <li>48 cámaras IP 4K con analítica de video e inteligencia artificial</li>
+          <li>NVR con 90 días de grabación continua en alta resolución</li>
+          <li>Control biométrico facial en 6 accesos con software de reportes</li>
+          <li>Integración con torniquetes de entrada y parteluces de estacionamiento</li>
+          <li>Acceso remoto para administración desde cualquier dispositivo</li>
+        </ul>
+        <div class="case-testimonial" itemscope itemtype="https://schema.org/Quotation">
+          <blockquote itemprop="text">"La instalación fue impecable y el sistema de reportes nos ahorró horas de trabajo administrativo cada semana."</blockquote>
+          <cite itemprop="author">Lic. Claudia Torres — Directora Administrativa</cite>
+        </div>
+        <a href="/contacto" class="case-cta-link">¿Necesitas modernizar tu seguridad? →</a>
+      </div>
+    </div>
+
+    <!-- CASO 3: Fotovoltaico + Soft-Restaurant -->
+    <div class="case-card" id="restaurante-satelite" data-category="energia software comercial">
+      <div class="case-visual">
+        <div class="case-visual-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+          <span>Fotovoltaico · Soft-Restaurant</span>
+        </div>
+        <span class="case-badge">Comercial · Destacado</span>
+      </div>
+      <div class="case-body">
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Naucalpan, Edomex
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Cadena de restaurantes
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            4 semanas
+          </span>
+        </div>
+        <h2>Solar + Punto de Venta para Cadena de Restaurantes</h2>
+        <p>Cadena de 3 sucursales con facturas de CFE elevadas y sistema de punto de venta desactualizado que generaba errores en el inventario y tiempos muertos en caja. Buscaban reducir costos operativos en ambos frentes.</p>
+        <ul class="case-results">
+          <li>24 paneles monocristalinos de 550W por sucursal (sistema híbrido)</li>
+          <li>Reducción del 60% en facturación eléctrica mensual</li>
+          <li>Instalación de Soft-Restaurant en 3 terminales por sucursal</li>
+          <li>Impresoras de cocina, barra y cajones de dinero integrados</li>
+          <li>Capacitación completa al personal en 2 días por sucursal</li>
+        </ul>
+        <div class="case-testimonial" itemscope itemtype="https://schema.org/Quotation">
+          <blockquote itemprop="text">"En el primer mes ya recuperamos parte de la inversión con el ahorro en luz. Y el punto de venta le dio orden a nuestras cocinas."</blockquote>
+          <cite itemprop="author">Chef Marco Reyes — Dueño</cite>
+        </div>
+        <a href="/contacto" class="case-cta-link">¿Quieres reducir tus costos operativos? →</a>
+      </div>
+    </div>
+
+    <!-- CASO 4: Portones + Cercas residencial -->
+    <div class="case-card" id="condominio-tlalnepantla" data-category="acceso residencial">
+      <div class="case-visual">
+        <div class="case-visual-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2"/>
+            <path d="M7 11V7a5 5 0 0110 0v4"/>
+          </svg>
+          <span>Acceso y Perímetro</span>
+        </div>
+        <span class="case-badge">Residencial</span>
+      </div>
+      <div class="case-body">
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Tlalnepantla, Edomex
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Condominio horizontal
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            3 semanas
+          </span>
+        </div>
+        <h2>Perímetro Inteligente para Condominio</h2>
+        <p>Condominio de 40 casas con portones manuales, sin control de acceso de visitas y con historial de robos en el perímetro. La administración buscaba una solución integral sin obra civil mayor.</p>
+        <ul class="case-results">
+          <li>2 portones automáticos corredizos con motor de alta resistencia</li>
+          <li>Videoportero con apertura remota en acceso peatonal y vehicular</li>
+          <li>Cerca electrificada en 380 metros lineales de perímetro</li>
+          <li>Control de acceso RFID con tarjetas por vivienda y registro de visitas</li>
+          <li>Cero incidentes de robo en los 8 meses posteriores a la instalación</li>
+        </ul>
+        <div class="case-testimonial" itemscope itemtype="https://schema.org/Quotation">
+          <blockquote itemprop="text">"La tranquilidad que nos dio el sistema no tiene precio. Los vecinos están muy satisfechos y la administración tiene todo bajo control."</blockquote>
+          <cite itemprop="author">Lic. Patricia Vega — Administradora de Condominio</cite>
+        </div>
+        <a href="/contacto" class="case-cta-link">¿Necesitas proteger tu condominio? →</a>
+      </div>
+    </div>
+
+    <!-- CASO 5: Fibra óptica + UPS industrial -->
+    <div class="case-card" id="datacenter-ecatepec" data-category="industrial">
+      <div class="case-visual">
+        <div class="case-visual-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/>
+          </svg>
+          <span>Fibra Óptica · UPS</span>
+        </div>
+        <span class="case-badge">Industrial · Telecom</span>
+      </div>
+      <div class="case-body">
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ecatepec, Edomex
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Bodega logística
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            5 semanas
+          </span>
+        </div>
+        <h2>Backbone de Fibra Óptica y Respaldo UPS</h2>
+        <p>Bodega de 8,000 m² con red de cobre deteriorada que causaba caídas frecuentes en el sistema de inventarios y CCTV. Los cortes de luz también afectaban los equipos críticos de almacén.</p>
+        <ul class="case-results">
+          <li>Tendido de 1,200 m de fibra óptica monomodo certificada con OTDR</li>
+          <li>4 gabinetes de telecomunicaciones con patch panels y switches</li>
+          <li>3 UPS on-line trifásicos de 10 KVA para equipos críticos</li>
+          <li>Autonomía de 45 minutos ante corte total de suministro</li>
+          <li>Cero caídas de red en los 6 meses posteriores a la instalación</li>
+        </ul>
+        <div class="case-testimonial" itemscope itemtype="https://schema.org/Quotation">
+          <blockquote itemprop="text">"Antes perdíamos horas por caídas de red. Desde la instalación no hemos tenido un solo problema. La inversión se pagó sola en productividad."</blockquote>
+          <cite itemprop="author">Ing. Luis Mendoza — Jefe de TI</cite>
+        </div>
+        <a href="/contacto" class="case-cta-link">¿Tu red necesita una actualización? →</a>
+      </div>
+    </div>
+
+    <!-- CASO 6: Alarma intrusión + radios residencial -->
+    <div class="case-card" id="casa-interlomas" data-category="cctv residencial">
+      <div class="case-visual">
+        <div class="case-visual-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 01-3.46 0"/>
+          </svg>
+          <span>Alarma · CCTV · Videoportero</span>
+        </div>
+        <span class="case-badge">Residencial</span>
+      </div>
+      <div class="case-body">
+        <div class="case-meta">
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Huixquilucan, Edomex
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            Casa habitación
+          </span>
+          <span class="case-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            1 semana
+          </span>
+        </div>
+        <h2>Seguridad Integral para Casa Habitación</h2>
+        <p>Familia que había sufrido un intento de robo y quería una solución completa: cámaras, alarma con notificación a celular y videoportero. Presupuesto definido y plazo de una semana para la instalación.</p>
+        <ul class="case-results">
+          <li>8 cámaras HD con visión nocturna en accesos y perímetro</li>
+          <li>Alarma con detectores PIR, contactos en puertas y ventanas</li>
+          <li>Videoportero con apertura remota y grabación de visitas</li>
+          <li>Notificación en tiempo real al celular del propietario</li>
+          <li>Instalación completada en 5 días hábiles dentro del presupuesto</li>
+        </ul>
+        <div class="case-testimonial" itemscope itemtype="https://schema.org/Quotation">
+          <blockquote itemprop="text">"Ahora nos vamos de viaje sin preocupaciones. Podemos ver las cámaras desde el celular y el videoportero nos avisa de cualquier visita."</blockquote>
+          <cite itemprop="author">Familia Herrera — Propietarios</cite>
+        </div>
+        <a href="/contacto" class="case-cta-link">¿Quieres proteger tu hogar? →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="cases-cta section">
+    <div>
+      <h3>¿Listo para ser nuestro próximo caso de éxito?</h3>
+      <p>Cuéntanos tu proyecto y te damos una cotización sin costo en menos de 24 horas.</p>
+    </div>
+    <a href="/contacto" class="btn-primary">Contactar ahora</a>
+  </div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Reveal de secciones
+  document.querySelectorAll('.section').forEach(el => {
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+    }, { threshold: 0.05 }).observe(el);
+  });
+
+  // Reveal de tarjetas con stagger
+  const grid = document.getElementById('cases-grid');
+  if (grid) {
+    new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.case-card').forEach((card, i) => {
+            setTimeout(() => card.classList.add('show'), i * 100);
+          });
+        }
+      });
+    }, { threshold: 0.05 }).observe(grid);
+  }
+
+  // Filtrado
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const caseCards  = document.querySelectorAll('.case-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.getAttribute('data-filter');
+
+      caseCards.forEach((card, i) => {
+        const cats = card.getAttribute('data-category');
+        const show = filter === 'all' || cats.includes(filter);
+        card.style.display = show ? 'flex' : 'none';
+        if (show) {
+          card.classList.remove('show');
+          setTimeout(() => card.classList.add('show'), i * 80);
+        }
+      });
+    });
+  });
+});
+</script>
+
+  </main>
+
+  <footer>
+  <div class="footer-slogan">
+    <a href="/" aria-label="Sistemas TVO — Inicio">
+      <picture>
+        <source srcset="/img/logo.webp" type="image/webp">
+        <img src="/img/logo.png" alt="Sistemas TVO" width="40" height="40" loading="lazy">
+      </picture>
+    </a>
+    <p><i>"Tecnología que protege. Experiencia que respalda."</i></p>
+  </div>
+
+  <div class="footer-bottom">
+
+    <!-- Info de contacto -->
+    <div class="footer-info">
+      <p class="footer-brand">Sistemas TVO</p>
+      <p>Ciudad de México y Área Metropolitana</p>
+      <p>Tel: <a href="tel:+52XXXXXXXXXX">XX XXXX XXXX</a></p>
+      <p>Email: <a href="mailto:contacto@sistemastvo.com.mx">contacto@sistemastvo.com.mx</a></p>
+      <p class="footer-copy">&copy; 2025 Sistemas TVO. Todos los derechos reservados.</p>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="footer-social">
+      <p>Síguenos</p>
+      <div class="social-icons-footer">
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5215643939397" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+            <path d="M20.52 3.48A11.46 11.46 0 0012 0C5.373 0 0 5.372 0 12c0 2.124.555 4.127 1.608 5.887L0 24l6.207-1.6A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12 0-3.204-1.252-6.212-3.48-8.52zm-8.46 18.42a9.9 9.9 0 01-5.038-1.381l-.36-.217-3.688.95.985-3.6-.234-.37A9.87 9.87 0 012.1 12c0-5.454 4.446-9.9 9.9-9.9a9.84 9.84 0 016.996 2.894 9.77 9.77 0 012.904 6.987c0 5.453-4.446 9.9-9.9 9.9zm5.43-7.41c-.3-.15-1.768-.87-2.04-.97-.273-.1-.473-.15-.673.15-.2.3-.77.97-.945 1.17-.173.2-.347.225-.646.075-.3-.15-1.268-.47-2.417-1.49-.894-.796-1.497-1.776-1.675-2.076-.173-.3-.018-.46.13-.61.134-.134.3-.347.45-.52.15-.17.2-.3.3-.5.1-.2.05-.375-.025-.52-.075-.15-.673-1.618-.922-2.214-.242-.58-.488-.5-.673-.51l-.573-.01c-.2 0-.52.075-.79.375s-1.04 1.02-1.04 2.48 1.065 2.875 1.213 3.075c.15.2 2.095 3.2 5.075 4.487.71.306 1.263.488 1.695.625.712.227 1.36.195 1.87.118.57-.085 1.768-.72 2.02-1.415.253-.696.253-1.29.176-1.415-.074-.124-.273-.2-.573-.35z"/>
+          </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61578315800649" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" aria-hidden="true">
+            <rect fill="#1877f2" width="512" height="512" rx="15%"/>
+            <path fill="#fff" d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z"/>
+          </svg>
+        </a>
+
+        <!-- Messenger -->
+        <a href="https://m.me/667562636447764" target="_blank" rel="noopener" title="Messenger" aria-label="Messenger">
+          <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true">
+            <radialGradient id="msgGrad" cx="11.087" cy="7.022" r="47.612" gradientTransform="matrix(1 0 0 -1 0 50)" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#1292ff"/>
+              <stop offset=".079" stop-color="#2982ff"/>
+              <stop offset=".23" stop-color="#4e69ff"/>
+              <stop offset=".351" stop-color="#6559ff"/>
+              <stop offset=".428" stop-color="#6d53ff"/>
+              <stop offset=".754" stop-color="#df47aa"/>
+              <stop offset=".946" stop-color="#ff6257"/>
+            </radialGradient>
+            <path fill="url(#msgGrad)" d="M44,23.5C44,34.27,35.05,43,24,43c-1.651,0-3.25-0.194-4.784-0.564c-0.465-0.112-0.951-0.069-1.379,0.145L13.46,44.77C12.33,45.335,11,44.513,11,43.249v-4.025c0-0.575-0.257-1.111-0.681-1.499C6.425,34.165,4,29.11,4,23.5C4,12.73,12.95,4,24,4S44,12.73,44,23.5z"/>
+            <path fill="#fff" d="M34.394,18.501l-5.7,4.22c-0.61,0.46-1.44,0.46-2.04,0.01L22.68,19.74c-1.68-1.25-4.06-0.82-5.19,0.94l-1.21,1.89l-4.11,6.68c-0.6,0.94,0.55,2.01,1.44,1.34l5.7-4.22c0.61-0.46,1.44-0.46,2.04-0.01l3.974,2.991c1.68,1.25,4.06,0.82,5.19-0.94l1.21-1.89l4.11-6.68C36.434,18.901,35.284,17.831,34.394,18.501z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/sistemastvo/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="instaGrad2" x1="100%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="#515bd4"/>
+                <stop offset="50%" stop-color="#dd2a7b"/>
+                <stop offset="100%" stop-color="#515bd4"/>
+              </linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="10" ry="10" fill="url(#instaGrad2)"/>
+            <rect x="6" y="6" width="36" height="36" rx="6" ry="6" fill="none" stroke="#fff" stroke-width="2"/>
+            <circle cx="24" cy="24" r="9.6" fill="none" stroke="#fff" stroke-width="3"/>
+            <circle cx="36" cy="12" r="3" fill="#fff"/>
+          </svg>
+        </a>
+
+        <!-- X / Twitter -->
+        <a href="https://www.x.com/sistemastvo/" target="_blank" rel="noopener" title="X" aria-label="X (Twitter)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#F0F0F0" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+
+      </div>
+
+      <div class="dmca-badge">
+        <a href="//www.dmca.com/Protection/Status.aspx?ID=9119aef2-a242-43b7-86f1-d2a5bb4a5a6c"
+           title="DMCA.com Protection Status" target="_blank" rel="noopener">
+          <img src="https://images.dmca.com/Badges/DMCA_logo-std-btn140w.png?ID=x"
+               loading="lazy" width="141" height="53" alt="DMCA.com Protection Status">
+        </a>
+        <script defer>
+          document.addEventListener('DOMContentLoaded', function () {
+            var s = document.createElement('script');
+            s.src = 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js';
+            document.body.appendChild(s);
+          });
+        </script>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+  
+    <script src="/js/main.js" defer></script>
+  
+
+  
+</body>
+</html>

@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistemas TVO | Seguridad Electrónica CDMX y Área Metropolitana</title>
+  <meta name="description" content="Sistemas TVO: 20 años instalando cámaras, control de acceso biométrico, alarmas y sistemas contra incendios Notifier Honeywell en CDMX y Estado de México.">
+
+  <link rel="canonical" href="http://localhost:8888/" />
+
+  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="shortcut icon" href="/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Sistemas TVO" />
+  <link rel="manifest" href="/img/site.webmanifest" />
+
+  <link rel="preconnect" href="https://images.dmca.com" crossorigin>
+
+  <!-- Fuentes locales -->
+  <link rel="stylesheet" href="/css/font.css">
+
+  <!-- Estilos principales (carga diferida para performance) -->
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+
+  <link rel="preload" href="/img/logo.webp" as="image" imagesrcset="/img/logo.webp" imagesizes="100vw">
+
+  
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Sistemas TVO | Seguridad Electrónica Profesional CDMX">
+<meta property="og:description" content="Instalación y mantenimiento de sistemas de seguridad, CCTV, control de acceso y alarmas contra incendios Notifier. 20 años de experiencia en CDMX y Área Metropolitana.">
+<meta property="og:url" content="https://sistemastvo.com/">
+<meta property="og:site_name" content="Sistemas TVO">
+<meta property="og:image" content="https://sistemastvo.com/img/logo.webp">
+<meta itemprop="address" content="Ciudad de México">
+<meta itemprop="telephone" content="+52XXXXXXXXXX">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Sistemas TVO",
+  "image": "https://sistemastvo.com/img/logo.webp",
+  "@id": "https://sistemastvo.com",
+  "url": "https://sistemastvo.com",
+  "telephone": "+52XXXXXXXXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ciudad de México",
+    "addressRegion": "CDMX",
+    "addressCountry": "MX"
+  },
+  "areaServed": ["Ciudad de México", "Estado de México"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Sistemas de Seguridad Electrónica",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CCTV y Videovigilancia" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Control de Acceso Biométrico" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistemas de Alarma" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alarmas Contra Incendio Notifier" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistemas Fotovoltaicos" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Puntos de Venta Soft-Restaurant" } }
+    ]
+  }
+}
+</script>
+<style>
+  /* ===== HERO ===== */
+  .hero-wrap {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--dark);
+  }
+
+  /* Video de fondo */
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+  .hero-video.loaded { opacity: 0.22; }
+
+  /* Fallback mientras no hay video: cuadrícula animada */
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(250,243,32,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(250,243,32,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridMove 20s linear infinite;
+    z-index: 0;
+    transition: opacity 1s ease;
+  }
+  .hero-grid.hidden { opacity: 0; }
+  @keyframes gridMove {
+    from { background-position: 0 0; }
+    to   { background-position: 60px 60px; }
+  }
+
+  /* Overlay oscuro sobre el video */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(13,27,42,0.82) 0%,
+      rgba(13,27,42,0.55) 60%,
+      rgba(13,27,42,0.75) 100%
+    );
+    z-index: 1;
+  }
+
+  /* Glow pulsante */
+  .hero-glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(250,243,32,0.07) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    animation: pulse 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: translate(-50%,-50%) scale(1); }
+    50%       { opacity: 1;   transform: translate(-50%,-50%) scale(1.08); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+  }
+  .hero-content.show { opacity: 1; transform: translateY(0); }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--yellow-dim);
+    border: 1px solid var(--yellow);
+    border-radius: 2px;
+    padding: 6px 14px;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 28px;
+  }
+  .hero-badge::before {
+    content: '';
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--yellow);
+    border-radius: 50%;
+    animation: blink 1.5s ease-in-out infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 28px;
+  }
+  .hero h1 span { color: var(--yellow); display: block; }
+
+  .hero p {
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    font-weight: 300;
+    color: var(--text-muted);
+    max-width: 580px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  /* Stats strip */
+  .stats-strip {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 40px;
+    gap: 0;
+  }
+  .stat-item { flex: 1 1 150px; padding: 10px 20px 10px 0; }
+  .stat-item:not(:last-child) {
+    border-right: 1px solid rgba(255,255,255,0.08);
+    margin-right: 20px;
+  }
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--yellow);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+  }
+
+  /* ===== SERVICIOS ===== */
+  .services-section {
+    padding: 100px 0;
+    background: var(--dark-2);
+  }
+  .services-header { text-align: left; margin-bottom: 60px; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px;
+  }
+  .service-card {
+    background: var(--dark-3);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 3px;
+    background: var(--yellow);
+    transition: width 0.4s ease;
+  }
+  .service-card:hover::before { width: 100%; }
+  .service-card:hover { background: var(--dark-4, #1a2f47); }
+  .service-card:hover .service-icon { color: var(--yellow); }
+  .service-icon {
+    width: 40px; height: 40px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    transition: color 0.3s;
+  }
+  .service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 12px;
+  }
+  .service-card p {
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .service-link {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+  .service-link:hover { gap: 12px; color: var(--text-light); }
+
+  /* ===== NOTIFIER ===== */
+  .notifier-section {
+    padding: 90px 0;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+  .notifier-section::before {
+    content: 'NOTIFIER';
+    position: absolute;
+    font-family: var(--font-display);
+    font-size: 18vw;
+    font-weight: 800;
+    color: rgba(250,243,32,0.03);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .notifier-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .notifier-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .notifier-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .notifier-features li::before {
+    content: '▶';
+    color: var(--yellow);
+    font-size: 0.6rem;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .cert-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--yellow-dim);
+    border: 1px solid var(--yellow);
+    border-radius: 2px;
+    padding: 14px 20px;
+    margin-bottom: 28px;
+  }
+  .cert-badge-icon { width: 32px; height: 32px; color: var(--yellow); flex-shrink: 0; }
+  .cert-badge-text {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    line-height: 1.4;
+  }
+  .cert-badge-text strong { display: block; font-size: 1rem; }
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    background: var(--dark-3);
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+    margin-bottom: 2px;
+  }
+  .spec-row:hover { border-left-color: var(--yellow); background: var(--dark-2); }
+  .spec-name {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+  }
+  .spec-value { font-size: 0.85rem; color: var(--text-muted); text-align: right; max-width: 200px; }
+
+  /* ===== POR QUÉ NOSOTROS ===== */
+  .why-section {
+    padding: 100px 0;
+    background: var(--yellow);
+    position: relative;
+    overflow: hidden;
+  }
+  .why-section::after {
+    content: '20';
+    position: absolute;
+    font-family: var(--font-display);
+    font-size: 50vw;
+    font-weight: 800;
+    color: rgba(0,0,0,0.04);
+    top: -10%; right: -10%;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .why-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .why-left .section-label { color: rgba(0,0,0,0.5); }
+  .why-left .section-title { color: var(--dark); }
+  .why-left .section-sub   { color: rgba(13,27,42,0.7); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .why-card {
+    background: var(--dark);
+    padding: 32px 28px;
+    transition: background 0.2s;
+  }
+  .why-card:hover { background: var(--dark-2); }
+  .why-num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--yellow);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .why-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .why-card p { font-size: 0.88rem; font-weight: 300; color: var(--text-muted); line-height: 1.65; }
+
+  /* ===== CTA FINAL ===== */
+  .cta-section {
+    padding: 120px 0;
+    background: var(--dark-2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(250,243,32,0.06) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+  }
+  .cta-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .cta-inner .section-title { font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 20px; }
+  .cta-inner .section-sub { max-width: 100%; margin: 0 auto 40px; text-align: center; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .notifier-inner,
+    .why-inner { grid-template-columns: 1fr; gap: 40px; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .hero-content { padding: 80px 20px; }
+    .stats-strip { gap: 20px; }
+    .stat-item:not(:last-child) { border-right: none; margin-right: 0; }
+    .why-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+  
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NC6XELGW6F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NC6XELGW6F');
+  </script>
+
+</head>
+<body>
+  <header>
+  <div class="header-container">
+
+    <!-- Logo -->
+    <a href="/" aria-label="Sistemas TVO — Inicio">
+      <picture>
+        <source srcset="/img/logo.webp" type="image/webp">
+        <img class="logo" src="/img/logo.png" alt="Sistemas TVO" width="40" height="40">
+      </picture>
+    </a>
+
+    <!-- Hamburger (mobile) -->
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Abrir menú" aria-controls="main-nav">
+      <svg id="icon-bars" width="22" height="22" viewBox="0 0 24 24" fill="none"
+           xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none"
+           xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none;">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <!-- Nav -->
+    <nav id="main-nav" role="navigation" aria-label="Navegación principal">
+      <a href="/" class="nav-link">Inicio</a>
+      <a href="/servicios" class="nav-link">Servicios</a>
+      <a href="/casos-de-exito" class="nav-link">Casos de Éxito</a>
+      <a href="/contacto" class="nav-cta">Cotizar</a>
+    </nav>
+
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav    = document.getElementById('main-nav');
+    const iconBars   = document.getElementById('icon-bars');
+    const iconClose  = document.getElementById('icon-close');
+
+    function toggleMenu() {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      const nowExpanded = !isExpanded;
+
+      menuToggle.setAttribute('aria-expanded', nowExpanded);
+      menuToggle.setAttribute('aria-label', nowExpanded ? 'Cerrar menú' : 'Abrir menú');
+      mainNav.classList.toggle('active', nowExpanded);
+
+      iconBars.style.display  = nowExpanded ? 'none'  : 'block';
+      iconClose.style.display = nowExpanded ? 'block' : 'none';
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Cerrar al hacer clic en un enlace (mobile)
+    mainNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (window.innerWidth <= 768) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Sombra al hacer scroll
+    window.addEventListener('scroll', function () {
+      document.querySelector('header').classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  });
+  </script>
+</header>
+
+
+  <main>
+    
+<!-- ===== HERO ===== -->
+<div class="hero-wrap">
+
+  <!--
+    VIDEO DE FONDO
+    Cuando tengas el video, colócalo en src/video/hero.mp4
+    y descomenta las líneas del <video> a continuación.
+    El video se mostrará con 22% de opacidad sobre el fondo oscuro.
+    Recomendaciones para el video:
+      - Duración: 10-20 segundos en loop
+      - Contenido: instalación de cámaras, servidores, paneles eléctricos,
+        fibra óptica, cualquier imagen de tecnología de seguridad
+      - Resolución: 1920x1080 mínimo, comprimir a <5MB con HandBrake
+      - Sin audio (muted requerido para autoplay)
+  -->
+  <!--
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="none"
+    poster="/img/hero-poster.webp"
+    aria-hidden="true">
+    <source src="/video/hero.mp4" type="video/mp4">
+  </video>
+  -->
+
+  <div class="hero-grid" id="hero-grid"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-glow"></div>
+
+  <section class="hero" style="width:100%;">
+    <div class="hero-content">
+      <div class="hero-badge">Sistema activo · CDMX &amp; Área Metropolitana</div>
+
+      <h1>
+        Protección que
+        <span>no falla.</span>
+      </h1>
+
+      <p>Instalación y mantenimiento de sistemas de seguridad electrónica, videovigilancia, control de acceso y alarmas contra incendios. 20 años respaldando empresas y hogares.</p>
+
+      <div class="hero-actions">
+        <a href="/contacto" class="btn-primary">Solicitar Cotización</a>
+        <a href="/servicios" class="btn-secondary">Ver Servicios</a>
+      </div>
+
+      <div class="stats-strip">
+        <div class="stat-item">
+          <div class="stat-number">20</div>
+          <div class="stat-label">Años de experiencia</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">CDMX</div>
+          <div class="stat-label">y Estado de México</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">Líneas de servicio</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Soporte técnico</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== SERVICIOS ===== -->
+<section class="section services-section">
+  <div class="container">
+    <div class="services-header">
+      <span class="section-label">Lo que hacemos</span>
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <p class="section-sub">Diseñamos, instalamos y damos mantenimiento a sistemas de seguridad electrónica a la medida de cada proyecto.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 10l4.553-2.276A1 1 0 0121 8.723v6.554a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/>
+        </svg>
+        <h3>CCTV y Videovigilancia</h3>
+        <p>Cámaras analógicas e IP, DVR/NVR, monitoreo remoto y grabación en la nube. Visión nocturna e inteligencia artificial.</p>
+        <a href="/servicios#cctv" class="service-link">Ver detalles →</a>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2"/>
+          <path d="M7 11V7a5 5 0 0110 0v4"/>
+          <circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        <h3>Control de Acceso Biométrico</h3>
+        <p>Lectores de huella, reconocimiento facial y RFID. Administración de usuarios, reportes y barreras vehiculares.</p>
+        <a href="/servicios#biometrico" class="service-link">Ver detalles →</a>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+          <path d="M13.73 21a2 2 0 01-3.46 0"/>
+        </svg>
+        <h3>Sistemas de Alarma</h3>
+        <p>Detectores PIR, contactos magnéticos, sirenas y paneles. Integración con monitoreo central y notificaciones a celular.</p>
+        <a href="/servicios#alarmas" class="service-link">Ver detalles →</a>
+      </div>
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2c0 0-4 4.5-4 8a4 4 0 008 0c0-3.5-4-8-4-8z"/>
+          <path d="M12 12c0 0-2 2-2 3.5a2 2 0 004 0C14 14 12 12 12 12z"/>
+          <path d="M5 20h14"/>
+        </svg>
+        <h3>Alarmas Contra Incendio</h3>
+        <p>Sistemas Notifier Honeywell certificados: detectores de humo, calor y CO, paneles, bocinas y estrobos.</p>
+        <a href="/servicios#incendio" class="service-link">Ver detalles →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NOTIFIER ===== -->
+<section class="section notifier-section">
+  <div class="container">
+    <div class="notifier-inner">
+      <div class="notifier-text">
+        <span class="section-label">Especialidad certificada</span>
+        <h2 class="section-title">Distribuidores<br>Notifier Honeywell</h2>
+        <div class="cert-badge">
+          <svg class="cert-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+          <div class="cert-badge-text">
+            <strong>Certificados por Honeywell</strong>
+            Línea Notifier · Verifire Tools
+          </div>
+        </div>
+        <p class="section-sub">Somos instaladores certificados de la línea Notifier de Honeywell, la marca líder mundial en sistemas de detección y alarma contra incendios.</p>
+        <ul class="notifier-features">
+          <li>Memorias de cálculo con Verifire Tools para cobertura exacta</li>
+          <li>Instalación bajo NOM-002-STPS y NFPA 72</li>
+          <li>Mantenimiento preventivo y correctivo con refacciones originales</li>
+          <li>Integración con CCTV y control de acceso</li>
+        </ul>
+        <a href="/servicios#incendio" class="btn-primary">Conocer más</a>
+      </div>
+      <div class="notifier-visual">
+        <div class="spec-row"><span class="spec-name">Paneles de Control</span><span class="spec-value">NFS2-3030 / AFP-400 / ONYX</span></div>
+        <div class="spec-row"><span class="spec-name">Detección</span><span class="spec-value">Humo fotoeléctrico, iónico, calor y CO</span></div>
+        <div class="spec-row"><span class="spec-name">Herramienta de diseño</span><span class="spec-value">Verifire Tools</span></div>
+        <div class="spec-row"><span class="spec-name">Normativas</span><span class="spec-value">NOM-002-STPS · NFPA 72 · NFPA 101</span></div>
+        <div class="spec-row"><span class="spec-name">Mantenimiento</span><span class="spec-value">Preventivo y correctivo, refacciones originales</span></div>
+        <div class="spec-row"><span class="spec-name">Cobertura</span><span class="spec-value">CDMX y Área Metropolitana</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POR QUÉ NOSOTROS ===== -->
+<section class="section why-section">
+  <div class="container">
+    <div class="why-inner">
+      <div class="why-left">
+        <span class="section-label">Por qué elegirnos</span>
+        <h2 class="section-title">20 años protegiendo lo que importa</h2>
+        <p class="section-sub">No somos un intermediario. Somos el equipo técnico que llega, instala y responde cuando algo falla.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-num">01</div>
+          <h4>Experiencia real</h4>
+          <p>Dos décadas de proyectos residenciales, comerciales e industriales en CDMX y Estado de México.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">02</div>
+          <h4>Certificación técnica</h4>
+          <p>Instaladores certificados por Honeywell para la línea Notifier. Respaldo oficial del fabricante.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">03</div>
+          <h4>Solución integral</h4>
+          <p>CCTV, acceso, alarmas e incendios bajo un solo contrato. Menos proveedores, más control.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">04</div>
+          <h4>Soporte continuo</h4>
+          <p>Mantenimiento preventivo programado y atención correctiva para que tu sistema nunca quede fuera de servicio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="section cta-section">
+  <div class="cta-inner">
+    <span class="section-label" style="display:block; text-align:center;">Hablemos hoy</span>
+    <h2 class="section-title">¿Tu instalación necesita revisión?</h2>
+    <p class="section-sub">Recibe una asesoría sin costo y cotización en menos de 24 horas. Atendemos CDMX y toda el Área Metropolitana.</p>
+    <a href="/contacto" class="btn-primary">Contactar Ahora</a>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Hero reveal
+  requestAnimationFrame(() => {
+    document.querySelector('.hero-content')?.classList.add('show');
+  });
+
+  // Cuando el video esté disponible: descomentar el <video> en el HTML
+  // y este bloque se encargará de mostrarlo suavemente al cargar
+  const video = document.querySelector('.hero-video');
+  const grid  = document.getElementById('hero-grid');
+  if (video) {
+    video.addEventListener('canplay', () => {
+      video.classList.add('loaded');
+      grid?.classList.add('hidden'); // oculta la cuadrícula cuando carga el video
+    }, { once: true });
+  }
+
+  // Scroll reveal de secciones
+  const observer = new IntersectionObserver((entries) => {
+    requestAnimationFrame(() => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.section').forEach(s => observer.observe(s));
+});
+</script>
+
+  </main>
+
+  <footer>
+  <div class="footer-slogan">
+    <a href="/" aria-label="Sistemas TVO — Inicio">
+      <picture>
+        <source srcset="/img/logo.webp" type="image/webp">
+        <img src="/img/logo.png" alt="Sistemas TVO" width="40" height="40" loading="lazy">
+      </picture>
+    </a>
+    <p><i>"Tecnología que protege. Experiencia que respalda."</i></p>
+  </div>
+
+  <div class="footer-bottom">
+
+    <!-- Info de contacto -->
+    <div class="footer-info">
+      <p class="footer-brand">Sistemas TVO</p>
+      <p>Ciudad de México y Área Metropolitana</p>
+      <p>Tel: <a href="tel:+52XXXXXXXXXX">XX XXXX XXXX</a></p>
+      <p>Email: <a href="mailto:contacto@sistemastvo.com.mx">contacto@sistemastvo.com.mx</a></p>
+      <p class="footer-copy">&copy; 2025 Sistemas TVO. Todos los derechos reservados.</p>
+    </div>
+
+    <!-- Redes sociales -->
+    <div class="footer-social">
+      <p>Síguenos</p>
+      <div class="social-icons-footer">
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5215643939397" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+            <path d="M20.52 3.48A11.46 11.46 0 0012 0C5.373 0 0 5.372 0 12c0 2.124.555 4.127 1.608 5.887L0 24l6.207-1.6A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12 0-3.204-1.252-6.212-3.48-8.52zm-8.46 18.42a9.9 9.9 0 01-5.038-1.381l-.36-.217-3.688.95.985-3.6-.234-.37A9.87 9.87 0 012.1 12c0-5.454 4.446-9.9 9.9-9.9a9.84 9.84 0 016.996 2.894 9.77 9.77 0 012.904 6.987c0 5.453-4.446 9.9-9.9 9.9zm5.43-7.41c-.3-.15-1.768-.87-2.04-.97-.273-.1-.473-.15-.673.15-.2.3-.77.97-.945 1.17-.173.2-.347.225-.646.075-.3-.15-1.268-.47-2.417-1.49-.894-.796-1.497-1.776-1.675-2.076-.173-.3-.018-.46.13-.61.134-.134.3-.347.45-.52.15-.17.2-.3.3-.5.1-.2.05-.375-.025-.52-.075-.15-.673-1.618-.922-2.214-.242-.58-.488-.5-.673-.51l-.573-.01c-.2 0-.52.075-.79.375s-1.04 1.02-1.04 2.48 1.065 2.875 1.213 3.075c.15.2 2.095 3.2 5.075 4.487.71.306 1.263.488 1.695.625.712.227 1.36.195 1.87.118.57-.085 1.768-.72 2.02-1.415.253-.696.253-1.29.176-1.415-.074-.124-.273-.2-.573-.35z"/>
+          </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61578315800649" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" aria-hidden="true">
+            <rect fill="#1877f2" width="512" height="512" rx="15%"/>
+            <path fill="#fff" d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z"/>
+          </svg>
+        </a>
+
+        <!-- Messenger -->
+        <a href="https://m.me/667562636447764" target="_blank" rel="noopener" title="Messenger" aria-label="Messenger">
+          <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-hidden="true">
+            <radialGradient id="msgGrad" cx="11.087" cy="7.022" r="47.612" gradientTransform="matrix(1 0 0 -1 0 50)" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#1292ff"/>
+              <stop offset=".079" stop-color="#2982ff"/>
+              <stop offset=".23" stop-color="#4e69ff"/>
+              <stop offset=".351" stop-color="#6559ff"/>
+              <stop offset=".428" stop-color="#6d53ff"/>
+              <stop offset=".754" stop-color="#df47aa"/>
+              <stop offset=".946" stop-color="#ff6257"/>
+            </radialGradient>
+            <path fill="url(#msgGrad)" d="M44,23.5C44,34.27,35.05,43,24,43c-1.651,0-3.25-0.194-4.784-0.564c-0.465-0.112-0.951-0.069-1.379,0.145L13.46,44.77C12.33,45.335,11,44.513,11,43.249v-4.025c0-0.575-0.257-1.111-0.681-1.499C6.425,34.165,4,29.11,4,23.5C4,12.73,12.95,4,24,4S44,12.73,44,23.5z"/>
+            <path fill="#fff" d="M34.394,18.501l-5.7,4.22c-0.61,0.46-1.44,0.46-2.04,0.01L22.68,19.74c-1.68-1.25-4.06-0.82-5.19,0.94l-1.21,1.89l-4.11,6.68c-0.6,0.94,0.55,2.01,1.44,1.34l5.7-4.22c0.61-0.46,1.44-0.46,2.04-0.01l3.974,2.991c1.68,1.25,4.06,0.82,5.19-0.94l1.21-1.89l4.11-6.68C36.434,18.901,35.284,17.831,34.394,18.501z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/sistemastvo/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="instaGrad2" x1="100%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="#515bd4"/>
+                <stop offset="50%" stop-color="#dd2a7b"/>
+                <stop offset="100%" stop-color="#515bd4"/>
+              </linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="10" ry="10" fill="url(#instaGrad2)"/>
+            <rect x="6" y="6" width="36" height="36" rx="6" ry="6" fill="none" stroke="#fff" stroke-width="2"/>
+            <circle cx="24" cy="24" r="9.6" fill="none" stroke="#fff" stroke-width="3"/>
+            <circle cx="36" cy="12" r="3" fill="#fff"/>
+          </svg>
+        </a>
+
+        <!-- X / Twitter -->
+        <a href="https://www.x.com/sistemastvo/" target="_blank" rel="noopener" title="X" aria-label="X (Twitter)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#F0F0F0" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+
+      </div>
+
+      <div class="dmca-badge">
+        <a href="//www.dmca.com/Protection/Status.aspx?ID=9119aef2-a242-43b7-86f1-d2a5bb4a5a6c"
+           title="DMCA.com Protection Status" target="_blank" rel="noopener">
+          <img src="https://images.dmca.com/Badges/DMCA_logo-std-btn140w.png?ID=x"
+               loading="lazy" width="141" height="53" alt="DMCA.com Protection Status">
+        </a>
+        <script defer>
+          document.addEventListener('DOMContentLoaded', function () {
+            var s = document.createElement('script');
+            s.src = 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js';
+            document.body.appendChild(s);
+          });
+        </script>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+  
+    <script src="/js/main.js" defer></script>
+  
+
+  
+</body>
+</html>

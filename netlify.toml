@@ -5,7 +5,7 @@ package = "@netlify/plugin-sitemap"
   NODE_ENV = "development"
 
 [build]
-command = "npm run build"
+command = "npm ci && npx @11ty/eleventy"
 publish = "_site"
 functions = "netlify/functions"
 

@@ -1,0 +1,24 @@
+<svg width="230" height="60" viewBox="0 0 230 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Onda izquierda exterior -->
+  <path d="M8 18 Q1 30 8 42" stroke="#FAF320" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.4"/>
+  <!-- Onda izquierda interior -->
+  <path d="M14 21 Q8 30 14 39" stroke="#FAF320" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.72"/>
+  <!-- Ojo -->
+  <path d="M20 30 Q32 16 42 16 Q52 16 64 30 Q52 44 42 44 Q32 44 20 30 Z" fill="none" stroke="#FAF320" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- Iris -->
+  <circle cx="42" cy="30" r="8" fill="none" stroke="#FAF320" stroke-width="1.5"/>
+  <!-- Pupila -->
+  <circle cx="42" cy="30" r="3.2" fill="#FAF320"/>
+  <!-- Destello -->
+  <circle cx="43.8" cy="28.3" r="1.1" fill="#0D1B2A"/>
+  <!-- Onda derecha interior -->
+  <path d="M70 21 Q76 30 70 39" stroke="#FAF320" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.72"/>
+  <!-- Onda derecha exterior -->
+  <path d="M76 18 Q83 30 76 42" stroke="#FAF320" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.4"/>
+  <!-- TVO -->
+  <text x="96" y="24" font-family="'Arial Black', Arial, sans-serif" font-size="20" font-weight="900" letter-spacing="4" fill="#F0F0F0">TVO</text>
+  <!-- Línea separadora -->
+  <line x1="96" y1="28.5" x2="222" y2="28.5" stroke="#FAF320" stroke-width="1.2"/>
+  <!-- SISTEMAS -->
+  <text x="97" y="44" font-family="Arial, sans-serif" font-size="8.5" font-weight="300" letter-spacing="5.5" fill="#9EAFC2">SISTEMAS</text>
+</svg>

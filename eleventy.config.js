@@ -52,6 +52,7 @@ module.exports = function(eleventyConfig) {
 
   // Passthrough copies
   eleventyConfig.addPassthroughCopy("src/downloads");
+  eleventyConfig.addPassthroughCopy("src/video");
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");

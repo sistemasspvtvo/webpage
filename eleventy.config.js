@@ -58,6 +58,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("dmca-validation.html");
   eleventyConfig.addPassthroughCopy({
     "node_modules/katex/dist/katex.min.css": "css/katex.min.css",
     "node_modules/katex/dist/katex.min.js": "js/katex.min.js",

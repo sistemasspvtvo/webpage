@@ -282,7 +282,7 @@ metaTags: |
         overflow: hidden;
       }
       .notifier-section::before {
-        content: 'NOTIFIER';
+        content: '';
         position: absolute;
         font-family: var(--font-display);
         font-size: 18vw;
@@ -373,7 +373,7 @@ metaTags: |
         overflow: hidden;
       }
       .why-section::after {
-        content: '20';
+        content: '';
         position: absolute;
         font-family: var(--font-display);
         font-size: 50vw;
@@ -470,30 +470,18 @@ metaTags: |
 
 <!-- ===== HERO ===== -->
 <div class="hero-wrap">
-
-  <!--
-    VIDEO DE FONDO
-    Cuando tengas el video, colócalo en src/video/hero.mp4
-    y descomenta las líneas del <video> a continuación.
-    El video se mostrará con 22% de opacidad sobre el fondo oscuro.
-    Recomendaciones para el video:
-      - Duración: 10-20 segundos en loop
-      - Contenido: instalación de cámaras, servidores, paneles eléctricos,
-        fibra óptica, cualquier imagen de tecnología de seguridad
-      - Resolución: 1920x1080 mínimo, comprimir a <5MB con HandBrake
-      - Sin audio (muted requerido para autoplay)
-  -->
-  <video
+<video
     class="hero-video"
     autoplay
     muted
     loop
     playsinline
-    preload="none"
+    preload="metadata"
     poster="/img/hero-poster.webp"
     aria-hidden="true">
+    <source src="/video/hero-mobile.m4v" type="video/mp4" media="(max-width: 768px)">
     <source src="/video/hero.m4v" type="video/mp4">
-  </video>
+</video>
   <div class="hero-grid" id="hero-grid"></div>
   <div class="hero-overlay"></div>
   <div class="hero-glow"></div>
@@ -619,6 +607,22 @@ metaTags: |
         <div class="spec-row"><span class="spec-name">Normativas</span><span class="spec-value">NOM-002-STPS · NFPA 72 · NFPA 101</span></div>
         <div class="spec-row"><span class="spec-name">Mantenimiento</span><span class="spec-value">Preventivo y correctivo, refacciones originales</span></div>
         <div class="spec-row"><span class="spec-name">Cobertura</span><span class="spec-value">Sede en CDMX - Atendemos a toda la Repúbllica Mexicana</span></div>
+      </div>
+      <div class="notifier-by-honeywell-logos2">
+        <a aria-label="Notifier by Honewell">
+        <picture>
+        <source srcset="/img/notifier.png" type="image/webp">
+        <img src="/img/notifier.png" alt="Certificados por Honeywell" width="300" height="300" loading="lazy">
+        </picture>
+        </a>
+      </div>      
+      <div class="nfpa-badge">
+        <a aria-label="Emblema NFPA 72 2025">
+          <picture>
+          <source srcset="/img/nfpa.webp" type="image/webp">
+          <img src="/img/nfpa.webp" alt="Certificados por NFPA 2025" width="300" height="300" loading="lazy">
+          </picture>
+        </a>
       </div>
     </div>
   </div>

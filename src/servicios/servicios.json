@@ -1,0 +1,7 @@
+{
+  "layout": "layout.njk",
+  "tags": ["servicio"],
+  "eleventyComputed": {
+    "permalink": "/servicios/{{ page.fileSlug }}/"
+  }
+}

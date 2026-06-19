@@ -1,20 +1,46 @@
-[[plugins]]
-package = "@netlify/plugin-sitemap"
+[build]
+  command = "npm ci && npx @11ty/eleventy"
+  publish = "_site"
+  functions = "netlify/functions"
 
 [build.environment]
-  NODE_ENV = "development"
+  NODE_ENV = "production"
 
-[build]
-command = "npm ci && npx @11ty/eleventy"
-publish = "_site"
-functions = "netlify/functions"
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+
+# ── Trailing slash ─────────────────────────────────────────
+# Eleventy genera URLs con / al final (ej. /casos-de-exito/).
+# Esta regla evita el salto extra cuando alguien o Google
+# pide la ruta sin la diagonal final.
 
 [[redirects]]
-  from = "/old-path"
-  to = "/new-path"
+  from = "/casos-de-exito"
+  to = "/casos-de-exito/"
   status = 301
+  force = true
 
-  [[headers]]
+[[redirects]]
+  from = "/servicios"
+  to = "/servicios/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contacto"
+  to = "/contacto/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/servicios/:slug"
+  to = "/servicios/:slug/"
+  status = 301
+  force = true
+
+# ── Headers ────────────────────────────────────────────────
+
+[[headers]]
   for = "/success-cv"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' https://www.google.com/recaptcha/; style-src 'self' 'unsafe-inline';"

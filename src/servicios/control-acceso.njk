@@ -1,0 +1,73 @@
+---
+layout: layout.njk
+title: "Control de Acceso Biométrico CDMX | Sistemas TVO"
+description: "Instalación de sistemas de control de acceso biométrico por huella, facial y tarjeta en CDMX y Estado de México. Integración con nómina, torniquetes, barreras vehiculares y lectores de tarjeta."
+keywords: "control de acceso biométrico CDMX, lector huella dactilar empresas CDMX, torniquete control acceso, barrera vehicular CDMX, acceso facial reconocimiento"
+robots: "index, follow, max-snippet:-1, max-image-preview:large"
+metaTags: |
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="Control de Acceso Biométrico CDMX | Sistemas TVO">
+  <meta property="og:description" content="Sistemas de control de acceso biométrico por huella, facial y tarjeta en CDMX. Torniquetes, barreras vehiculares, integración con nómina.">
+  <meta property="og:url" content="https://sistemastvo.com/servicios/control-acceso/">
+  <link rel="canonical" href="https://sistemastvo.com/servicios/control-acceso/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Control de Acceso Biométrico",
+    "description": "Diseño e instalación de sistemas de control de acceso biométrico por huella dactilar, reconocimiento facial y tarjeta RFID para empresas en CDMX y Estado de México.",
+    "provider": { "@type": "LocalBusiness", "name": "Sistemas TVO", "url": "https://sistemastvo.com" },
+    "areaServed": ["Ciudad de México", "Estado de México"],
+    "serviceType": "Control de Acceso"
+  }
+  </script>
+servicio:
+  titulo: "Control de Acceso Biométrico"
+  h1: "Control de Acceso Biométrico en CDMX"
+  badge: "Huella · Facial · Tarjeta RFID"
+  lead: "Controlamos quién entra, en qué horario y a qué áreas de tu empresa. Desde un lector biométrico para una sola puerta hasta redes de múltiples accesos con torniquetes, barreras vehiculares y registro integrado con nómina."
+  metachip: "Integración con nómina"
+  seccion1_titulo: "Saber quién entra y cuándo, sin depender de llaves ni tarjetas perdidas"
+  descripcion:
+    - "Las llaves se copian, las tarjetas se pierden o se prestan. Un sistema biométrico elimina esos riesgos: el acceso está vinculado a la persona, no a un objeto que puede transferirse. En Sistemas TVO instalamos lectores de huella dactilar, reconocimiento facial y tarjeta RFID según el nivel de seguridad que requiere cada punto de acceso."
+    - "Para empresas con múltiples empleados o turnos, integramos el sistema de control de acceso con software de asistencia que genera reportes de entradas y salidas por empleado, departamento y horario. Esto simplifica la captura de asistencia, elimina el marcaje por otro y sirve como respaldo documental ante auditorías laborales."
+    - "Para accesos vehiculares instalamos barreras y plumas con lectora de tarjeta o reconocimiento de placas. Para áreas de tránsito alto, torniquetes de medio cuerpo o cuerpo completo. Toda la red de accesos puede gestionarse desde un software centralizado con permisos por usuario, horario y zona."
+  incluye:
+    - "Lectores biométricos de huella dactilar"
+    - "Reconocimiento facial con cámara infrarroja"
+    - "Lectores de tarjeta RFID / Mifare"
+    - "Controles de acceso para puertas y torniquetes"
+    - "Barreras y plumas vehiculares"
+    - "Reconocimiento de placas (LPR)"
+    - "Software centralizado multiusuario"
+    - "Reportes de asistencia exportables a nómina"
+    - "Gestión de horarios y permisos por usuario"
+    - "Integración con alarma y CCTV"
+  faqs:
+    - q: "¿Funciona el lector de huella si el trabajador tiene las manos sucias o húmedas?"
+      a: "Los lectores ópticos de última generación tienen menor sensibilidad a estas condiciones. Para entornos industriales donde las manos se ensucian con frecuencia, recomendamos lectores capacitivos de alta tolerancia o complementar con tarjeta RFID como método alternativo. Lo definimos durante el levantamiento."
+    - q: "¿Se puede restringir el acceso por horario?"
+      a: "Sí. El software permite configurar que un empleado solo pueda acceder en su turno asignado. Por ejemplo, el turno nocturno solo accede entre las 10 pm y las 6 am. Fuera de ese horario, el lector rechaza el acceso aunque la huella sea válida."
+    - q: "¿Qué pasa si se va la luz?"
+      a: "Los controles de acceso incluyen batería de respaldo. Además, configuramos el comportamiento en fallo: 'fail-safe' (la puerta se abre al fallar la electricidad, para evacuación) o 'fail-secure' (la puerta permanece cerrada, para áreas de seguridad alta). Lo definimos según el uso de cada puerta."
+    - q: "¿Puedo exportar la asistencia directamente a mi sistema de nómina?"
+      a: "El software genera reportes en Excel y en formatos compatibles con los sistemas de nómina más comunes en México. Para integraciones más específicas, evaluamos la API o el formato que requiere tu sistema."
+  cta_titulo: "¿Quieres controlar quién accede y cuándo?"
+  cta_sub: "Diseñamos la solución para tu número de empleados, turnos y puntos de acceso. Sin costo."
+  normas:
+    - "ISO 27001"
+    - "LFPDPPP"
+    - "RFID ISO 14443"
+  relacionados:
+    - nombre: "CCTV y Videovigilancia"
+      url: "/servicios/cctv/"
+    - nombre: "Alarmas de Intrusión"
+      url: "/servicios/alarma-intrusion/"
+    - nombre: "Videoporteros"
+      url: "/servicios/videoporteros/"
+    - nombre: "Ver todos los servicios"
+      url: "/servicios/"
+---
+{% set servicio = servicio %}
+{% include "_servicio-base.njk" %}

@@ -10,33 +10,30 @@
   package = "@netlify/plugin-sitemap"
 
 # ── Trailing slash ─────────────────────────────────────────
-# Eleventy genera URLs con / al final (ej. /casos-de-exito/).
-# Esta regla evita el salto extra cuando alguien o Google
-# pide la ruta sin la diagonal final.
+# Red de seguridad para links viejos o externos sin / final.
+# Sin "force": solo redirige si NO existe ya un archivo real
+# en esa ruta, evitando loops contra las páginas generadas
+# por Eleventy.
 
 [[redirects]]
   from = "/casos-de-exito"
   to = "/casos-de-exito/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/servicios"
   to = "/servicios/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/contacto"
   to = "/contacto/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/servicios/:slug"
   to = "/servicios/:slug/"
   status = 301
-  force = true
 
 # ── Headers ────────────────────────────────────────────────
 

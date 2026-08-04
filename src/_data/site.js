@@ -1,4 +1,5 @@
 module.exports = {
+  currentYear: new Date().getFullYear(),
   url: process.env.URL || 'https://sistemastvo.com',
   name: 'Sistemas TVO',
   css: {

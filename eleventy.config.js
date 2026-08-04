@@ -28,8 +28,10 @@ const md = markdownIt({
     })
     */
   });
-
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addFilter("conAnio", function(str) {
+    return str.replace(/\{year\}/g, new Date().getFullYear());
+  });
   // Date filter
   eleventyConfig.addFilter("date", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "UTC" })
@@ -124,6 +126,7 @@ module.exports = function(eleventyConfig) {
     passthroughFileCopy: true,
     templateFormats: ["njk", "md", "html", "11ty.js"],
     markdownTemplateEngine: false,
-    htmlTemplateEngine: "njk"
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk"
   };
 };

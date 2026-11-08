@@ -2,7 +2,7 @@
 layout: layout.njk
 title: "Servicios de Seguridad Electrónica CDMX | Sistemas TVO"
 description: "CCTV, control de acceso biométrico, alarmas contra incendio Notifier, videoporteros, automatización de portones, fibra óptica y más. CDMX y Área Metropolitana."
-keywords: "sistemas de seguridad CDMX, cámaras vigilancia, control acceso biométrico, alarma incendio Notifier, videoportero, automatización portón, fibra óptica, sistemas fotovoltaicos, Soft-Restaurant"
+keywords: "sistemas de seguridad CDMX, cámaras vigilancia, control acceso biométrico, alarma incendio Notifier, videoportero, automatización portón, fibra óptica, sistemas fotovoltaicos"
 robots: "index, follow, max-snippet:-1, max-image-preview:large"
 metaTags: |
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -44,7 +44,6 @@ metaTags: |
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Radios de Comunicación" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UPS Inteligentes" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistemas Fotovoltaicos" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Puntos de Venta Soft-Restaurant" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Instalación de Fibra Óptica" } }
         ]
       }
@@ -292,6 +291,9 @@ metaTags: |
 </div>
 
 <!-- CATEGORIES NAV -->
+{# Cambia a true para reactivar Soft-Restaurant (nav + sección). Recuerda restaurar la línea del JSON-LD y la keyword en el front matter #}
+{% set mostrarSoftRestaurant = false %}
+
 <div class="cat-nav">
   <div class="cat-nav-inner">
     <a href="#seguridad">Seguridad</a>
@@ -299,7 +301,7 @@ metaTags: |
     <a href="#acceso">Acceso y Perímetro</a>
     <a href="#telecomunicaciones">Telecom</a>
     <a href="#energia">Energía</a>
-    <a href="#software">Software</a>
+    {% if mostrarSoftRestaurant %}<a href="#software">Software</a>{% endif %}
   </div>
 </div>
 
@@ -617,6 +619,7 @@ metaTags: |
     </div>
   </div>
 
+  {% if mostrarSoftRestaurant %}
   <!-- GRUPO 6: SOFTWARE -->
   <div class="svc-group section" id="software">
     <div class="svc-group-header">
@@ -660,6 +663,7 @@ metaTags: |
       <a href="/contacto/" class="btn-secondary">Hablar con un asesor</a>
     </div>
   </div>
+  {% endif %}
 
   <!-- CTA FINAL -->
   <div class="section" style="text-align:center; padding: 60px 0 80px;">

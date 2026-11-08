@@ -35,6 +35,11 @@
   to = "/servicios/:slug/"
   status = 301
 
+[[redirects]]
+  from = "/soft-restaurant/"
+  to = "/servicios/"
+  status = 302
+
 # ── Headers ────────────────────────────────────────────────
 
 [[headers]]
